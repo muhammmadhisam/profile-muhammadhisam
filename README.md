@@ -1,41 +1,82 @@
-# 🧑‍💻 Resume Portfolio - มูฮัมหมัดฮีซาม ปาล๊ะ (ซัง)
+# Resume Portfolio — มูฮัมหมัดฮีซาม ปาล๊ะ (ซัง)
 
-Developer ที่มีประสบการณ์หลากหลายทั้งระบบ POS, Blockchain, HealthTech, และ Government System  
-เชี่ยวชาญทั้ง Backend และ Frontend พร้อมสร้างระบบ Production-level ด้วยเทคโนโลยีสมัยใหม่
+> Mid-level Backend Developer — ออกแบบ System Architecture และพัฒนา RESTful APIs โดยเน้น Performance, Scalability และ Security ในอุตสาหกรรม HealthTech, Enterprise และ Digital Platform
 
-## 📄 Project Description
+หน้าเว็บ Resume / Portfolio แบบ Single Page ที่สร้างด้วย Tailwind CSS ในสไตล์ของ [shadcn/ui](https://ui.shadcn.com/) — โทนน้ำเงิน สะอาด อ่านง่าย และรองรับทุกขนาดหน้าจอ
 
-เว็บ Resume นี้จัดทำขึ้นเพื่อแสดงประวัติการทำงาน ทักษะ และความเชี่ยวชาญของผม โดยออกแบบให้ดูสะอาด ทันสมัย และสามารถนำไปปรับใช้เป็น Resume Online หรือ Landing Page สำหรับนักพัฒนาได้
+## Tech Stack
 
-### 🔧 Technologies Used
-- **HTML5 + Tailwind CSS** — ออกแบบ UI ที่ Responsive และทันสมัย
-- **Font:** Sarabun (Google Fonts)
-- **Layout:** Section-based (Experience / Skills / Education)
+- **HTML5** — โครงสร้างหน้าเว็บแบบ semantic
+- **Tailwind CSS** (CDN build) — utility-first styling พร้อม custom theme tokens แบบ shadcn
+- **Vanilla JavaScript** — สำหรับปีอัตโนมัติใน footer และ smooth scroll
+- **Google Fonts** — Sarabun (ไทย) + Inter (อังกฤษ)
+- **Cookie Consent** — CookieWow integration
 
-## 🌐 Preview Online
-สามารถดูเวอร์ชัน HTML ได้จากเครื่องของคุณโดยเปิด `index.html` หรือ deploy บน GitHub Pages, Netlify หรือ Vercel
+## Sections
 
-## 🧠 Highlighted Features
+| Section | รายละเอียด |
+|---------|-----------|
+| Hero | ชื่อ ตำแหน่ง คำอธิบายสั้น พร้อมปุ่ม Contact (Email / Phone / Line / LinkedIn) |
+| About | สรุปประสบการณ์และขอบเขตงาน |
+| Experience | ประวัติการทำงาน 3 บริษัท พร้อมรายละเอียดที่ทำและ impact ที่วัดผลได้ |
+| Projects | งานหลักที่รับผิดชอบ — ERC Energy Platform, Pool Manager, Verso PO/PR, Prolab |
+| Side Projects | งานอดิเรกที่กำลังพัฒนา — StockSook, Clinic ERP, Clinic Booking + AI Chatbot |
+| Skills | Frontend / Backend / Database / DevOps / AI &amp; Integration / Architecture &amp; Concepts |
 
-- ✅ จัดหมวดหมู่ประสบการณ์ทำงานอย่างชัดเจน พร้อมลิงก์ตัวอย่างโปรเจกต์จริง
-- ✅ ทักษะ Frontend / Backend / Database / DevOps ครบทุกด้าน
-- ✅ รองรับมือถือ และ UI อ่านง่ายทุกขนาดหน้าจอ
-- ✅ เหมาะสำหรับใช้สมัครงาน หรือนำไปปรับเป็น Portfolio ส่วนตัว
+## Featured Projects
 
-## 🔗 Sample Projects Included
+### Work Projects
+| Project | Stack |
+|---------|-------|
+| ERC — Centralized Energy Data Platform | NestJS · Microservices · Near Real-time Dashboard |
+| Pool Manager — Gas Pool Management | Cost Allocation &amp; Pricing Workflow |
+| Verso PO/PR — Procurement Workflow | Multi-Level Approval · Budget Validation |
+| Prolab — Health Service Platform — [ai.prolab.co.th](https://ai.prolab.co.th/th) | AI Health Analytics · LAB Result System |
 
-| โปรเจกต์ | ลิงก์ |
-|----------|--------|
-| SuperX Cryptocurrency Marketplace | [superxtoken.com](https://superxtoken.com/) |
-| Health AI Analysis | [ai.prolab.co.th](https://ai.prolab.co.th/th) |
-| Government Project Management System | [ehandbook.rtrda.or.th](https://ehandbook.rtrda.or.th/) |
-| POS Web Application | [pinsouqstore.com](https://pinsouqstore.com/) |
+### Side Projects (Currently Building)
+| Project | Stack |
+|---------|-------|
+| **StockSook** — SaaS ERP สำหรับ SME ไทย | Turborepo · Next.js 15 · Hono · PostgreSQL · LINE LIFF |
+| **Clinic ERP** — Multi-tenant B2B SaaS สำหรับคลินิก | Hono 4 · fp-ts · SuperTokens · BullMQ · Cloudflare R2 |
+| **Clinic Booking + AI Chatbot** | OpenAI · Milvus Vector DB · LINE LIFF · MinIO |
 
-## 📬 Contact Me
+## Getting Started
 
-- Email: [muhammadhisam.pala@gmail.com](mailto:muhammadhisam.pala@gmail.com)
-- LinkedIn: [linkedin.com/in/muhammadhisam-pala-45b83825a](https://linkedin.com/in/muhammadhisam-pala-45b83825a)
-- GitHub: [hisampala](https://github.com/hisampala)
+```bash
+# Clone repo
+git clone https://github.com/muhammmadhisam/profile-muhammadhisam.git
+cd profile-muhammadhisam
+
+# เปิดไฟล์ HTML ใน browser ได้เลย
+open index.html
+```
+
+หรือเปิดด้วย local server (แนะนำสำหรับการพัฒนา):
+
+```bash
+# Python 3
+python3 -m http.server 8000
+
+# Node.js
+npx serve .
+```
+
+## Deployment
+
+หน้าเว็บนี้เป็น static site เปิดได้กับ:
+- **GitHub Pages** — เปิดใช้งานใน repo Settings → Pages
+- **Netlify** — drag-and-drop หรือ connect repo
+- **Vercel** — `vercel deploy`
+- **Cloudflare Pages** — connect repo และเลือก build command ว่าง
+
+## Contact
+
+- 📧 Email: [muhammadhisam.pala@gmail.com](mailto:muhammadhisam.pala@gmail.com)
+- 📱 Phone: 090-163-0867
+- 💬 Line: hisam023
+- 💼 LinkedIn: [muhammadhisam-pala](https://linkedin.com/in/muhammadhisam-pala-45b83825a)
+- 🐙 GitHub: [hisampala](https://github.com/hisampala)
 
 ---
 
+Built with ♥ in Thailand
