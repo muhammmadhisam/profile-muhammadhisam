@@ -20,7 +20,7 @@
 | About | สรุปประสบการณ์และขอบเขตงาน |
 | Experience | ประวัติการทำงาน 3 บริษัท พร้อมรายละเอียดที่ทำและ impact ที่วัดผลได้ |
 | Projects | งานหลักที่รับผิดชอบ — ERC Energy Platform, Pool Manager, Verso PO/PR, Prolab |
-| Side Projects | งานอดิเรกที่กำลังพัฒนา — StockSook, Clinic ERP, Clinic Booking + AI Chatbot, M-MERT, SE Ranking Scraper, MeawSook |
+| Side Projects | งานอดิเรกที่กำลังพัฒนา — StockSook, Clinic ERP, Clinic Booking + AI Chatbot, M-MERT, EMS-ECI, SE Ranking Scraper, MeawSook |
 | Skills | Frontend / Backend / Database / DevOps / AI &amp; Integration / Architecture &amp; Concepts |
 
 ## Featured Projects
@@ -42,6 +42,7 @@
 | **M-MERT** — Maritime Emergency Medical Direction System | Bun · Hono 4 · Effect · PostgreSQL 16 · SSE · JWT+RBAC |
 | **MeawSook (เหมียวสุข)** — แพลตฟอร์มแมวหาย &amp; บริจาคอาหาร — [meawsook.com](https://meawsook.com/) | Next.js 15 · React 19 · Hono · Voyage Multimodal-3 · pgvector · LINE LIFF |
 | **SE Ranking Scraper API** — ระบบดึงข้อมูล SEO Keyword อัตโนมัติ | Bun · Hono · Playwright Stealth · BullMQ · Redis · ExcelJS |
+| **EMS-ECI** — ระบบบันทึกผู้ป่วย &amp; Checklist สำหรับพยาบาล | Next.js 16 · React 19 · Prisma 7 · PostgreSQL · better-auth · ExcelJS |
 
 ## Getting Started
 
