@@ -20,7 +20,7 @@
 | About | สรุปประสบการณ์และขอบเขตงาน |
 | Experience | ประวัติการทำงาน 3 บริษัท พร้อมรายละเอียดที่ทำและ impact ที่วัดผลได้ |
 | Projects | งานหลักที่รับผิดชอบ — ERC Energy Platform, Pool Manager, Verso PO/PR, Prolab |
-| Side Projects | งานอดิเรกที่กำลังพัฒนา — StockSook, Clinic ERP, Clinic Booking + AI Chatbot |
+| Side Projects | งานอดิเรกที่กำลังพัฒนา — StockSook, Clinic ERP, Clinic Booking + AI Chatbot, M-MERT, MeawSook |
 | Skills | Frontend / Backend / Database / DevOps / AI &amp; Integration / Architecture &amp; Concepts |
 
 ## Featured Projects
@@ -36,9 +36,11 @@
 ### Side Projects (Currently Building)
 | Project | Stack |
 |---------|-------|
-| **StockSook** — SaaS ERP สำหรับ SME ไทย | Turborepo · Next.js 15 · Hono · PostgreSQL · LINE LIFF |
+| **StockSook** — SaaS ERP สำหรับ SME ไทย — [stocksook.pixelranklab.com](https://stocksook.pixelranklab.com/) | Turborepo · Next.js 15 · Hono · PostgreSQL · LINE LIFF |
 | **Clinic ERP** — Multi-tenant B2B SaaS สำหรับคลินิก | Hono 4 · fp-ts · SuperTokens · BullMQ · Cloudflare R2 |
-| **Clinic Booking + AI Chatbot** | OpenAI · Milvus Vector DB · LINE LIFF · MinIO |
+| **Clinic Booking + AI Chatbot** — RAG-powered booking system | OpenAI · Milvus Vector DB · LINE LIFF · MinIO |
+| **M-MERT** — Maritime Emergency Medical Direction System | Bun · Hono 4 · Effect · PostgreSQL 16 · SSE · JWT+RBAC |
+| **MeawSook (เหมียวสุข)** — แพลตฟอร์มแมวหาย &amp; บริจาคอาหาร — [meawsook.com](https://meawsook.com/) | Next.js 15 · React 19 · Hono · Voyage Multimodal-3 · pgvector · LINE LIFF |
 
 ## Getting Started
 
@@ -75,7 +77,7 @@ npx serve .
 - 📱 Phone: 090-163-0867
 - 💬 Line: hisam023
 - 💼 LinkedIn: [muhammadhisam-pala](https://linkedin.com/in/muhammadhisam-pala-45b83825a)
-- 🐙 GitHub: [hisampala](https://github.com/hisampala)
+- 🐙 GitHub: [muhammmadhisam](https://github.com/muhammmadhisam)
 
 ---
 
