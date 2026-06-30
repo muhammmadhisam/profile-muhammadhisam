@@ -43,7 +43,7 @@
 | **MeawSook (เหมียวสุข)** — แพลตฟอร์มแมวหาย &amp; บริจาคอาหาร — [meawsook.com](https://meawsook.com/) | Next.js 15 · React 19 · Hono · Voyage Multimodal-3 · pgvector · LINE LIFF |
 | **SE Ranking Scraper API** — ระบบดึงข้อมูล SEO Keyword อัตโนมัติ | Bun · Hono · Playwright Stealth · BullMQ · Redis · ExcelJS |
 | **EMS-ECI** — ระบบบันทึกผู้ป่วย &amp; Checklist สำหรับพยาบาล | Next.js 16 · React 19 · Prisma 7 · PostgreSQL · better-auth · ExcelJS |
-| **MoveSook** — แพลตฟอร์มเรียกคนขับขนย้าย On-demand (two-sided marketplace) | Next.js · Hono · Prisma · PostgreSQL · Zod · LINE LIFF · Turborepo |
+| **MoveSook** — แพลตฟอร์มเรียกคนขับขนย้าย On-demand (two-sided marketplace) — [movesook.com](https://movesook.com/) | Next.js · Hono · Prisma · PostgreSQL · Zod · LINE LIFF · Turborepo |
 
 ## Getting Started
 
