@@ -19,7 +19,7 @@
 | Hero | ชื่อ ตำแหน่ง คำอธิบายสั้น พร้อมปุ่ม Contact (Email / Phone / Line / LinkedIn) |
 | About | สรุปประสบการณ์และขอบเขตงาน |
 | Experience | ประวัติการทำงาน 3 บริษัท พร้อมรายละเอียดที่ทำและ impact ที่วัดผลได้ |
-| Projects | งานหลักที่รับผิดชอบ — ERC Energy Platform, Pool Manager, Verso PO/PR, Prolab |
+| Projects | งานหลักที่รับผิดชอบ — ERC Energy Platform, Pool Manager, Verso PO/PR, Prolab, ICMT |
 | Side Projects | งานอดิเรกที่กำลังพัฒนา — StockSook, Clinic ERP, Clinic Booking + AI Chatbot, M-MERT, MoveSook, EMS-ECI, SE Ranking Scraper, MeawSook |
 | Skills | Frontend / Backend / Database / DevOps / AI &amp; Integration / Architecture &amp; Concepts |
 
@@ -32,6 +32,7 @@
 | Pool Manager — Gas Pool Management | Cost Allocation &amp; Pricing Workflow |
 | Verso PO/PR — Procurement Workflow | Multi-Level Approval · Budget Validation |
 | Prolab — Health Service Platform — [ai.prolab.co.th](https://ai.prolab.co.th/th) | AI Health Analytics · LAB Result System |
+| ICMT — ระบบลงทะเบียนและยืนยันอุปกรณ์โทรศัพท์ | Turborepo · Next.js 14 · Hono · Prisma · PostgreSQL · Redis · Bull · NextAuth |
 
 ### Side Projects (Currently Building)
 | Project | Stack |
