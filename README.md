@@ -38,7 +38,7 @@
 | Project | Stack |
 |---------|-------|
 | **StockSook** — SaaS ERP สำหรับ SME ไทย — [stocksook.pixelranklab.com](https://stocksook.pixelranklab.com/) | Turborepo · Next.js 15 · Hono · PostgreSQL · LINE LIFF |
-| **Clinic ERP** — Multi-tenant B2B SaaS สำหรับคลินิก | Hono 4 · fp-ts · SuperTokens · BullMQ · Cloudflare R2 |
+| **Clinic ERP** — Multi-tenant B2B SaaS สำหรับคลินิก — [erp-clinic.pixelranklab.com](https://erp-clinic.pixelranklab.com/) | Hono 4 · fp-ts · SuperTokens · BullMQ · Cloudflare R2 |
 | **Clinic Booking + AI Chatbot** — RAG-powered booking system | OpenAI · Milvus Vector DB · LINE LIFF · MinIO |
 | **M-MERT** — Maritime Emergency Medical Direction System | Bun · Hono 4 · Effect · PostgreSQL 16 · SSE · JWT+RBAC |
 | **MeawSook (เหมียวสุข)** — แพลตฟอร์มแมวหาย &amp; บริจาคอาหาร — [meawsook.com](https://meawsook.com/) | Next.js 15 · React 19 · Hono · Voyage Multimodal-3 · pgvector · LINE LIFF |
