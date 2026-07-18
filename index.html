@@ -131,30 +131,65 @@
     <!-- Hero -->
     <header id="top" class="relative border-b border-border bg-background">
         <div class="absolute inset-0 grid-bg opacity-60" aria-hidden="true"></div>
-        <div class="container relative mx-auto max-w-5xl px-6 py-20 sm:py-28">
-            <!-- Status badge -->
-            <a href="https://linkedin.com/in/muhammadhisam-pala-45b83825a" target="_blank" rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 rounded-full border border-border bg-background px-3 py-1 text-xs font-medium shadow-sm hover:bg-accent transition-colors mb-6">
-                <span class="relative flex h-2 w-2">
-                    <span class="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping"></span>
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                </span>
-                เปิดรับโอกาสใหม่
-                <svg class="h-3 w-3 text-muted-foreground" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                </svg>
-            </a>
-
-            <p class="eyebrow text-xs uppercase tracking-[0.18em] font-medium text-primary mb-3">Mid-level Backend Developer</p>
-            <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-5">
+        <div class="container relative mx-auto max-w-5xl px-6 py-12 sm:py-16">
+            <p class="eyebrow text-xs uppercase tracking-wide font-medium text-primary mb-2">Mid-level Backend Developer</p>
+            <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-3">
                 มูฮัมหมัดฮีซาม ปาล๊ะ
                 <span class="text-muted-foreground font-normal">(ซัง)</span>
             </h1>
-            <p class="max-w-2xl text-lg text-muted-foreground leading-relaxed mb-8">
-                ออกแบบ System Architecture และพัฒนา RESTful APIs โดยเน้น Performance, Scalability
-                และ Security — รับผิดชอบงานตั้งแต่ Requirement, Database Design จนถึง Deploy ระบบขึ้น Production
-                ในอุตสาหกรรม HealthTech, Enterprise และ Digital Platform
+            <p class="max-w-2xl text-lg text-muted-foreground leading-normal mb-5">
+                Backend Developer ที่ดูแลงานตั้งแต่ออกแบบระบบและฐานข้อมูล เขียน API ไปจนถึง deploy
+                ขึ้น production มีประสบการณ์ข้าม 4 อุตสาหกรรม ทั้ง HealthTech, Energy, Enterprise และ Digital Platform
             </p>
+
+            <!-- What I do — fast scan for recruiters -->
+            <div class="space-y-2.5 mb-6">
+                <div class="flex flex-wrap items-center gap-1.5">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-muted-foreground w-12 shrink-0">ถนัด</span>
+                    <span class="inline-flex items-center rounded-md bg-primary/10 text-primary border border-primary/20 px-2.5 py-0.5 text-xs font-medium">System Architecture</span>
+                    <span class="inline-flex items-center rounded-md bg-primary/10 text-primary border border-primary/20 px-2.5 py-0.5 text-xs font-medium">RESTful API</span>
+                    <span class="inline-flex items-center rounded-md bg-primary/10 text-primary border border-primary/20 px-2.5 py-0.5 text-xs font-medium">Microservices</span>
+                    <span class="inline-flex items-center rounded-md bg-primary/10 text-primary border border-primary/20 px-2.5 py-0.5 text-xs font-medium">Database Design</span>
+                    <span class="inline-flex items-center rounded-md bg-primary/10 text-primary border border-primary/20 px-2.5 py-0.5 text-xs font-medium">DevOps</span>
+                    <span class="inline-flex items-center rounded-md bg-primary/10 text-primary border border-primary/20 px-2.5 py-0.5 text-xs font-medium">AI / RAG</span>
+                </div>
+                <div class="flex flex-wrap items-center gap-1.5">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-muted-foreground w-12 shrink-0">Stack</span>
+                    <span class="inline-flex items-center rounded-md border border-border bg-secondary px-2.5 py-0.5 text-xs font-medium">TypeScript</span>
+                    <span class="inline-flex items-center rounded-md border border-border bg-secondary px-2.5 py-0.5 text-xs font-medium">Node.js</span>
+                    <span class="inline-flex items-center rounded-md border border-border bg-secondary px-2.5 py-0.5 text-xs font-medium">Bun</span>
+                    <span class="inline-flex items-center rounded-md border border-border bg-secondary px-2.5 py-0.5 text-xs font-medium">NestJS</span>
+                    <span class="inline-flex items-center rounded-md border border-border bg-secondary px-2.5 py-0.5 text-xs font-medium">Hono</span>
+                    <span class="inline-flex items-center rounded-md border border-border bg-secondary px-2.5 py-0.5 text-xs font-medium">Next.js</span>
+                    <span class="inline-flex items-center rounded-md border border-border bg-secondary px-2.5 py-0.5 text-xs font-medium">PostgreSQL</span>
+                    <span class="inline-flex items-center rounded-md border border-border bg-secondary px-2.5 py-0.5 text-xs font-medium">Redis</span>
+                    <span class="inline-flex items-center rounded-md border border-border bg-secondary px-2.5 py-0.5 text-xs font-medium">Docker</span>
+                    <a href="#skills" class="inline-flex items-center gap-0.5 rounded-md px-1.5 py-0.5 text-xs font-medium text-primary hover:underline">+ ทั้งหมด</a>
+                </div>
+            </div>
+
+            <!-- Quick stats -->
+            <div class="flex flex-wrap gap-x-6 gap-y-2 mb-7 text-sm">
+                <div class="flex items-center gap-2">
+                    <span class="font-display text-xl font-bold text-foreground">5+</span>
+                    <span class="text-muted-foreground leading-tight">ปีในสาย<br class="hidden sm:block" />พัฒนา</span>
+                </div>
+                <div class="h-8 w-px bg-border hidden sm:block"></div>
+                <div class="flex items-center gap-2">
+                    <span class="font-display text-xl font-bold text-foreground">10+</span>
+                    <span class="text-muted-foreground leading-tight">ระบบขึ้น<br class="hidden sm:block" />Production</span>
+                </div>
+                <div class="h-8 w-px bg-border hidden sm:block"></div>
+                <div class="flex items-center gap-2">
+                    <span class="font-display text-xl font-bold text-foreground">4</span>
+                    <span class="text-muted-foreground leading-tight">อุตสาหกรรม<br class="hidden sm:block" />ที่เคยส่งมอบ</span>
+                </div>
+                <div class="h-8 w-px bg-border hidden sm:block"></div>
+                <div class="flex items-center gap-2">
+                    <span class="font-display text-xl font-bold text-foreground">E2E</span>
+                    <span class="text-muted-foreground leading-tight">Requirement<br class="hidden sm:block" />→ Deploy</span>
+                </div>
+            </div>
 
             <div class="flex flex-wrap gap-3">
                 <a href="mailto:muhammadhisam.pala@gmail.com"
@@ -191,7 +226,7 @@
         </div>
     </header>
 
-    <main class="container mx-auto max-w-5xl px-6 py-16 space-y-16">
+    <main class="container mx-auto max-w-5xl px-6 py-12 space-y-12">
 
         <!-- About -->
         <section id="about">
@@ -200,12 +235,30 @@
                 <p class="text-sm text-muted-foreground mt-1">ภาพรวมสั้น ๆ เกี่ยวกับตัวผม</p>
             </div>
             <div class="rounded-lg border border-border bg-card text-card-foreground shadow-sm p-6">
-                <p class="text-[15px] leading-relaxed text-foreground/90">
-                    Backend Developer ที่มีประสบการณ์ออกแบบและพัฒนา API สำหรับระบบที่ต้องการความเสถียร ขยายตัวได้
-                    และปลอดภัย ตั้งแต่งานด้าน HealthTech, Energy Platform, Procurement System ไปจนถึง POS และ CRM ภายในองค์กร
-                    ครอบคลุมงานตั้งแต่ Requirement, System Design, Database Design, Implementation จนถึง Deployment
-                    บน Cloud Infrastructure
+                <p class="text-[15px] leading-normal text-foreground/90 mb-4">
+                    Backend Developer ที่ดูแลงานครบตั้งแต่เก็บ requirement, ออกแบบระบบและฐานข้อมูล,
+                    เขียน API จนถึง deploy และดูแลระบบบน production
+                    ตลอด 5+ ปีที่ผ่านมาทำงานข้าม 4 อุตสาหกรรม — HealthTech, Energy, Enterprise และ Digital Platform —
+                    ได้ใช้ทั้ง Microservices, Multi-tenant SaaS, Event-driven และ AI/RAG กับโจทย์ธุรกิจจริง
                 </p>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                    <div class="rounded-md border border-border bg-secondary/50 px-3 py-2.5">
+                        <p class="text-xs text-muted-foreground">Ownership</p>
+                        <p class="text-sm font-medium text-foreground mt-0.5">Requirement → Deploy</p>
+                    </div>
+                    <div class="rounded-md border border-border bg-secondary/50 px-3 py-2.5">
+                        <p class="text-xs text-muted-foreground">Focus</p>
+                        <p class="text-sm font-medium text-foreground mt-0.5">Scalable &amp; Secure API</p>
+                    </div>
+                    <div class="rounded-md border border-border bg-secondary/50 px-3 py-2.5">
+                        <p class="text-xs text-muted-foreground">Strength</p>
+                        <p class="text-sm font-medium text-foreground mt-0.5">System Architecture</p>
+                    </div>
+                    <div class="rounded-md border border-border bg-secondary/50 px-3 py-2.5">
+                        <p class="text-xs text-muted-foreground">Edge</p>
+                        <p class="text-sm font-medium text-foreground mt-0.5">AI · RAG · Vector</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -237,24 +290,23 @@
                             </div>
                         </div>
                     </div>
-                    <div class="p-6 pt-4">
-                        <ul class="space-y-2.5 text-[14.5px] text-foreground/85">
-                            <li class="flex gap-3"><span class="text-primary mt-1.5 shrink-0">•</span>ออกแบบ System Architecture และพัฒนา RESTful APIs รองรับ Web Application โดยเน้น Performance, Scalability และ Security พร้อมออกแบบฐานข้อมูลให้เหมาะกับแต่ละโปรเจกต์</li>
-                            <li class="flex gap-3"><span class="text-primary mt-1.5 shrink-0">•</span>รับผิดชอบงานตั้งแต่ Requirement, Database Design จนถึง Deploy ระบบขึ้น Production ในหลายอุตสาหกรรม (HealthTech, Enterprise, Digital Platform)</li>
-                            <li class="flex gap-3"><span class="text-primary mt-1.5 shrink-0">•</span>ปรับปรุงระบบให้รองรับผู้ใช้งานจำนวนมาก ลดงาน Manual และเพิ่มประสิทธิภาพการประมวลผลข้อมูลเพื่อสนับสนุนการตัดสินใจทางธุรกิจ</li>
-                            <li class="flex gap-3"><span class="text-primary mt-1.5 shrink-0">•</span>ดูแล DevOps และ Deployment ด้วย Docker, CI/CD และ Cloud Infrastructure เพื่อให้ระบบเสถียรและพร้อมใช้งานตลอดเวลา</li>
-                            <li class="flex gap-3"><span class="text-primary mt-1.5 shrink-0">•</span>พัฒนาระบบ Energy Data Aggregation API เพื่อ feed เข้า dashboard สำหรับการวิเคราะห์ภาพรวมและ monitoring แบบใกล้ real-time</li>
+                    <div class="p-6 pt-3">
+                        <ul class="space-y-1.5 text-[14.5px] leading-snug text-foreground/85">
+                            <li class="flex gap-3"><span class="text-primary mt-1.5 shrink-0">•</span>ออกแบบสถาปัตยกรรมและ RESTful API ของระบบข้ามอุตสาหกรรม (HealthTech, Energy, Enterprise) ดูแลตั้งแต่ requirement, ออกแบบฐานข้อมูล จนขึ้น production</li>
+                            <li class="flex gap-3"><span class="text-primary mt-1.5 shrink-0">•</span>พัฒนา Energy Data Aggregation API รวมข้อมูลไฟฟ้าจากหลายแหล่งเข้าสู่ dashboard เดียว ใช้ดูภาพรวมและ monitoring แบบใกล้ real-time</li>
                             <li class="flex gap-3"><span class="text-primary mt-1.5 shrink-0">•</span>
-                                <span>พัฒนา API Application และ AI Health Analytics วิเคราะห์ผลตรวจเพื่อช่วย predict ความเสี่ยง และสนับสนุนการตัดสินใจของแพทย์ให้แม่นยำขึ้น
+                                <span>พัฒนา AI Health Analytics วิเคราะห์ผลตรวจเพื่อช่วย predict ความเสี่ยง สนับสนุนการตัดสินใจของแพทย์
                                     <a href="https://ai.prolab.co.th/th" target="_blank" rel="noopener noreferrer"
                                         class="inline-flex items-center gap-1 text-primary hover:underline ml-1">ดูระบบ<svg class="h-3 w-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
                                 </span>
                             </li>
                             <li class="flex gap-3"><span class="text-primary mt-1.5 shrink-0">•</span>
-                                <span>พัฒนา API Lab Result System ปรับ flow และระบบหลังบ้าน
+                                <span>ปรับ flow และระบบหลังบ้านของ Lab Result System
                                     <span class="inline-flex items-center rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 px-2 py-0.5 text-xs font-medium ml-1">ลดเวลารอผล 3–7 วัน → 1–3 วัน</span>
                                 </span>
                             </li>
+                            <li class="flex gap-3"><span class="text-primary mt-1.5 shrink-0">•</span>ปรับปรุงระบบให้รองรับผู้ใช้จำนวนมากและลดงาน manual ที่ทีมต้องทำซ้ำ</li>
+                            <li class="flex gap-3"><span class="text-primary mt-1.5 shrink-0">•</span>ดูแล DevOps และ deployment ด้วย Docker, CI/CD และ Cloud Infrastructure</li>
                         </ul>
                     </div>
                 </article>
@@ -275,11 +327,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="p-6 pt-4">
-                        <ul class="space-y-2.5 text-[14.5px] text-foreground/85">
-                            <li class="flex gap-3"><span class="text-primary mt-1.5 shrink-0">•</span>พัฒนาและปรับปรุง Web Application ด้วย HTML, CSS, JavaScript และ Angular โดยออกแบบโครงสร้าง Component ให้รองรับการขยายระบบในอนาคต</li>
-                            <li class="flex gap-3"><span class="text-primary mt-1.5 shrink-0">•</span>ทำงานร่วมกับทีม UX/UI เพื่อพัฒนา Interface ที่ใช้งานง่าย รองรับ Responsive Design ครบทุกอุปกรณ์ (Desktop / Tablet / Mobile)</li>
-                            <li class="flex gap-3"><span class="text-primary mt-1.5 shrink-0">•</span>เชื่อมต่อและจัดการการทำงานร่วมกับ Backend API อย่างมีประสิทธิภาพ ลดข้อผิดพลาดของข้อมูล และเพิ่มเสถียรภาพของระบบ</li>
+                    <div class="p-6 pt-3">
+                        <ul class="space-y-1.5 text-[14.5px] leading-snug text-foreground/85">
+                            <li class="flex gap-3"><span class="text-primary mt-1.5 shrink-0">•</span>พัฒนา Web Application ด้วย Angular วางโครงสร้าง Component ที่นำกลับมาใช้ซ้ำได้ ดูแลและต่อยอดง่าย</li>
+                            <li class="flex gap-3"><span class="text-primary mt-1.5 shrink-0">•</span>ทำงานร่วมกับทีม UX/UI พัฒนา Interface ที่ใช้งานง่ายและ Responsive ครบทุกอุปกรณ์ (Desktop / Tablet / Mobile)</li>
+                            <li class="flex gap-3"><span class="text-primary mt-1.5 shrink-0">•</span>เชื่อมต่อ Backend API ลดข้อผิดพลาดของข้อมูลบนหน้าจอ</li>
                         </ul>
                     </div>
                 </article>
@@ -300,19 +352,18 @@
                             </div>
                         </div>
                     </div>
-                    <div class="p-6 pt-4">
-                        <ul class="space-y-2.5 text-[14.5px] text-foreground/85">
-                            <li class="flex gap-3"><span class="text-primary mt-1.5 shrink-0">•</span>พัฒนา Web Application แบบ End-to-End ทั้ง Frontend และ Backend ตั้งแต่วิเคราะห์ความต้องการ ออกแบบฐานข้อมูล พัฒนา RESTful APIs จนถึงสร้าง UI โดยคำนึงถึงประสิทธิภาพ ความปลอดภัย และการขยายระบบ</li>
-                            <li class="flex gap-3"><span class="text-primary mt-1.5 shrink-0">•</span>ออกแบบและเชื่อมต่อ RESTful APIs ให้แต่ละโมดูลทำงานร่วมกันอย่างมีประสิทธิภาพ พร้อมวางโครงสร้าง System Architecture ให้รองรับการเพิ่มฟีเจอร์และจำนวนผู้ใช้งานที่เติบโตต่อเนื่อง</li>
+                    <div class="p-6 pt-3">
+                        <ul class="space-y-1.5 text-[14.5px] leading-snug text-foreground/85">
+                            <li class="flex gap-3"><span class="text-primary mt-1.5 shrink-0">•</span>ดูแลระบบทั้ง Frontend และ Backend แบบ end-to-end ตั้งแต่วิเคราะห์ requirement ออกแบบฐานข้อมูล เขียน RESTful API จนถึง UI</li>
                             <li class="flex gap-3"><span class="text-primary mt-1.5 shrink-0">•</span>
-                                <span>พัฒนาระบบธุรกิจ เช่น POS, CRM และระบบบริหารจัดการภายในองค์กร เพิ่มความแม่นยำของข้อมูล ลดงาน Manual และให้ทีมงานติดตามข้อมูลแบบ Real-time
+                                <span>พัฒนาระบบธุรกิจอย่าง POS, CRM และระบบบริหารภายในองค์กร ลดงาน manual และให้ทีมติดตามข้อมูลได้แบบ real-time
                                     <a href="https://pinsouqstore.com/" target="_blank" rel="noopener noreferrer"
                                         class="inline-flex items-center gap-1 text-primary hover:underline ml-1">ดูระบบ<svg class="h-3 w-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
                                 </span>
                             </li>
-                            <li class="flex gap-3"><span class="text-primary mt-1.5 shrink-0">•</span>ดูแล Deployment และ Infrastructure ด้วย Docker และ Cloud Environment จัดการ Environment Configuration, Version Control และ CI/CD</li>
-                            <li class="flex gap-3"><span class="text-primary mt-1.5 shrink-0">•</span>พัฒนา Automated Cronjob สำหรับสรุปยอดขายรายวัน/รายเดือน พร้อมส่งรายงานเข้า Line ผู้บริหารแบบอัตโนมัติ ช่วยให้เข้าถึงข้อมูลเพื่อตัดสินใจได้ทันที</li>
-                            <li class="flex gap-3"><span class="text-primary mt-1.5 shrink-0">•</span>ออกแบบและพัฒนาระบบบัญชีและเงินเดือนภายในองค์กร วางโครงสร้างข้อมูลทางการเงินอย่างเป็นระบบ ลดความซ้ำซ้อน และเพิ่มความถูกต้องโปร่งใส</li>
+                            <li class="flex gap-3"><span class="text-primary mt-1.5 shrink-0">•</span>ทำ Automated Cronjob สรุปยอดขายรายวัน/รายเดือน และส่งรายงานเข้า Line ผู้บริหารอัตโนมัติ</li>
+                            <li class="flex gap-3"><span class="text-primary mt-1.5 shrink-0">•</span>พัฒนาระบบบัญชีและเงินเดือนภายในองค์กร วางโครงสร้างข้อมูลการเงินให้เป็นระบบ</li>
+                            <li class="flex gap-3"><span class="text-primary mt-1.5 shrink-0">•</span>ดูแล deployment และ infrastructure ด้วย Docker และ Cloud จัดการ environment config, version control และ CI/CD</li>
                         </ul>
                     </div>
                 </article>
@@ -414,15 +465,15 @@
                             Currently Building
                         </span>
                     </div>
-                    <p class="text-sm text-muted-foreground">โปรเจกต์ที่พัฒนานอกเวลางาน เพื่อแก้ปัญหาธุรกิจ SME ไทยจริง ๆ และทดลองสถาปัตยกรรมระดับ Production</p>
+                    <p class="text-sm text-muted-foreground">โปรเจกต์ที่พัฒนานอกเวลางาน เพื่อแก้ปัญหาธุรกิจ SME ไทยจริง ๆ และทดลองสถาปัตยกรรมระดับ Production <span class="text-primary font-medium">— แตะที่การ์ดเพื่อดูรายละเอียด &amp; Architecture</span></p>
                 </div>
             </div>
 
             <div class="space-y-4">
 
                 <!-- StockSook -->
-                <article class="rounded-lg border border-border bg-card text-card-foreground shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-                    <div class="p-6 pb-4 border-b border-border">
+                <details class="group rounded-lg border border-border bg-card text-card-foreground shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+                    <summary class="cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden p-6 pb-4 hover:bg-secondary/20 transition-colors">
                         <div class="flex flex-wrap items-start justify-between gap-3">
                             <div>
                                 <div class="flex items-center gap-2 mb-1.5 flex-wrap">
@@ -437,14 +488,12 @@
                                         stocksook.pixelranklab.com<svg class="h-3 w-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                                     </a>
                                 </h3>
-                                <p class="text-sm text-muted-foreground mt-0.5">Full-Stack SaaS ERP Platform · Founder &amp; Lead Developer</p>
+                                <p class="text-sm text-muted-foreground mt-0.5">Full-Stack SaaS ERP Platform</p>
                             </div>
-                            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-gradient-to-br from-primary to-primary/70 text-primary-foreground font-bold">
-                                S
-                            </div>
+                            <svg class="h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200 group-open:rotate-180 mt-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
                         </div>
-                    </div>
-                    <div class="p-6 pt-4">
+                    </summary>
+                    <div class="p-6 pt-4 border-t border-border">
                         <p class="text-[14.5px] text-foreground/85 leading-relaxed mb-4">
                             สร้าง <span class="font-medium text-foreground">SaaS ERP ทดแทนซอฟต์แวร์ต่างประเทศ</span>
                             สำหรับร้านค้า SME ที่ต้องการระบบครบจบในที่เดียว ตั้งแต่จัดการสต๊อก ขายหน้าร้าน คำนวณต้นทุน
@@ -469,11 +518,11 @@
                             <span class="inline-flex items-center rounded-md bg-secondary px-2 py-0.5 text-[11px] font-medium text-muted-foreground">JWT Auth</span>
                         </div>
                     </div>
-                </article>
+                </details>
 
                 <!-- Clinic ERP -->
-                <article class="rounded-lg border border-border bg-card text-card-foreground shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-                    <div class="p-6 pb-4 border-b border-border">
+                <details class="group rounded-lg border border-border bg-card text-card-foreground shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+                    <summary class="cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden p-6 pb-4 hover:bg-secondary/20 transition-colors">
                         <div class="flex flex-wrap items-start justify-between gap-3">
                             <div>
                                 <div class="flex items-center gap-2 mb-1.5 flex-wrap">
@@ -488,14 +537,12 @@
                                         erp-clinic.pixelranklab.com<svg class="h-3 w-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                                     </a>
                                 </h3>
-                                <p class="text-sm text-muted-foreground mt-0.5">Multi-tenant B2B SaaS · Solo Architect &amp; Engineer</p>
+                                <p class="text-sm text-muted-foreground mt-0.5">Multi-tenant B2B SaaS</p>
                             </div>
-                            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-gradient-to-br from-primary to-primary/70 text-primary-foreground font-bold">
-                                E
-                            </div>
+                            <svg class="h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200 group-open:rotate-180 mt-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
                         </div>
-                    </div>
-                    <div class="p-6 pt-4">
+                    </summary>
+                    <div class="p-6 pt-4 border-t border-border">
                         <p class="text-[14.5px] text-foreground/85 leading-relaxed mb-4">
                             ออกแบบ <span class="font-medium text-foreground">สถาปัตยกรรม Multi-tenant B2B SaaS</span>
                             สำหรับคลินิกในไทย แยก Workspace ของแต่ละสาขา รองรับการบริหารงานคลินิกตั้งแต่นัดหมาย
@@ -510,6 +557,64 @@
                             <div class="flex gap-2"><span class="text-primary mt-1 shrink-0">▸</span>OpenAPI / Scalar Docs สำหรับ Frontend &amp; Integration Partner</div>
                             <div class="flex gap-2"><span class="text-primary mt-1 shrink-0">▸</span>Cloudflare R2 / S3-compatible Object Storage</div>
                         </div>
+
+                        <!-- Architecture: Clinic ERP -->
+                        <div class="mb-4">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2 flex items-center gap-1.5">
+                                <svg class="h-3.5 w-3.5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 5a1 1 0 011-1h5v6H4V5zM14 4h5a1 1 0 011 1v3h-6V4zM14 12h6v7a1 1 0 01-1 1h-5v-8zM4 14h6v6H5a1 1 0 01-1-1v-5z"/></svg>
+                                Architecture — Microservices Monorepo
+                            </p>
+                            <div class="rounded-md border border-border bg-secondary/30 p-4 overflow-x-auto">
+                                <svg viewBox="0 0 760 244" class="w-full min-w-[660px] h-auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Clinic ERP microservices architecture">
+                                    <defs>
+                                        <marker id="ar-clinic" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#94a3b8"/></marker>
+                                    </defs>
+                                    <!-- Row 1: Clients -->
+                                    <text x="40" y="14" font-size="10" font-weight="600" fill="#94a3b8" letter-spacing="0.05em">CLIENTS · Next.js 15 · shadcn/ui</text>
+                                    <g>
+                                        <rect x="40" y="22" width="200" height="44" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+                                        <text x="140" y="41" font-size="13" font-weight="600" fill="#0f172a" text-anchor="middle">Web-Clinic</text>
+                                        <text x="140" y="56" font-size="10.5" fill="#64748b" text-anchor="middle">แดชบอร์ดคลินิก</text>
+                                        <rect x="280" y="22" width="200" height="44" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+                                        <text x="380" y="41" font-size="13" font-weight="600" fill="#0f172a" text-anchor="middle">Admin Console</text>
+                                        <text x="380" y="56" font-size="10.5" fill="#64748b" text-anchor="middle">Super-admin</text>
+                                        <rect x="520" y="22" width="200" height="44" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+                                        <text x="620" y="41" font-size="13" font-weight="600" fill="#0f172a" text-anchor="middle">Patient Portal</text>
+                                        <text x="620" y="56" font-size="10.5" fill="#64748b" text-anchor="middle">จองนัด · LINE Login</text>
+                                    </g>
+                                    <!-- Arrows to API -->
+                                    <path d="M140,66 L160,98" stroke="#94a3b8" stroke-width="1.4" fill="none" marker-end="url(#ar-clinic)"/>
+                                    <path d="M380,66 L380,98" stroke="#94a3b8" stroke-width="1.4" fill="none" marker-end="url(#ar-clinic)"/>
+                                    <path d="M620,66 L470,98" stroke="#94a3b8" stroke-width="1.4" fill="none" marker-end="url(#ar-clinic)"/>
+                                    <!-- Row 2: API + Webhook -->
+                                    <rect x="140" y="100" width="400" height="44" rx="8" fill="#eff6ff" stroke="#bfdbfe"/>
+                                    <text x="340" y="119" font-size="13" font-weight="700" fill="#1e40af" text-anchor="middle">API Gateway · Hono 4 · fp-ts</text>
+                                    <text x="340" y="134" font-size="10.5" fill="#3b82f6" text-anchor="middle">Type-safe · Multi-tenant · OpenAPI / Scalar Docs</text>
+                                    <rect x="580" y="100" width="140" height="44" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+                                    <text x="650" y="119" font-size="13" font-weight="600" fill="#0f172a" text-anchor="middle">Webhook</text>
+                                    <text x="650" y="134" font-size="10.5" fill="#64748b" text-anchor="middle">LINE · Payment</text>
+                                    <path d="M580,122 L544,122" stroke="#94a3b8" stroke-width="1.4" fill="none" marker-end="url(#ar-clinic)"/>
+                                    <!-- Bus to data layer -->
+                                    <path d="M340,144 L340,160 M122,160 L662,160 M122,160 L122,176 M302,160 L302,176 M482,160 L482,176 M662,160 L662,176" stroke="#94a3b8" stroke-width="1.4" fill="none"/>
+                                    <path d="M122,176 L122,178 M302,176 L302,178 M482,176 L482,178 M662,176 L662,178" stroke="#94a3b8" stroke-width="1.4" fill="none" marker-end="url(#ar-clinic)"/>
+                                    <!-- Row 3: Data & Async -->
+                                    <text x="40" y="196" font-size="10" font-weight="600" fill="#94a3b8" letter-spacing="0.05em">DATA &amp; ASYNC LAYER</text>
+                                    <rect x="40" y="200" width="165" height="40" rx="8" fill="#f8fafc" stroke="#e2e8f0"/>
+                                    <text x="122" y="217" font-size="12.5" font-weight="600" fill="#0f172a" text-anchor="middle">PostgreSQL 16</text>
+                                    <text x="122" y="231" font-size="10" fill="#64748b" text-anchor="middle">per-tenant schema</text>
+                                    <rect x="220" y="200" width="165" height="40" rx="8" fill="#f8fafc" stroke="#e2e8f0"/>
+                                    <text x="302" y="217" font-size="12.5" font-weight="600" fill="#0f172a" text-anchor="middle">BullMQ Worker</text>
+                                    <text x="302" y="231" font-size="10" fill="#64748b" text-anchor="middle">Redis · Notification</text>
+                                    <rect x="400" y="200" width="165" height="40" rx="8" fill="#f8fafc" stroke="#e2e8f0"/>
+                                    <text x="482" y="217" font-size="12.5" font-weight="600" fill="#0f172a" text-anchor="middle">SuperTokens</text>
+                                    <text x="482" y="231" font-size="10" fill="#64748b" text-anchor="middle">Auth · Multi-tenant</text>
+                                    <rect x="580" y="200" width="165" height="40" rx="8" fill="#f8fafc" stroke="#e2e8f0"/>
+                                    <text x="662" y="217" font-size="12.5" font-weight="600" fill="#0f172a" text-anchor="middle">Cloudflare R2</text>
+                                    <text x="662" y="231" font-size="10" fill="#64748b" text-anchor="middle">Object Storage</text>
+                                </svg>
+                            </div>
+                        </div>
+
                         <div class="flex flex-wrap gap-1.5 pt-3 border-t border-border">
                             <span class="inline-flex items-center rounded-md bg-secondary px-2 py-0.5 text-[11px] font-medium text-muted-foreground">Turborepo</span>
                             <span class="inline-flex items-center rounded-md bg-secondary px-2 py-0.5 text-[11px] font-medium text-muted-foreground">Hono 4</span>
@@ -523,11 +628,11 @@
                             <span class="inline-flex items-center rounded-md bg-secondary px-2 py-0.5 text-[11px] font-medium text-muted-foreground">Cloudflare R2</span>
                         </div>
                     </div>
-                </article>
+                </details>
 
                 <!-- Clinic Booking + AI -->
-                <article class="rounded-lg border border-border bg-card text-card-foreground shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-                    <div class="p-6 pb-4 border-b border-border">
+                <details class="group rounded-lg border border-border bg-card text-card-foreground shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+                    <summary class="cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden p-6 pb-4 hover:bg-secondary/20 transition-colors">
                         <div class="flex flex-wrap items-start justify-between gap-3">
                             <div>
                                 <div class="flex items-center gap-2 mb-1.5 flex-wrap">
@@ -536,14 +641,12 @@
                                     <span class="inline-flex items-center rounded-md bg-secondary border border-border px-2 py-0.5 text-xs font-medium text-muted-foreground">Vector Search</span>
                                 </div>
                                 <h3 class="font-display text-lg font-semibold leading-tight">Clinic Booking + AI Chatbot — ระบบจองคิวคลินิกพร้อมผู้ช่วย AI</h3>
-                                <p class="text-sm text-muted-foreground mt-0.5">RAG-powered Booking Platform · Solo Engineer</p>
+                                <p class="text-sm text-muted-foreground mt-0.5">RAG-powered Booking Platform</p>
                             </div>
-                            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-gradient-to-br from-primary to-primary/70 text-primary-foreground font-bold">
-                                C
-                            </div>
+                            <svg class="h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200 group-open:rotate-180 mt-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
                         </div>
-                    </div>
-                    <div class="p-6 pt-4">
+                    </summary>
+                    <div class="p-6 pt-4 border-t border-border">
                         <p class="text-[14.5px] text-foreground/85 leading-relaxed mb-4">
                             ผสาน <span class="font-medium text-foreground">AI Chatbot แบบ RAG (Retrieval-Augmented Generation)</span>
                             เข้ากับระบบจองคิวคลินิก — ผู้ป่วยถามคำถามเกี่ยวกับบริการ ราคา และเวลาเปิดทำการได้ผ่าน LINE
@@ -571,11 +674,11 @@
                             <span class="inline-flex items-center rounded-md bg-secondary px-2 py-0.5 text-[11px] font-medium text-muted-foreground">LINE LIFF</span>
                         </div>
                     </div>
-                </article>
+                </details>
 
                 <!-- M-MERT -->
-                <article class="rounded-lg border border-border bg-card text-card-foreground shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-                    <div class="p-6 pb-4 border-b border-border">
+                <details class="group rounded-lg border border-border bg-card text-card-foreground shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+                    <summary class="cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden p-6 pb-4 hover:bg-secondary/20 transition-colors">
                         <div class="flex flex-wrap items-start justify-between gap-3">
                             <div>
                                 <div class="flex items-center gap-2 mb-1.5 flex-wrap">
@@ -585,14 +688,12 @@
                                     <span class="inline-flex items-center rounded-md bg-secondary border border-border px-2 py-0.5 text-xs font-medium text-muted-foreground">Mission-critical</span>
                                 </div>
                                 <h3 class="font-display text-lg font-semibold leading-tight">M-MERT — Maritime Emergency Medical Direction System</h3>
-                                <p class="text-sm text-muted-foreground mt-0.5">ระบบสั่งการกู้ภัยทางการแพทย์ฉุกเฉินทางน้ำ · Solo Architect &amp; Engineer</p>
+                                <p class="text-sm text-muted-foreground mt-0.5">ระบบสั่งการกู้ภัยทางการแพทย์ฉุกเฉินทางน้ำ</p>
                             </div>
-                            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-gradient-to-br from-primary to-primary/70 text-primary-foreground font-bold">
-                                M
-                            </div>
+                            <svg class="h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200 group-open:rotate-180 mt-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
                         </div>
-                    </div>
-                    <div class="p-6 pt-4">
+                    </summary>
+                    <div class="p-6 pt-4 border-t border-border">
                         <p class="text-[14.5px] text-foreground/85 leading-relaxed mb-4">
                             ออกแบบ <span class="font-medium text-foreground">แพลตฟอร์มสั่งการกู้ภัยทางการแพทย์ฉุกเฉิน</span>
                             ครบวงจร — รองรับภารกิจประเภท Water / Land / Air ตั้งแต่รับแจ้งเหตุ จัดทีมอาสาสมัคร
@@ -610,6 +711,55 @@
                             <div class="flex gap-2"><span class="text-primary mt-1 shrink-0">▸</span>OpenAPI Specs + Scalar UI ทำ Documentation อัตโนมัติ</div>
                             <div class="flex gap-2"><span class="text-primary mt-1 shrink-0">▸</span>Hospital Coordination + Ambulance Parking Management</div>
                         </div>
+
+                        <!-- Architecture: M-MERT -->
+                        <div class="mb-4">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2 flex items-center gap-1.5">
+                                <svg class="h-3.5 w-3.5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                                Architecture — Real-time Event-driven (SSE)
+                            </p>
+                            <div class="rounded-md border border-border bg-secondary/30 p-4 overflow-x-auto">
+                                <svg viewBox="0 0 760 244" class="w-full min-w-[660px] h-auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="M-MERT real-time architecture">
+                                    <defs>
+                                        <marker id="ar-mmert" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#94a3b8"/></marker>
+                                        <marker id="ar-mmert-live" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#059669"/></marker>
+                                    </defs>
+                                    <!-- Modules -->
+                                    <text x="30" y="14" font-size="10" font-weight="600" fill="#94a3b8" letter-spacing="0.05em">9 CORE MODULES</text>
+                                    <g font-size="11" font-weight="600" fill="#1e40af" text-anchor="middle">
+                                        <rect x="30" y="22" width="130" height="30" rx="6" fill="#eff6ff" stroke="#bfdbfe"/><text x="95" y="41">Mission</text>
+                                        <rect x="170" y="22" width="130" height="30" rx="6" fill="#eff6ff" stroke="#bfdbfe"/><text x="235" y="41">Triage</text>
+                                        <rect x="310" y="22" width="130" height="30" rx="6" fill="#eff6ff" stroke="#bfdbfe"/><text x="375" y="41">Vital Signs</text>
+                                        <rect x="450" y="22" width="130" height="30" rx="6" fill="#eff6ff" stroke="#bfdbfe"/><text x="515" y="41">Medical Order</text>
+                                        <rect x="590" y="22" width="140" height="30" rx="6" fill="#eff6ff" stroke="#bfdbfe"/><text x="660" y="41">Hospital Coord.</text>
+                                    </g>
+                                    <!-- Flow -->
+                                    <rect x="30" y="96" width="180" height="54" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+                                    <text x="120" y="118" font-size="13" font-weight="600" fill="#0f172a" text-anchor="middle">Field Units</text>
+                                    <text x="120" y="134" font-size="10.5" fill="#64748b" text-anchor="middle">รถพยาบาล · อาสาสมัคร</text>
+                                    <rect x="300" y="90" width="200" height="66" rx="8" fill="#eff6ff" stroke="#bfdbfe"/>
+                                    <text x="400" y="111" font-size="13" font-weight="700" fill="#1e40af" text-anchor="middle">M-MERT API</text>
+                                    <text x="400" y="127" font-size="10.5" fill="#3b82f6" text-anchor="middle">Bun · Hono 4 · Effect (FP)</text>
+                                    <text x="400" y="142" font-size="10.5" font-weight="600" fill="#059669" text-anchor="middle">response &lt; 10ms</text>
+                                    <rect x="580" y="96" width="160" height="54" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+                                    <text x="660" y="118" font-size="13" font-weight="600" fill="#0f172a" text-anchor="middle">Command Dashboard</text>
+                                    <text x="660" y="134" font-size="10.5" fill="#64748b" text-anchor="middle">สั่งการแบบ Real-time</text>
+                                    <!-- REST in -->
+                                    <text x="255" y="112" font-size="10" fill="#64748b" text-anchor="middle">REST · JWT/RBAC</text>
+                                    <path d="M210,123 L296,123" stroke="#94a3b8" stroke-width="1.4" fill="none" marker-end="url(#ar-mmert)"/>
+                                    <!-- SSE out -->
+                                    <text x="540" y="112" font-size="10" font-weight="600" fill="#059669" text-anchor="middle">SSE push (live)</text>
+                                    <path d="M500,123 L576,123" stroke="#059669" stroke-width="1.6" fill="none" marker-end="url(#ar-mmert-live)"/>
+                                    <!-- DB -->
+                                    <path d="M400,156 L400,190" stroke="#94a3b8" stroke-width="1.4" fill="none" marker-end="url(#ar-mmert)"/>
+                                    <text x="440" y="177" font-size="10" fill="#64748b" text-anchor="start">Prisma 6</text>
+                                    <rect x="315" y="192" width="170" height="42" rx="8" fill="#f8fafc" stroke="#e2e8f0"/>
+                                    <text x="400" y="210" font-size="12.5" font-weight="600" fill="#0f172a" text-anchor="middle">PostgreSQL 16</text>
+                                    <text x="400" y="225" font-size="10" fill="#64748b" text-anchor="middle">Mission · Vital · GPS (UTM/MGRS)</text>
+                                </svg>
+                            </div>
+                        </div>
+
                         <div class="flex flex-wrap gap-1.5 pt-3 border-t border-border">
                             <span class="inline-flex items-center rounded-md bg-secondary px-2 py-0.5 text-[11px] font-medium text-muted-foreground">Bun</span>
                             <span class="inline-flex items-center rounded-md bg-secondary px-2 py-0.5 text-[11px] font-medium text-muted-foreground">Hono 4</span>
@@ -623,11 +773,11 @@
                             <span class="inline-flex items-center rounded-md bg-secondary px-2 py-0.5 text-[11px] font-medium text-muted-foreground">Docker</span>
                         </div>
                     </div>
-                </article>
+                </details>
 
                 <!-- MoveSook -->
-                <article class="rounded-lg border border-border bg-card text-card-foreground shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-                    <div class="p-6 pb-4 border-b border-border">
+                <details class="group rounded-lg border border-border bg-card text-card-foreground shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+                    <summary class="cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden p-6 pb-4 hover:bg-secondary/20 transition-colors">
                         <div class="flex flex-wrap items-start justify-between gap-3">
                             <div>
                                 <div class="flex items-center gap-2 mb-1.5 flex-wrap">
@@ -643,14 +793,12 @@
                                         movesook.com<svg class="h-3 w-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                                     </a>
                                 </h3>
-                                <p class="text-sm text-muted-foreground mt-0.5">Two-sided On-demand Moving Marketplace · Solo Engineer</p>
+                                <p class="text-sm text-muted-foreground mt-0.5">Two-sided On-demand Moving Marketplace</p>
                             </div>
-                            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-gradient-to-br from-primary to-primary/70 text-primary-foreground font-bold">
-                                M
-                            </div>
+                            <svg class="h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200 group-open:rotate-180 mt-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
                         </div>
-                    </div>
-                    <div class="p-6 pt-4">
+                    </summary>
+                    <div class="p-6 pt-4 border-t border-border">
                         <p class="text-[14.5px] text-foreground/85 leading-relaxed mb-4">
                             แพลตฟอร์ม <span class="font-medium text-foreground">two-sided marketplace</span>
                             สำหรับเรียกคนขับขนย้ายแบบ on-demand — เชื่อม
@@ -679,11 +827,11 @@
                             <span class="inline-flex items-center rounded-md bg-secondary px-2 py-0.5 text-[11px] font-medium text-muted-foreground">Turborepo</span>
                         </div>
                     </div>
-                </article>
+                </details>
 
                 <!-- EMS-ECI -->
-                <article class="rounded-lg border border-border bg-card text-card-foreground shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-                    <div class="p-6 pb-4 border-b border-border">
+                <details class="group rounded-lg border border-border bg-card text-card-foreground shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+                    <summary class="cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden p-6 pb-4 hover:bg-secondary/20 transition-colors">
                         <div class="flex flex-wrap items-start justify-between gap-3">
                             <div>
                                 <div class="flex items-center gap-2 mb-1.5 flex-wrap">
@@ -693,14 +841,12 @@
                                     <span class="inline-flex items-center rounded-md bg-secondary border border-border px-2 py-0.5 text-xs font-medium text-muted-foreground">Patient Registry</span>
                                 </div>
                                 <h3 class="font-display text-lg font-semibold leading-tight">EMS-ECI — ระบบบันทึกข้อมูลผู้ป่วย &amp; Checklist สำหรับพยาบาล</h3>
-                                <p class="text-sm text-muted-foreground mt-0.5">Internal Clinical Operation System · Solo Engineer</p>
+                                <p class="text-sm text-muted-foreground mt-0.5">Internal Clinical Operation System</p>
                             </div>
-                            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-gradient-to-br from-primary to-primary/70 text-primary-foreground font-bold">
-                                E
-                            </div>
+                            <svg class="h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200 group-open:rotate-180 mt-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
                         </div>
-                    </div>
-                    <div class="p-6 pt-4">
+                    </summary>
+                    <div class="p-6 pt-4 border-t border-border">
                         <p class="text-[14.5px] text-foreground/85 leading-relaxed mb-4">
                             ระบบหลังบ้านสำหรับ <span class="font-medium text-foreground">เจ้าหน้าที่พยาบาล</span>
                             ใช้บันทึก Checklist ประจำวันและ Patient Registry — เช่นทะเบียนผู้ป่วยแผลกดทับ (Pressure Ulcer)
@@ -727,11 +873,11 @@
                             <span class="inline-flex items-center rounded-md bg-secondary px-2 py-0.5 text-[11px] font-medium text-muted-foreground">ExcelJS</span>
                         </div>
                     </div>
-                </article>
+                </details>
 
                 <!-- SE Ranking Scraper -->
-                <article class="rounded-lg border border-border bg-card text-card-foreground shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-                    <div class="p-6 pb-4 border-b border-border">
+                <details class="group rounded-lg border border-border bg-card text-card-foreground shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+                    <summary class="cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden p-6 pb-4 hover:bg-secondary/20 transition-colors">
                         <div class="flex flex-wrap items-start justify-between gap-3">
                             <div>
                                 <div class="flex items-center gap-2 mb-1.5 flex-wrap">
@@ -741,14 +887,12 @@
                                     <span class="inline-flex items-center rounded-md bg-secondary border border-border px-2 py-0.5 text-xs font-medium text-muted-foreground">Job Queue</span>
                                 </div>
                                 <h3 class="font-display text-lg font-semibold leading-tight">SE Ranking Scraper API — ระบบดึงข้อมูลคู่แข่ง SEO แบบอัตโนมัติ</h3>
-                                <p class="text-sm text-muted-foreground mt-0.5">REST API + Stealth Browser Automation · Solo Engineer</p>
+                                <p class="text-sm text-muted-foreground mt-0.5">REST API + Stealth Browser Automation</p>
                             </div>
-                            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-gradient-to-br from-primary to-primary/70 text-primary-foreground font-bold">
-                                S
-                            </div>
+                            <svg class="h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200 group-open:rotate-180 mt-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
                         </div>
-                    </div>
-                    <div class="p-6 pt-4">
+                    </summary>
+                    <div class="p-6 pt-4 border-t border-border">
                         <p class="text-[14.5px] text-foreground/85 leading-relaxed mb-4">
                             สร้าง REST API ที่ <span class="font-medium text-foreground">ดึงข้อมูล Keyword Research จาก SE Ranking</span>
                             แบบอัตโนมัติ — ใช้ <span class="font-medium text-foreground">Stealth Browser Automation</span> หลบระบบตรวจจับบอท
@@ -776,11 +920,11 @@
                             <span class="inline-flex items-center rounded-md bg-secondary px-2 py-0.5 text-[11px] font-medium text-muted-foreground">Docker</span>
                         </div>
                     </div>
-                </article>
+                </details>
 
                 <!-- MeawSook -->
-                <article class="rounded-lg border border-border bg-card text-card-foreground shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-                    <div class="p-6 pb-4 border-b border-border">
+                <details class="group rounded-lg border border-border bg-card text-card-foreground shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+                    <summary class="cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden p-6 pb-4 hover:bg-secondary/20 transition-colors">
                         <div class="flex flex-wrap items-start justify-between gap-3">
                             <div>
                                 <div class="flex items-center gap-2 mb-1.5 flex-wrap">
@@ -796,14 +940,12 @@
                                         meawsook.com<svg class="h-3 w-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                                     </a>
                                 </h3>
-                                <p class="text-sm text-muted-foreground mt-0.5">LINE Mini App for Cat Welfare · Solo Founder &amp; Engineer</p>
+                                <p class="text-sm text-muted-foreground mt-0.5">LINE Mini App for Cat Welfare</p>
                             </div>
-                            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-gradient-to-br from-primary to-primary/70 text-primary-foreground font-bold">
-                                M
-                            </div>
+                            <svg class="h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200 group-open:rotate-180 mt-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
                         </div>
-                    </div>
-                    <div class="p-6 pt-4">
+                    </summary>
+                    <div class="p-6 pt-4 border-t border-border">
                         <p class="text-[14.5px] text-foreground/85 leading-relaxed mb-4">
                             สร้างแพลตฟอร์มเพื่อช่วย <span class="font-medium text-foreground">ตามหาแมวหาย</span>
                             และ <span class="font-medium text-foreground">บริจาคอาหารแมวให้มูลนิธิแบบโปร่งใส 100%</span> —
@@ -818,6 +960,54 @@
                             <div class="flex gap-2"><span class="text-primary mt-1 shrink-0">▸</span>Idempotency Key ป้องกัน Double-charge ในระบบบริจาค</div>
                             <div class="flex gap-2"><span class="text-primary mt-1 shrink-0">▸</span>Province-scoped Pilot (Narathiwat) ออกแบบให้ขยายจังหวัดได้ง่าย</div>
                         </div>
+
+                        <!-- Architecture: MeawSook -->
+                        <div class="mb-4">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2 flex items-center gap-1.5">
+                                <svg class="h-3.5 w-3.5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.847.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
+                                Architecture — AI Vector Search Pipeline
+                            </p>
+                            <div class="rounded-md border border-border bg-secondary/30 p-4 overflow-x-auto">
+                                <svg viewBox="0 0 760 214" class="w-full min-w-[680px] h-auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MeawSook AI vector search architecture">
+                                    <defs>
+                                        <marker id="ar-meaw" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#94a3b8"/></marker>
+                                        <marker id="ar-meaw-r" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#2563eb"/></marker>
+                                    </defs>
+                                    <!-- Pipeline -->
+                                    <text x="20" y="14" font-size="10" font-weight="600" fill="#94a3b8" letter-spacing="0.05em">AI IMAGE MATCHING PIPELINE</text>
+                                    <rect x="20" y="22" width="140" height="50" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+                                    <text x="90" y="43" font-size="12.5" font-weight="600" fill="#0f172a" text-anchor="middle">LINE LIFF</text>
+                                    <text x="90" y="58" font-size="10" fill="#64748b" text-anchor="middle">อัปรูปแมว</text>
+                                    <rect x="190" y="22" width="130" height="50" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+                                    <text x="255" y="43" font-size="12.5" font-weight="600" fill="#0f172a" text-anchor="middle">API · Hono</text>
+                                    <text x="255" y="58" font-size="10" fill="#64748b" text-anchor="middle">Next.js 15</text>
+                                    <rect x="350" y="22" width="150" height="50" rx="8" fill="#eff6ff" stroke="#bfdbfe"/>
+                                    <text x="425" y="43" font-size="12.5" font-weight="700" fill="#1e40af" text-anchor="middle">Voyage MM-3</text>
+                                    <text x="425" y="58" font-size="10" fill="#3b82f6" text-anchor="middle">Multimodal Embedding</text>
+                                    <rect x="540" y="22" width="200" height="50" rx="8" fill="#f8fafc" stroke="#e2e8f0"/>
+                                    <text x="640" y="43" font-size="12.5" font-weight="600" fill="#0f172a" text-anchor="middle">PostgreSQL + pgvector</text>
+                                    <text x="640" y="58" font-size="10" fill="#64748b" text-anchor="middle">ANN Similarity Search</text>
+                                    <path d="M160,47 L188,47" stroke="#94a3b8" stroke-width="1.4" fill="none" marker-end="url(#ar-meaw)"/>
+                                    <path d="M320,47 L348,47" stroke="#94a3b8" stroke-width="1.4" fill="none" marker-end="url(#ar-meaw)"/>
+                                    <path d="M500,47 L538,47" stroke="#94a3b8" stroke-width="1.4" fill="none" marker-end="url(#ar-meaw)"/>
+                                    <!-- Return: matched cats -->
+                                    <path d="M640,72 L640,96 L90,96 L90,74" stroke="#2563eb" stroke-width="1.5" fill="none" marker-end="url(#ar-meaw-r)"/>
+                                    <text x="365" y="91" font-size="10" font-weight="600" fill="#2563eb" text-anchor="middle">จับคู่ใบหน้าแมวข้ามโพสต์อัตโนมัติ (Vector Similarity)</text>
+                                    <!-- Donation flow -->
+                                    <text x="20" y="134" font-size="10" font-weight="600" fill="#94a3b8" letter-spacing="0.05em">DONATION FLOW · idempotency-safe</text>
+                                    <g font-size="11.5" font-weight="600" fill="#0f172a" text-anchor="middle">
+                                        <rect x="20" y="142" width="128" height="34" rx="6" fill="#ffffff" stroke="#e2e8f0"/><text x="84" y="163">สั่งบริจาค</text>
+                                        <rect x="168" y="142" width="128" height="34" rx="6" fill="#ffffff" stroke="#e2e8f0"/><text x="232" y="163">โอนเงิน</text>
+                                        <rect x="316" y="142" width="128" height="34" rx="6" fill="#ffffff" stroke="#e2e8f0"/><text x="380" y="163">อัปสลิป</text>
+                                        <rect x="464" y="142" width="128" height="34" rx="6" fill="#ffffff" stroke="#e2e8f0"/><text x="528" y="163">ยืนยัน (Admin)</text>
+                                        <rect x="612" y="142" width="128" height="34" rx="6" fill="#ecfdf5" stroke="#a7f3d0"/><text x="676" y="163" fill="#047857">จัดส่ง + รูป</text>
+                                    </g>
+                                    <path d="M148,159 L166,159 M296,159 L314,159 M444,159 L462,159 M592,159 L610,159" stroke="#94a3b8" stroke-width="1.4" fill="none" marker-end="url(#ar-meaw)"/>
+                                    <text x="20" y="200" font-size="10.5" fill="#64748b">🔒 Idempotency Key ในทุก transaction — donor ตรวจสอบได้ตั้งแต่โอนเงินจนถึงรูปแมวกินอาหาร (โปร่งใส 100%)</text>
+                                </svg>
+                            </div>
+                        </div>
+
                         <div class="flex flex-wrap gap-1.5 pt-3 border-t border-border">
                             <span class="inline-flex items-center rounded-md bg-secondary px-2 py-0.5 text-[11px] font-medium text-muted-foreground">Turborepo</span>
                             <span class="inline-flex items-center rounded-md bg-secondary px-2 py-0.5 text-[11px] font-medium text-muted-foreground">Next.js 15</span>
@@ -831,7 +1021,7 @@
                             <span class="inline-flex items-center rounded-md bg-secondary px-2 py-0.5 text-[11px] font-medium text-muted-foreground">Docker</span>
                         </div>
                     </div>
-                </article>
+                </details>
 
             </div>
         </section>
@@ -1019,6 +1209,11 @@
 
     <script>
         document.getElementById("year").textContent = new Date().getFullYear();
+
+        // ไม่ให้การคลิกลิงก์ในหัวการ์ด (summary) ไปย่อ/ขยายการ์ด
+        document.querySelectorAll("#side-projects summary a").forEach(function (a) {
+            a.addEventListener("click", function (e) { e.stopPropagation(); });
+        });
     </script>
 </body>
 
