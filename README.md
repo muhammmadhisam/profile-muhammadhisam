@@ -3,10 +3,10 @@
 # มูฮัมหมัดฮีซาม ปาล๊ะ (ซัง)
 
 ### Mid-level Backend Developer
-**System Architecture · Scalable & Secure APIs · End-to-End Ownership**
+**REST API · Database Design · Microservices · DevOps**
 
-ออกแบบสถาปัตยกรรมและพัฒนา RESTful API สำหรับระบบระดับ Production ข้าม 4 อุตสาหกรรม —
-HealthTech · Energy · Enterprise · Digital Platform
+ออกแบบและพัฒนา RESTful API ให้ระบบที่ใช้งานจริง —
+งานสาย HealthTech, Energy และระบบภายในองค์กร
 
 <br/>
 
@@ -30,22 +30,22 @@ HealthTech · Energy · Enterprise · Digital Platform
 
 ## 👋 เกี่ยวกับผม
 
-ผมเป็น Backend Developer ที่ทำงานครบตั้งแต่เก็บ requirement, ออกแบบระบบและฐานข้อมูล, เขียน API ไปจนถึง deploy และดูแลระบบบน production
+ผมเป็น Backend Developer ทำงานตั้งแต่คุย requirement, ออกแบบฐานข้อมูลและ API, เขียนโค้ด ไปจนถึง deploy และดูแลระบบหลังขึ้น production
 
-ตลอด 5+ ปีที่ผ่านมา ทำงานข้ามหลายอุตสาหกรรม และได้ลองใช้สถาปัตยกรรมหลายแบบ —
-Microservices, Multi-tenant SaaS, Event-driven, Queue และ AI/RAG — กับโจทย์ธุรกิจ SME ไทยจริง
+5+ ปีที่ผ่านมาส่วนใหญ่อยู่กับงานสาย HealthTech, Energy และระบบภายในองค์กร
+เคยทำทั้ง Microservices, multi-tenant SaaS, งาน queue / background job และช่วงหลังเริ่มทำงานสาย AI / RAG
 
 | | |
 |---|---|
-| 🗓️ **5+ ปี** ในสายพัฒนา | 🚀 **10+ ระบบ** ขึ้น Production |
-| 🏭 **4 อุตสาหกรรม** ที่เคยส่งมอบ | 🔁 **End-to-End** Requirement → Deploy |
+| 🗓️ **5+ ปี** ในสายพัฒนา | 🚀 **10+ ระบบ** ที่ร่วมพัฒนาและใช้งานจริง |
+| 🔁 ทำงานตั้งแต่ **Requirement → Deploy** | 🧩 ถนัดฝั่ง **Backend / API** |
 
 ---
 
-## 🏗️ แนวทางการออกแบบระบบ (Production Blueprint)
+## 🏗️ แนวทางการออกแบบระบบที่ใช้บ่อย
 
-สถาปัตยกรรมที่ผมใช้ซ้ำในหลายโปรเจกต์ — Monorepo แยก App ชัดเจน, API แบบ type-safe,
-งานหนักโยนเข้า Queue, และรองรับ Real-time / AI ในเลเยอร์เดียวกัน
+โครงที่ผมใช้ซ้ำในหลายโปรเจกต์ — Monorepo แยก App ชัดเจน, API แบบ type-safe,
+งานหนักโยนเข้า Queue และรองรับ Real-time / AI ในเลเยอร์เดียวกัน
 
 ```mermaid
 flowchart TD
@@ -76,31 +76,32 @@ flowchart TD
 
 ---
 
-## 💼 ผลงานเด่น (Work)
+## 💼 โปรเจกต์ที่ทำในนามบริษัท
+
+งานเหล่านี้ทำกันเป็นทีม — ผมรับผิดชอบฝั่ง backend และ API เป็นหลัก
 
 | Project | สรุป | Stack |
 |---------|------|-------|
-| **ERC — Centralized Energy Data Platform** | รวมข้อมูลไฟฟ้าระดับประเทศจากหลายแหล่งเข้าสู่ dashboard เดียว ประมวลผลแบบ near real-time | `NestJS` `Microservices` `PostgreSQL` |
+| **ERC — Centralized Energy Data Platform** | รวมข้อมูลไฟฟ้าจากหลายแหล่งเข้า dashboard เดียว สำหรับดูภาพรวมและ monitoring | `NestJS` `Microservices` `PostgreSQL` |
 | **Pool Manager — Gas Pool Management** | คำนวณต้นทุนก๊าซจากหลายแหล่งจัดหา (LNG/Gulf/Myanmar) พร้อม Cost Allocation & Pricing Workflow | `Cost Engine` `Audit Trail` |
-| **Verso PO/PR — Procurement Workflow** | จัดซื้อครบวงจร Multi-Level Approval + Budget Validation ตามหลัก Internal Control | `Approval Flow` `Budget Control` |
-| **[Prolab — Health Service Platform](https://ai.prolab.co.th/th)** 🔗 | AI Health Analytics ช่วยแพทย์ประเมินความเสี่ยง + ปรับ Lab Result System (ลดเวลารอผล 3–7 → 1–3 วัน) | `AI Analytics` `HL7` `LAB System` |
+| **Verso PO/PR — Procurement Workflow** | ระบบจัดซื้อ Multi-Level Approval + Budget Validation พร้อม Audit Trail | `Approval Flow` `Budget Control` |
+| **[Prolab — Health Service Platform](https://ai.prolab.co.th/th)** 🔗 | ร่วมพัฒนา backend ของ AI Health Analytics + ปรับ Lab Result System (ทีมลดเวลารอผล 3–7 → 1–3 วัน) | `AI Analytics` `HL7` `LAB System` |
 | **ICMT — Device Registration** | ลงทะเบียน/ยืนยันอุปกรณ์โทรศัพท์ด้วย IMEI แยก Web/Admin/Storage/Worker | `Turborepo` `Next.js 14` `Hono` `Prisma` `Redis` |
 
 ---
 
-## 🧪 Side Projects — *Currently Building* 🟢
+## 🧪 Side Projects 🟢
 
-โปรเจกต์ที่พัฒนานอกเวลางาน เพื่อแก้ปัญหาธุรกิจ SME ไทยจริง และทดลองสถาปัตยกรรมระดับ Production
+โปรเจกต์ที่ทำนอกเวลางาน เพื่อฝึกออกแบบระบบและลองเทคโนโลยีใหม่ ๆ — บางตัวเปิดใช้จริงแล้ว บางตัวยังพัฒนาอยู่
 
 | Project | Highlight | Stack |
 |---------|-----------|-------|
-| **[StockSook](https://stocksook.pixelranklab.com/)** 🔗 | SaaS ERP + POS สำหรับ SME ไทย เข้าใช้ผ่าน LINE Mini App ไม่ต้องติดตั้ง | `Turborepo` `Next.js 15` `Hono` `PostgreSQL` `LINE LIFF` |
+| **[StockSook](https://stocksook.pixelranklab.com/)** 🔗 | ERP + POS ขนาดเล็กสำหรับร้าน SME เข้าใช้ผ่าน LINE Mini App | `Turborepo` `Next.js 15` `Hono` `PostgreSQL` `LINE LIFF` |
 | **[Clinic ERP](https://erp-clinic.pixelranklab.com/)** 🔗 | Multi-tenant B2B SaaS 6 Microservices · fp-ts · SuperTokens | `Hono 4` `fp-ts` `BullMQ` `Cloudflare R2` |
-| **M-MERT** | ระบบสั่งการกู้ภัยการแพทย์ฉุกเฉิน Real-time (SSE) · response < 10ms | `Bun` `Hono 4` `Effect` `SSE` `JWT+RBAC` |
-| **[MeawSook](https://meawsook.com/)** 🔗 | แมวหาย + บริจาคอาหารโปร่งใส · AI จับคู่ใบหน้าแมวด้วย Vector Search | `Voyage MM-3` `pgvector` `LINE LIFF` |
+| **M-MERT** | ระบบสั่งการกู้ภัยการแพทย์ฉุกเฉิน · ใช้ SSE push คำสั่งถึงหน่วยหน้างานโดยไม่ต้องรอ refresh | `Bun` `Hono 4` `Effect` `SSE` `JWT+RBAC` |
+| **[MeawSook](https://meawsook.com/)** 🔗 | แมวหาย + บริจาคอาหารที่ตรวจสอบย้อนหลังได้ · AI จับคู่ใบหน้าแมวด้วย Vector Search | `Voyage MM-3` `pgvector` `LINE LIFF` |
 | **[MoveSook](https://movesook.com/)** 🔗 | Two-sided marketplace เรียกคนขับขนย้าย On-demand · end-to-end type-safe RPC | `Next.js` `Hono` `Prisma` `Zod` `Turborepo` |
 | **Clinic Booking + AI Chatbot** | จองคิวคลินิก + ผู้ช่วย AI แบบ RAG ตอบจากฐานข้อมูลจริง | `OpenAI` `Milvus` `LINE LIFF` `MinIO` |
-| **SE Ranking Scraper API** | ดึงข้อมูล SEO อัตโนมัติด้วย Stealth Browser + Job Queue | `Bun` `Playwright Stealth` `BullMQ` `ExcelJS` |
 | **EMS-ECI** | ระบบบันทึกผู้ป่วย & Checklist สำหรับพยาบาล ทดแทนกระดาษ | `Next.js 16` `Prisma 7` `better-auth` `ExcelJS` |
 
 ---
@@ -140,7 +141,7 @@ flowchart TD
 ![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat&logo=openai&logoColor=white)
 ![Turborepo](https://img.shields.io/badge/Turborepo-EF4444?style=flat&logo=turborepo&logoColor=white)
 
-**Architecture & Concepts** · System Design · Microservices · Multi-tenant SaaS · Event-driven · RAG / Vector Search · API Security · RBAC
+**Architecture & Concepts** · System Design · Microservices · Multi-tenant SaaS · Queue / Background Job · RAG / Vector Search · API Security · RBAC
 
 ---
 
