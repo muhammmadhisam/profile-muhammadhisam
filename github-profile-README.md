@@ -27,7 +27,7 @@
 
 - 🏗️ ออกแบบ **System Architecture & RESTful API** — Microservices, Multi-tenant SaaS, Event-driven, Queue
 - 🏭 ส่งมอบระบบข้าม **4 อุตสาหกรรม** — HealthTech · Energy · Enterprise · Digital Platform
-- 🤖 สร้างระบบ **AI / RAG / Vector Search** ใช้งานจริง (OpenAI · pgvector · Voyage Multimodal)
+- 🤖 สร้างระบบ **AI / RAG / Vector Search** ใช้งานจริง (LangChain · OpenAI · Qdrant · pgvector · Voyage Multimodal)
 - 🔁 รับผิดชอบครบ **end-to-end** — Requirement → System & DB Design → API → Deploy → DevOps
 - 🌱 กำลังสร้าง SaaS หลายตัวเพื่อแก้ปัญหาธุรกิจ **SME ไทย** จริง ๆ
 
@@ -46,6 +46,7 @@
 ![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat&logo=redis&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 ![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat&logo=openai&logoColor=white)
+![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat&logo=langchain&logoColor=white)
 
 ---
 

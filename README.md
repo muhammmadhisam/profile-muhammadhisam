@@ -3,7 +3,7 @@
 # มูฮัมหมัดฮีซาม ปาล๊ะ (ซัง)
 
 ### Mid-level Backend Developer
-**REST API · Database Design · Microservices · DevOps**
+**REST API · Database Design · Real-time & Queue · DevOps**
 
 ออกแบบและพัฒนา RESTful API ให้ระบบที่ใช้งานจริง —
 งานสาย HealthTech, Energy และระบบภายในองค์กร
@@ -33,7 +33,7 @@
 ผมเป็น Backend Developer ทำงานตั้งแต่คุย requirement, ออกแบบฐานข้อมูลและ API, เขียนโค้ด ไปจนถึง deploy และดูแลระบบหลังขึ้น production
 
 5+ ปีที่ผ่านมาส่วนใหญ่อยู่กับงานสาย HealthTech, Energy และระบบภายในองค์กร
-เคยทำทั้ง Microservices, multi-tenant SaaS, งาน queue / background job และช่วงหลังเริ่มทำงานสาย AI / RAG
+เคยทำทั้ง multi-tenant SaaS, งาน queue / background job, ระบบ real-time ด้วย SSE และช่วงหลังเริ่มทำงานสาย AI / RAG
 
 | | |
 |---|---|
@@ -65,7 +65,7 @@ flowchart TD
     API --> Q["📨 Queue · BullMQ + Redis"]
     Q --> WK["🔧 Worker · Background Jobs"]
     API --> ST[("🗄️ Object Storage · R2 / S3")]
-    API --> AI["🤖 AI Layer · RAG / Vector<br/>OpenAI · pgvector · Voyage"]
+    API --> AI["🤖 AI Layer · RAG / Vector<br/>LangChain · OpenAI · Qdrant · pgvector"]
     API -. "SSE · Real-time" .-> W
 
     classDef api fill:#eff6ff,stroke:#3b82f6,color:#1e40af;
@@ -82,11 +82,22 @@ flowchart TD
 
 | Project | สรุป | Stack |
 |---------|------|-------|
-| **ERC — Centralized Energy Data Platform** | รวมข้อมูลไฟฟ้าจากหลายแหล่งเข้า dashboard เดียว สำหรับดูภาพรวมและ monitoring | `NestJS` `Microservices` `PostgreSQL` |
-| **Pool Manager — Gas Pool Management** | คำนวณต้นทุนก๊าซจากหลายแหล่งจัดหา (LNG/Gulf/Myanmar) พร้อม Cost Allocation & Pricing Workflow | `Cost Engine` `Audit Trail` |
-| **Verso PO/PR — Procurement Workflow** | ระบบจัดซื้อ Multi-Level Approval + Budget Validation พร้อม Audit Trail | `Approval Flow` `Budget Control` |
+| **ERC — Centralized Energy Data Platform** | รวมข้อมูลไฟฟ้าจากหลายแหล่งเข้า dashboard เดียว สำหรับดูภาพรวมและ monitoring | `NestJS` `REST API` `PostgreSQL` `Data Pipeline` |
+| **Pool Manager — Gas Pool Management** | คำนวณต้นทุนก๊าซจากหลายแหล่งจัดหา (LNG/Gulf/Myanmar) พร้อม Cost Allocation & Pricing Workflow | `Cost Engine` `Audit Trail` `PostgreSQL` |
 | **[Prolab — Health Service Platform](https://ai.prolab.co.th/th)** 🔗 | ร่วมพัฒนา backend ของ AI Health Analytics + ปรับ Lab Result System (ทีมลดเวลารอผล 3–7 → 1–3 วัน) | `AI Analytics` `HL7` `LAB System` |
-| **ICMT — Device Registration** | ลงทะเบียน/ยืนยันอุปกรณ์โทรศัพท์ด้วย IMEI แยก Web/Admin/Storage/Worker | `Turborepo` `Next.js 14` `Hono` `Prisma` `Redis` |
+| **ICMT — Device Registration** | ลงทะเบียน/ยืนยันอุปกรณ์โทรศัพท์ด้วย IMEI แยก Web/Admin/Storage/Worker | `Turborepo` `Next.js` `Hono` `Prisma` `Redis` |
+
+---
+
+## 🤝 งานฟรีแลนซ์
+
+รับงานอิสระ — ดูแลตั้งแต่คุย Requirement ออกแบบระบบ พัฒนา จนส่งมอบและขึ้นใช้งาน
+
+| Project | สรุป | Stack |
+|---------|------|-------|
+| **Verso PO/PR — Procurement Workflow** | ระบบจัดซื้อครบวงจร Multi-Level Approval + Budget Validation พร้อม Audit Trail ตามหลัก Internal Control | `Approval Flow` `Budget Control` `Audit Trail` |
+| **M-MERT — ระบบสั่งการการแพทย์ฉุกเฉินทางทะเล** | ระบบสั่งการครบวงจร ครอบคลุมภารกิจ, Triage, คำสั่งแพทย์, ติดตามสัญญาณชีพ — push ข้อมูล Real-time ด้วย SSE พร้อมแผนที่ติดตามตำแหน่ง | `Hono 4` `Effect` `SSE` `Prisma` `Next.js` `Leaflet` |
+| **Clinic Booking + RAG Chat** | ระบบจองคิวผ่าน LINE LIFF พร้อม AI Chat ตอบคำถามอัตโนมัติด้วย RAG ดึงข้อมูลจาก Vector DB | `RAG` `LangChain` `Qdrant` `OpenAI` `LINE LIFF` `Redis` `Prisma` `Sentry` |
 
 ---
 
@@ -97,11 +108,9 @@ flowchart TD
 | Project | Highlight | Stack |
 |---------|-----------|-------|
 | **[StockSook](https://stocksook.pixelranklab.com/)** 🔗 | ERP + POS ขนาดเล็กสำหรับร้าน SME เข้าใช้ผ่าน LINE Mini App | `Turborepo` `Next.js 15` `Hono` `PostgreSQL` `LINE LIFF` |
-| **[Clinic ERP](https://erp-clinic.pixelranklab.com/)** 🔗 | Multi-tenant B2B SaaS 6 Microservices · fp-ts · SuperTokens | `Hono 4` `fp-ts` `BullMQ` `Cloudflare R2` |
-| **M-MERT** | ระบบสั่งการกู้ภัยการแพทย์ฉุกเฉิน · ใช้ SSE push คำสั่งถึงหน่วยหน้างานโดยไม่ต้องรอ refresh | `Bun` `Hono 4` `Effect` `SSE` `JWT+RBAC` |
+| **[Clinic ERP](https://erp-clinic.pixelranklab.com/)** 🔗 | Multi-tenant B2B SaaS แยกบริการ 6 ส่วน · fp-ts · SuperTokens | `Hono 4` `fp-ts` `BullMQ` `Cloudflare R2` |
 | **[MeawSook](https://meawsook.com/)** 🔗 | แมวหาย + บริจาคอาหารที่ตรวจสอบย้อนหลังได้ · AI จับคู่ใบหน้าแมวด้วย Vector Search | `Voyage MM-3` `pgvector` `LINE LIFF` |
 | **[MoveSook](https://movesook.com/)** 🔗 | Two-sided marketplace เรียกคนขับขนย้าย On-demand · end-to-end type-safe RPC | `Next.js` `Hono` `Prisma` `Zod` `Turborepo` |
-| **Clinic Booking + AI Chatbot** | จองคิวคลินิก + ผู้ช่วย AI แบบ RAG ตอบจากฐานข้อมูลจริง | `OpenAI` `Milvus` `LINE LIFF` `MinIO` |
 | **EMS-ECI** | ระบบบันทึกผู้ป่วย & Checklist สำหรับพยาบาล ทดแทนกระดาษ | `Next.js 16` `Prisma 7` `better-auth` `ExcelJS` |
 
 ---
@@ -131,7 +140,8 @@ flowchart TD
 ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat&logo=mongodb&logoColor=white)
 ![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat&logo=redis&logoColor=white)
 ![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=flat&logo=prisma&logoColor=white)
-![Milvus](https://img.shields.io/badge/Milvus_(Vector)-00A1EA?style=flat&logoColor=white)
+![Qdrant](https://img.shields.io/badge/Qdrant_(Vector)-DC244C?style=flat&logo=qdrant&logoColor=white)
+![pgvector](https://img.shields.io/badge/pgvector-4169E1?style=flat&logo=postgresql&logoColor=white)
 
 **DevOps & AI**
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
@@ -139,9 +149,10 @@ flowchart TD
 ![Nginx](https://img.shields.io/badge/Nginx-009639?style=flat&logo=nginx&logoColor=white)
 ![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat&logo=amazonwebservices&logoColor=white)
 ![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat&logo=openai&logoColor=white)
+![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat&logo=langchain&logoColor=white)
 ![Turborepo](https://img.shields.io/badge/Turborepo-EF4444?style=flat&logo=turborepo&logoColor=white)
 
-**Architecture & Concepts** · System Design · Microservices · Multi-tenant SaaS · Queue / Background Job · RAG / Vector Search · API Security · RBAC
+**Architecture & Concepts** · System Design · Multi-tenant SaaS · Queue / Background Job · Real-time (SSE) · RAG / Vector Search · Embedding & Retrieval Pipeline · API Security · RBAC
 
 ---
 
