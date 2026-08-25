@@ -489,7 +489,7 @@
                         <p aria-hidden="true" class="font-mono text-4xl sm:text-5xl font-bold text-mint glow-mint">&lt;/&gt;</p>
                         <h2 class="mt-3 font-display text-3xl sm:text-4xl font-light">Work</h2>
                         <span class="mx-auto mt-2 block h-0.5 w-24 rounded-full bg-mint"></span>
-                        <p class="mt-3 font-mono text-xs text-muted">งานในนามบริษัท ทำกันเป็นทีม — ผมรับผิดชอบฝั่ง backend และ API เป็นหลัก</p>
+                        <p class="mt-3 font-mono text-xs text-muted">ระบบที่ผมมีส่วนร่วมพัฒนาและได้ใช้งานจริง — คลิกที่การ์ดเพื่อดูภาพหน้าจอ</p>
                     </div>
 
                     <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -599,30 +599,38 @@
                     </article>
 
                         <article class="group/card rounded-2xl border border-line bg-panel/70 transition-colors hover:border-mint/50 flex flex-col overflow-hidden">
-                        <div aria-hidden="true" class="relative aspect-[16/10] w-full overflow-hidden border-b border-line bg-[#171D1E]">
-                            <pre class="absolute inset-0 overflow-hidden px-4 py-3 font-mono text-[9px] leading-[1.55] text-mint/50">MSH|^~\&amp;|ANALYZER|LAB|LIS|HOSP|20250211||ORU^R01
-PID|1||HN0098213||***|||F
-OBR|1||S25-000412|CBC^Complete Blood Count
-OBX|1|NM|WBC^White Blood Cell||7.4|10^3/uL|4.0-11.0|N
-OBX|2|NM|HGB^Hemoglobin||13.2|g/dL|12.0-16.0|N
-OBX|3|ED|PDF^Report||^AP^PDF^Base64^JVBERi0xLjcK...
-
--&gt; parsed: 3 results + 1 embedded PDF -&gt; PNG</pre>
-                            <span class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-panel to-transparent"></span>
-                        </div>
-                        <div class="flex flex-1 flex-col p-6">
-                            <div class="flex items-center justify-between mb-3">
-                                <span class="inline-flex items-center rounded-md bg-mint/10 text-mint border border-mint/30 px-2 py-0.5 font-mono text-[10px] font-medium">HL7 Integration</span>
-                                <svg class="h-4 w-4 text-muted" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            <button type="button" class="shot relative block w-full overflow-hidden border-b border-line text-left"
+                                data-gallery="movesook" data-index="0" aria-label="เปิดภาพหน้าจอของ MoveSook — แพลตฟอร์มเรียกคนขับขนย้าย ทั้งหมด 3 ภาพ">
+                                <img src="assets/projects/movesook-01.webp" alt="MoveSook — หน้าแรก เรียกรถรับจ้างขนย้าย" loading="lazy" decoding="async"
+                                    class="block aspect-[16/10] w-full object-cover object-top transition-transform duration-500 group-hover/card:scale-[1.04]" />
+                                <span aria-hidden="true" class="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/0 to-ink/0"></span>
+                                <span aria-hidden="true" class="pointer-events-none absolute bottom-2 right-2 inline-flex items-center gap-1 rounded-full border border-mint/40 bg-ink/85 px-2 py-1 font-mono text-[10px] text-mint">
+                                    <svg class="h-3 w-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16v12H4zM8 7V5h8v2M9 15l2.5-3 2 2.5L15.5 12 18 15"/></svg> 3 ภาพ
+                                </span>
+                            </button>
+                            <div class="flex flex-1 flex-col p-6">
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="inline-flex items-center rounded-md bg-mint/10 text-mint border border-mint/30 px-2 py-0.5 font-mono text-[10px] font-medium">Side Project · ทำเอง</span>
+                                    <svg class="h-4 w-4 text-muted" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.4-2.7V5.4L9 8m0 12l6-3m-6 3V8m6 9l5.4 2.7V7.4L15 4.7m0 12.3V4.7M9 8l6-3.3"/></svg>
+                                </div>
+                                <h3 class="font-mono text-base font-bold mb-2 leading-snug">MoveSook — แพลตฟอร์มเรียกคนขับขนย้าย On-demand</h3>
+                                <p class="text-[13px] text-txt/80 leading-relaxed">
+                                    Two-sided marketplace เชื่อมผู้ใช้กับคนขับขนย้ายผ่าน LINE/LIFF พร้อมหลังบ้านสำหรับทีม Admin
+                                    ออกแบบเป็น Monorepo แยก 3 แอป (web · admin · api) ที่ใช้ end-to-end type-safe RPC ตั้งแต่ DB ถึง UI
+                                </p>
+                                <div class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1">
+                                    <a href="https://movesook.com/" target="_blank" rel="noopener noreferrer"
+                                        class="inline-flex items-center gap-1 font-mono text-[11px] text-mint hover:underline">
+                                        movesook.com
+                                        <svg class="h-3 w-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                                    </a>
+                                    <a href="#side-projects" class="inline-flex items-center gap-1 font-mono text-[11px] text-muted hover:text-mint transition-colors">
+                                        ดูรายละเอียด &amp; stack
+                                        <svg class="h-3 w-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M6 13l6 6 6-6"/></svg>
+                                    </a>
+                                </div>
                             </div>
-                            <h3 class="font-mono text-base font-bold mb-2 leading-snug">HL7 Reader — ระบบอ่านผลแล็บมาตรฐาน HL7</h3>
-                            <p class="text-[13px] text-txt/80 leading-relaxed">
-                                Engine อ่านและแปลงข้อความมาตรฐาน HL7 จากเครื่องวิเคราะห์ทางการแพทย์ (Lab Analyzer)
-                                แยกผลตรวจและรายงาน PDF ที่ฝังมา แปลงเป็นรูปภาพอัตโนมัติ พร้อม API แบบ tRPC + OpenAPI (Swagger)
-                                สำหรับเชื่อมต่อระบบโรงพยาบาล จัดการ Data Pipeline ด้วย Effect และ Prisma บน Monorepo (Turborepo)
-                            </p>
-                        </div>
-                    </article>
+                        </article>
 
                         <article class="group/card rounded-2xl border border-line bg-panel/70 transition-colors hover:border-mint/50 flex flex-col overflow-hidden">
                         <div aria-hidden="true" class="relative aspect-[16/10] w-full overflow-hidden border-b border-line bg-[#171D1E]">
