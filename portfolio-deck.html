@@ -94,17 +94,17 @@
         .accent-bar { width: 48px; height: 4px; background: var(--accent); margin-bottom: 14px; }
 
         /* selected-work index grid */
-        .thumbgrid { position: absolute; left: 80px; top: 286px; width: 1760px;
-            display: flex; flex-wrap: wrap; gap: 30px 40px; }
-        .thumbgrid .cell { width: 560px; }
+        .thumbgrid { position: absolute; left: 80px; top: 286px; width: 1780px;
+            display: flex; flex-wrap: wrap; gap: 34px 30px; }
+        .thumbgrid .cell { width: 410px; }
         .thumbgrid .cell .box {
-            height: 224px; overflow: hidden; border: 1px solid var(--hair); background: var(--panel);
+            height: 256px; overflow: hidden; border: 1px solid var(--hair); background: var(--panel);
         }
         .thumbgrid .cell .no {
             font-size: 13px; font-weight: 700; letter-spacing: .16em; color: var(--accent);
             margin-top: 14px;
         }
-        .thumbgrid .cell .nm { font-size: 24px; font-weight: 600; color: var(--navy); margin-top: 3px; }
+        .thumbgrid .cell .nm { font-size: 22px; font-weight: 600; color: var(--navy); margin-top: 3px; }
         .thumbgrid .cell .tg { font-size: 15px; color: var(--label); margin-top: 3px; }
         .meta-val { font-size: 19px; line-height: 1.55; color: var(--body); }
 
@@ -170,7 +170,7 @@
         <p class="eyebrow">Contents</p>
         <div class="rule full"></div>
         <h1 class="title">Selected work</h1>
-        <p class="lede th">หกระบบที่ผมมีส่วนร่วมพัฒนาและได้ใช้งานจริง — แต่ละตัวมีหน้าอธิบายและภาพหน้าจอในหน้าถัดไป</p>
+        <p class="lede th">แปดระบบที่ผมมีส่วนร่วมพัฒนาและได้ใช้งานจริง — แต่ละตัวมีหน้าอธิบายและภาพหน้าจอในหน้าถัดไป</p>
         <div class="thumbgrid">
             <div class="cell">
                 <div class="box"><img class="shot" src="assets/projects/erc-01.webp" alt="" /></div>
@@ -207,6 +207,18 @@
                 <p class="no">06</p>
                 <p class="nm">ICMT</p>
                 <p class="tg th">EdTech · Aquila Studio</p>
+            </div>
+            <div class="cell">
+                <div class="box"><img class="shot" src="assets/projects/mmert-01.webp" alt="" /></div>
+                <p class="no">07</p>
+                <p class="nm">M-MERT</p>
+                <p class="tg th">Emergency Medical · Side project</p>
+            </div>
+            <div class="cell">
+                <div class="box"><img class="shot" src="assets/projects/clinic-rag-01.webp" alt="" /></div>
+                <p class="no">08</p>
+                <p class="nm">Clinic Booking + AI</p>
+                <p class="tg th">AI · RAG · Side project</p>
             </div>
         </div>
         <div class="foot"><b>Muhammadhisam Pala</b> &nbsp;|&nbsp; Software Developer Portfolio &nbsp;|&nbsp; 2026</div>
@@ -512,17 +524,6 @@
         <div class="foot" style="width:600px;"><b>Muhammadhisam Pala</b> &nbsp;|&nbsp; Software Developer Portfolio &nbsp;|&nbsp; 2026</div>
     </section>
 
-    <section class="slide">
-        <p class="eyebrow">Pool Manager Gas Pool Management</p>
-        <div class="rule full"></div>
-        <h1 class="title">More screens</h1>
-        <p class="lede th">หน้า Home Portal ที่แยกโมดูล Planning / Billing / Manual ออกจากกันให้ผู้ใช้เลือกงานได้ทันที</p>
-        <div class="frame" style="left:360px;top:300px;width:1200px;height:620px;">
-            <img class="shot" src="assets/projects/pool-02.webp" alt="" />
-        </div>
-        <p class="cap th" style="left:360px;top:940px;width:1200px;">หน้า Home Portal แยกโมดูล Planning / Billing / Manual</p>
-        <div class="foot"><b>Muhammadhisam Pala</b> &nbsp;|&nbsp; Software Developer Portfolio &nbsp;|&nbsp; 2026</div>
-    </section>
 
     <!-- ===== verso ===== -->
     <section class="slide">
@@ -690,11 +691,97 @@
         <p class="cap th" style="left:980px;top:880px;width:860px;">หน้าผู้ใช้ สำหรับยืมอุปกรณ์และดูสถานะการยืม</p>
         <div class="foot"><b>Muhammadhisam Pala</b> &nbsp;|&nbsp; Software Developer Portfolio &nbsp;|&nbsp; 2026</div>
     </section>
+
+    <!-- ===== mmert ===== -->
+    <section class="slide">
+        <div style="position:absolute;left:680px;top:0;width:1240px;height:1080px;background:var(--wash);"></div>
+        <div class="frame" style="left:870px;top:160px;width:860px;height:700px;">
+            <img class="shot" src="assets/projects/mmert-01.webp" alt="" />
+        </div>
+        <p class="cap th" style="left:870px;top:880px;width:860px;">แดชบอร์ดศูนย์สั่งการ รวมสถานะภารกิจและทรัพยากรในหน้าเดียว</p>
+        <div class="metrics" style="position:absolute;left:870px;top:912px;width:860px;">
+            <div><div class="accent-bar"></div><p class="m-num">9</p><p class="m-cap th">โมดูลหลัก<br />Mission · Triage · Vital · Order …</p></div>
+            <div><div class="accent-bar"></div><p class="m-num">4</p><p class="m-cap th">ระดับ Triage<br />แดง · เหลือง · เขียว · ดำ</p></div>
+        </div>
+
+        <p class="eyebrow">Side project · Emergency Medical</p>
+        <div class="rule half"></div>
+        <h1 class="title" style="top:104px;max-width:560px;font-size:46px;">M-MERT<br />Maritime Emergency Medical</h1>
+        <p class="th" style="position:absolute;left:80px;top:268px;width:560px;font-size:21px;line-height:1.6;">ระบบสั่งการกู้ภัยทางการแพทย์ฉุกเฉินทางน้ำ รองรับภารกิจ Water / Land / Air ตั้งแต่รับแจ้งเหตุ จัดทีมอาสาสมัคร ติดตามรถพยาบาลแบบเรียลไทม์ ไปจนถึงประสานงานกับโรงพยาบาลปลายทาง</p>
+
+        <div style="position:absolute;left:80px;top:492px;width:560px;">
+            <p class="label">Platform</p><p class="meta-val th" style="margin-bottom:26px;">Web · Command Dashboard · Field Units</p>
+            <p class="label">Work done</p><p class="meta-val th" style="margin-bottom:26px;">ทำเองทั้งหมด — Architecture · Backend · Frontend · Deploy</p>
+            <p class="label">Stack</p><p class="meta-val th" style="margin-bottom:26px;">Bun · Hono 4 · Effect · Next.js 16 · PostgreSQL 16 · Prisma 6 · SSE</p>
+            <p class="label">Overview</p><p class="meta-val th">สั่งการผ่าน SSE push — คำสั่งจากแพทย์ถึงหน่วยหน้างานทันทีโดยไม่ต้องรอ refresh มี Triage 4 ระดับ, Vital Signs Monitoring, Waypoint Navigation (GPS / UTM / MGRS) และ Medical Order System แบบเรียลไทม์ ใช้ Effect จัดการ Dependency Injection และ Error</p>
+        </div>
+        <div class="foot" style="width:600px;"><b>Muhammadhisam Pala</b> &nbsp;|&nbsp; Software Developer Portfolio &nbsp;|&nbsp; 2026</div>
+    </section>
+    <section class="slide">
+        <p class="eyebrow">M-MERT · MARITIME EMERGENCY MEDICAL</p>
+        <div class="rule full"></div>
+        <h1 class="title">More screens</h1>
+        <p class="lede th">ฝั่งปฏิบัติการ — ติดตามยานพาหนะเรียลไทม์ จัดการผู้ป่วยตามระดับ Triage ติดตามสถานการณ์ภารกิจ และประสานโรงพยาบาลปลายทาง</p>
+        <div class="frame" style="left:80px;top:300px;width:410px;height:345px;">
+            <img class="shot" src="assets/projects/mmert-02.webp" alt="" />
+        </div>
+        <p class="cap th" style="left:80px;top:665px;width:410px;font-size:15px;">แผนที่ติดตามยานพาหนะแบบเรียลไทม์</p>
+        <div class="frame" style="left:530px;top:300px;width:410px;height:345px;">
+            <img class="shot" src="assets/projects/mmert-03.webp" alt="" />
+        </div>
+        <p class="cap th" style="left:530px;top:665px;width:410px;font-size:15px;">ระบบจัดการผู้ป่วยพร้อมระดับ Triage</p>
+        <div class="frame" style="left:980px;top:300px;width:410px;height:345px;">
+            <img class="shot" src="assets/projects/mmert-04.webp" alt="" />
+        </div>
+        <p class="cap th" style="left:980px;top:665px;width:410px;font-size:15px;">หน้าติดตามสถานการณ์ของภารกิจ</p>
+        <div class="frame" style="left:1430px;top:300px;width:410px;height:345px;">
+            <img class="shot" src="assets/projects/mmert-05.webp" alt="" />
+        </div>
+        <p class="cap th" style="left:1430px;top:665px;width:410px;font-size:15px;">ระบบจัดการโรงพยาบาลเชื่อมต่อ</p>
+        <div class="foot"><b>Muhammadhisam Pala</b> &nbsp;|&nbsp; Software Developer Portfolio &nbsp;|&nbsp; 2026</div>
+    </section>
+    <!-- ===== clinic-rag ===== -->
+    <section class="slide">
+        <div style="position:absolute;left:680px;top:0;width:1240px;height:1080px;background:var(--wash);"></div>
+        <div class="frame" style="left:870px;top:160px;width:860px;height:700px;">
+            <img class="shot" src="assets/projects/clinic-rag-01.webp" alt="" />
+        </div>
+        <p class="cap th" style="left:870px;top:880px;width:860px;">Analytics Dashboard วิเคราะห์คุณภาพการตอบของแชท AI</p>
+
+        <p class="eyebrow">Side project · AI · RAG</p>
+        <div class="rule half"></div>
+        <h1 class="title" style="top:104px;max-width:560px;font-size:46px;">Clinic Booking<br />+ AI Chatbot</h1>
+        <p class="th" style="position:absolute;left:80px;top:268px;width:560px;font-size:21px;line-height:1.6;">ต่อ AI Chatbot แบบ RAG เข้ากับระบบจองคิวคลินิก — ผู้ป่วยถามเรื่องบริการ ราคา และเวลาเปิดทำการได้ผ่าน LINE โดยดึงคำตอบจากฐานข้อมูลของคลินิกผ่าน Vector Search เพื่อลดงานตอบแชทซ้ำ ๆ ของพนักงาน</p>
+
+        <div style="position:absolute;left:80px;top:492px;width:560px;">
+            <p class="label">Platform</p><p class="meta-val th" style="margin-bottom:26px;">LINE LIFF · Web Admin · Worker</p>
+            <p class="label">Work done</p><p class="meta-val th" style="margin-bottom:26px;">ทำเองทั้งหมด — RAG Pipeline · Backend · Admin</p>
+            <p class="label">Stack</p><p class="meta-val th" style="margin-bottom:26px;">Turborepo · Next.js · LangChain · OpenAI SDK · Qdrant · Prisma · BullMQ · MinIO</p>
+            <p class="label">Overview</p><p class="meta-val th">RAG Pipeline ด้วย LangChain + OpenAI + Qdrant Vector Database, LINE LIFF ให้คนไข้จองคิวผ่านมือถือโดยไม่ต้องลงแอป, Admin Dashboard สำหรับเจ้าหน้าที่จัดการนัดหมาย และ Worker Service สำหรับงานพื้นหลังและส่งแจ้งเตือน</p>
+        </div>
+        <div class="foot" style="width:600px;"><b>Muhammadhisam Pala</b> &nbsp;|&nbsp; Software Developer Portfolio &nbsp;|&nbsp; 2026</div>
+    </section>
+    <section class="slide">
+        <p class="eyebrow">CLINIC BOOKING + AI CHATBOT</p>
+        <div class="rule full"></div>
+        <h1 class="title">More screens</h1>
+        <p class="lede th">ฝั่งหลังบ้าน — จัดการบริการและแพ็กเกจของคลินิก และข้อมูลแพทย์ (ปิดชื่อและรูปเพื่อความเป็นส่วนตัว)</p>
+        <div class="frame" style="left:80px;top:300px;width:860px;height:535px;">
+            <img class="shot" src="assets/projects/clinic-rag-02.webp" alt="" />
+        </div>
+        <p class="cap th" style="left:80px;top:855px;width:860px;font-size:15px;">หน้าจัดการบริการและแพ็กเกจของคลินิก</p>
+        <div class="frame" style="left:980px;top:300px;width:860px;height:535px;">
+            <img class="shot" src="assets/projects/clinic-rag-03.webp" alt="" />
+        </div>
+        <p class="cap th" style="left:980px;top:855px;width:860px;font-size:15px;">หน้าจัดการข้อมูลแพทย์</p>
+        <div class="foot"><b>Muhammadhisam Pala</b> &nbsp;|&nbsp; Software Developer Portfolio &nbsp;|&nbsp; 2026</div>
+    </section>
+
     <!-- ========== SIDE PROJECTS ========== -->
     <section class="slide">
         <p class="eyebrow">Outside of work</p>
         <div class="rule full"></div>
-        <h1 class="title">Side projects</h1>
+        <h1 class="title">More side projects</h1>
         <p class="lede th">โปรเจกต์ที่ทำนอกเวลางาน เพื่อฝึกออกแบบระบบและลองเทคโนโลยีใหม่ ๆ บางตัวเปิดใช้จริงแล้ว บางตัวยังพัฒนาอยู่</p>
 
         <div style="position:absolute;left:80px;top:320px;width:1760px;display:flex;flex-wrap:wrap;gap:40px;">
@@ -709,18 +796,6 @@
                 <p style="font-size:28px;font-weight:600;color:var(--navy);margin-top:8px;">Clinic ERP</p>
                 <p class="th" style="font-size:18px;margin-top:8px;">ระบบ ERP + CRM สำหรับคลินิก แยก Workspace รายสาขา 6 แอปใน Monorepo (API, Web, Admin, Patient, Webhook, Worker) ใช้ fp-ts จัดการ error</p>
                 <p style="font-size:16px;color:var(--label);margin-top:10px;">Hono 4 · fp-ts · SuperTokens · BullMQ · Cloudflare R2</p>
-            </div>
-            <div style="width:560px;border-top:1px solid var(--hair);padding-top:24px;">
-                <p style="font-size:15px;letter-spacing:.12em;color:var(--label);text-transform:uppercase;font-weight:600;">AI · RAG · Vector Search</p>
-                <p style="font-size:28px;font-weight:600;color:var(--navy);margin-top:8px;">Clinic Booking + AI Chatbot</p>
-                <p class="th" style="font-size:18px;margin-top:8px;">ต่อ AI Chatbot แบบ RAG เข้ากับระบบจองคิวคลินิก ผู้ป่วยถามเรื่องบริการและเวลาเปิดผ่าน LINE โดยดึงคำตอบจากฐานข้อมูลผ่าน Vector Search</p>
-                <p style="font-size:16px;color:var(--label);margin-top:10px;">LangChain · OpenAI SDK · Qdrant · Prisma · LINE LIFF</p>
-            </div>
-            <div style="width:560px;border-top:1px solid var(--hair);padding-top:24px;">
-                <p style="font-size:15px;letter-spacing:.12em;color:var(--label);text-transform:uppercase;font-weight:600;">Emergency · Real-time GPS</p>
-                <p style="font-size:28px;font-weight:600;color:var(--navy);margin-top:8px;">M-MERT</p>
-                <p class="th" style="font-size:18px;margin-top:8px;">ระบบสั่งการกู้ภัยทางการแพทย์ฉุกเฉินทางน้ำ — รับแจ้งเหตุ จัดทีม ติดตามรถพยาบาลเรียลไทม์ผ่าน SSE และประสานโรงพยาบาลปลายทาง</p>
-                <p style="font-size:16px;color:var(--label);margin-top:10px;">Bun · Hono 4 · Effect · Next.js 16 · SSE · PostgreSQL 16</p>
             </div>
             <div style="width:560px;border-top:1px solid var(--hair);padding-top:24px;">
                 <p style="font-size:15px;letter-spacing:.12em;color:var(--label);text-transform:uppercase;font-weight:600;">Social Good · AI Matching</p>
