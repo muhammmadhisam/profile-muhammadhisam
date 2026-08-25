@@ -542,22 +542,15 @@
                     </article>
 
                         <article class="group/card rounded-2xl border border-line bg-panel/70 transition-colors hover:border-mint/50 flex flex-col overflow-hidden">
-                        <div aria-hidden="true" class="relative aspect-[16/10] w-full overflow-hidden border-b border-line bg-[#171D1E]">
-                            <pre class="absolute inset-0 overflow-hidden px-4 py-3 font-mono text-[9px] leading-[1.55] text-mint/50">POST /api/purchase-requests
-{
-  "requester":  "user_8213",
-  "budgetCode": "BU-2025-OPS",
-  "items":      [ { "sku": "IT-0912", "qty": 4 } ],
-  "approvals": [
-    { "level": 1, "role": "HEAD",    "state": "APPROVED" },
-    { "level": 2, "role": "FINANCE", "state": "APPROVED" },
-    { "level": 3, "role": "DIRECTOR","state": "PENDING"  }
-  ],
-  "budgetCheck": "PASSED",
-  "auditTrail":  14
-}</pre>
-                            <span class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-panel to-transparent"></span>
-                        </div>
+                        <button type="button" class="shot relative block w-full overflow-hidden border-b border-line text-left"
+                            data-gallery="verso" data-index="0" aria-label="เปิดภาพหน้าจอของ Verso PO/PR — Procurement Workflow ทั้งหมด 2 ภาพ">
+                            <img src="assets/projects/verso-01.webp" alt="Verso PO/PR — หน้าแรกของระบบจัดซื้อ พร้อมรายการคำขอเบิกจ่าย" loading="lazy" decoding="async"
+                                class="block aspect-[16/10] w-full object-cover object-top transition-transform duration-500 group-hover/card:scale-[1.04]" />
+                            <span aria-hidden="true" class="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/0 to-ink/0"></span>
+                            <span aria-hidden="true" class="pointer-events-none absolute bottom-2 right-2 inline-flex items-center gap-1 rounded-full border border-mint/40 bg-ink/85 px-2 py-1 font-mono text-[10px] text-mint">
+                                <svg class="h-3 w-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16v12H4zM8 7V5h8v2M9 15l2.5-3 2 2.5L15.5 12 18 15"/></svg> 2 ภาพ
+                            </span>
+                        </button>
                         <div class="flex flex-1 flex-col p-6">
                             <div class="flex items-center justify-between mb-3">
                                 <span class="inline-flex items-center rounded-md bg-mint/10 text-mint border border-mint/30 px-2 py-0.5 font-mono text-[10px] font-medium">Procurement</span>
@@ -1568,6 +1561,10 @@
         <template data-gallery-src="pool" data-gallery-title="Pool Manager — Gas Pool Management">
             <img src="assets/projects/pool-01.webp" alt="Pool Manager — แดชบอร์ด Billing สรุปปริมาณและราคาก๊าซรายเดือน" />
             <img src="assets/projects/pool-02.webp" alt="Pool Manager — หน้า Home Portal แยกโมดูล Planning / Billing / Manual" />
+        </template>
+        <template data-gallery-src="verso" data-gallery-title="Verso PO/PR — Procurement Workflow">
+            <img src="assets/projects/verso-01.webp" alt="Verso PO/PR — หน้าแรกของระบบจัดซื้อ พร้อมรายการคำขอเบิกจ่าย" />
+            <img src="assets/projects/verso-02.webp" alt="Verso PO/PR — หน้า Purchase Order พร้อมตารางรายการและสรุปภาษี (ลบลายเซ็นออกแล้ว)" />
         </template>
         <template data-gallery-src="prolab" data-gallery-title="Prolab — Health Service Platform">
             <img src="assets/projects/prolab-01.webp" alt="Prolab — หน้ารายการนัดหมายของผู้ใช้" />
