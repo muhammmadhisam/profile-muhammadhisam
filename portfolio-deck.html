@@ -13,6 +13,7 @@
         :root {
             --navy: #072A57;
             --navy-soft: #2C4E78;
+            --accent: #E8552F;
             --body: #55606D;
             --label: #97A2AE;
             --hair: #D8DEE4;
@@ -58,7 +59,7 @@
         }
         .rule { position: absolute; left: 80px; top: 63px; height: 1px; background: var(--hair); }
         .rule.full { width: 1760px; }
-        .rule.half { width: 600px; height: 4px; background: var(--navy); top: 62px; }
+        .rule.half { width: 600px; height: 4px; background: var(--accent); top: 62px; }
 
         h1.title {
             position: absolute; left: 80px; top: 108px;
@@ -76,12 +77,35 @@
             padding-top: 16px; border-top: 1px solid var(--hair);
             font-size: 16px; color: var(--label); letter-spacing: .02em;
         }
-        .foot b { color: var(--navy-soft); font-weight: 600; }
+        .foot b { color: var(--navy); font-weight: 700; }
 
         .label {
-            font-size: 15px; font-weight: 700; letter-spacing: .12em;
-            text-transform: uppercase; color: var(--navy); margin-bottom: 6px;
+            font-size: 14px; font-weight: 700; letter-spacing: .14em;
+            text-transform: uppercase; color: var(--accent); margin-bottom: 6px;
         }
+
+        /* impact numbers under a project title */
+        .metrics { display: flex; gap: 40px; }
+        .metrics .m-num {
+            font-size: 40px; font-weight: 800; line-height: 1; color: var(--navy);
+            letter-spacing: -.02em;
+        }
+        .metrics .m-cap { font-size: 14px; line-height: 1.35; color: var(--label); margin-top: 7px; }
+        .accent-bar { width: 48px; height: 4px; background: var(--accent); margin-bottom: 14px; }
+
+        /* selected-work index grid */
+        .thumbgrid { position: absolute; left: 80px; top: 286px; width: 1760px;
+            display: flex; flex-wrap: wrap; gap: 30px 40px; }
+        .thumbgrid .cell { width: 560px; }
+        .thumbgrid .cell .box {
+            height: 224px; overflow: hidden; border: 1px solid var(--hair); background: var(--panel);
+        }
+        .thumbgrid .cell .no {
+            font-size: 13px; font-weight: 700; letter-spacing: .16em; color: var(--accent);
+            margin-top: 14px;
+        }
+        .thumbgrid .cell .nm { font-size: 24px; font-weight: 600; color: var(--navy); margin-top: 3px; }
+        .thumbgrid .cell .tg { font-size: 15px; color: var(--label); margin-top: 3px; }
         .meta-val { font-size: 19px; line-height: 1.55; color: var(--body); }
 
         .shot {
@@ -106,8 +130,8 @@
         }
         .cover-copy { position: absolute; left: 80px; bottom: 108px; z-index: 2; }
         .cover-eyebrow {
-            font-size: 26px; font-weight: 500; letter-spacing: .18em;
-            text-transform: uppercase; color: #9BA7B4; margin-bottom: 22px;
+            font-size: 24px; font-weight: 700; letter-spacing: .22em;
+            text-transform: uppercase; color: var(--accent); margin-bottom: 22px;
         }
         .cover-name {
             font-size: 128px; font-weight: 800; line-height: 1; color: var(--navy);
@@ -138,6 +162,54 @@
             090-163-0867 · LINE: hisam023<br />
             github.com/muhammmadhisam
         </div>
+    </section>
+
+
+    <!-- ========== SELECTED WORK INDEX ========== -->
+    <section class="slide">
+        <p class="eyebrow">Contents</p>
+        <div class="rule full"></div>
+        <h1 class="title">Selected work</h1>
+        <p class="lede th">หกระบบที่ผมมีส่วนร่วมพัฒนาและได้ใช้งานจริง — แต่ละตัวมีหน้าอธิบายและภาพหน้าจอในหน้าถัดไป</p>
+        <div class="thumbgrid">
+            <div class="cell">
+                <div class="box"><img class="shot" src="assets/projects/erc-01.webp" alt="" /></div>
+                <p class="no">01</p>
+                <p class="nm">ERC</p>
+                <p class="tg th">Energy Platform · Aquila Studio</p>
+            </div>
+            <div class="cell">
+                <div class="box"><img class="shot" src="assets/projects/pool-01.webp" alt="" /></div>
+                <p class="no">02</p>
+                <p class="nm">Pool Manager</p>
+                <p class="tg th">Gas Management · Aquila Studio</p>
+            </div>
+            <div class="cell">
+                <div class="box"><img class="shot" src="assets/projects/verso-01.webp" alt="" /></div>
+                <p class="no">03</p>
+                <p class="nm">Verso PO/PR</p>
+                <p class="tg th">Procurement · Aquila Studio</p>
+            </div>
+            <div class="cell">
+                <div class="box"><img class="shot" src="assets/projects/prolab-01.webp" alt="" /></div>
+                <p class="no">04</p>
+                <p class="nm">Prolab</p>
+                <p class="tg th">HealthTech · Aquila Studio</p>
+            </div>
+            <div class="cell">
+                <div class="box"><img class="shot" src="assets/projects/movesook-01.webp" alt="" /></div>
+                <p class="no">05</p>
+                <p class="nm">MoveSook</p>
+                <p class="tg th">SaaS Marketplace · Side project</p>
+            </div>
+            <div class="cell">
+                <div class="box"><img class="shot" src="assets/projects/icmt-01.webp" alt="" /></div>
+                <p class="no">06</p>
+                <p class="nm">ICMT</p>
+                <p class="tg th">EdTech · Aquila Studio</p>
+            </div>
+        </div>
+        <div class="foot"><b>Muhammadhisam Pala</b> &nbsp;|&nbsp; Software Developer Portfolio &nbsp;|&nbsp; 2026</div>
     </section>
 
     <!-- ========== 1. ABOUT / EXPERTISE ========== -->
@@ -210,40 +282,159 @@
         <p class="eyebrow">About me</p>
         <div class="rule full"></div>
         <h1 class="title">What I do</h1>
-        <p class="lede th">สามเรื่องหลักที่ผมรับผิดชอบในทุกโปรเจกต์ ตั้งแต่ออกแบบจนขึ้น production</p>
+        <p class="lede th">สามเรื่องหลักที่ผมรับผิดชอบในทุกโปรเจกต์ — ตั้งแต่ออกแบบสถาปัตยกรรม จนขึ้น production และดูแลต่อ</p>
 
-        <div style="position:absolute;left:80px;top:330px;display:flex;gap:40px;">
+        <div style="position:absolute;left:80px;top:300px;display:flex;gap:40px;">
             <div style="width:560px;">
-                <div style="height:300px;background:var(--wash);border:1px solid var(--hair);display:flex;align-items:center;justify-content:center;">
-                    <span style="font-size:120px;font-weight:800;color:#DCE3EA;">01</span>
+                <div style="height:300px;background:var(--wash);border:1px solid var(--hair);padding:22px 20px;display:flex;align-items:center;">
+                    <svg viewBox="0 0 760 244" style="width:100%;height:auto;display:block;" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Clinic ERP microservices architecture">
+                                    <defs>
+                                        <marker id="dk-ar-clinic" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#9AA5B1"/></marker>
+                                    </defs>
+                                    <!-- Row 1: Clients -->
+                                    <text x="40" y="14" font-size="10" font-weight="600" fill="#9AA5B1" letter-spacing="0.05em">CLIENTS · Next.js 15 · shadcn/ui</text>
+                                    <g>
+                                        <rect x="40" y="22" width="200" height="44" rx="8" fill="#FFFFFF" stroke="#D3DAE1"/>
+                                        <text x="140" y="41" font-size="13" font-weight="600" fill="#072A57" text-anchor="middle">Web-Clinic</text>
+                                        <text x="140" y="56" font-size="10.5" fill="#55606D" text-anchor="middle">แดชบอร์ดคลินิก</text>
+                                        <rect x="280" y="22" width="200" height="44" rx="8" fill="#FFFFFF" stroke="#D3DAE1"/>
+                                        <text x="380" y="41" font-size="13" font-weight="600" fill="#072A57" text-anchor="middle">Admin Console</text>
+                                        <text x="380" y="56" font-size="10.5" fill="#55606D" text-anchor="middle">Super-admin</text>
+                                        <rect x="520" y="22" width="200" height="44" rx="8" fill="#FFFFFF" stroke="#D3DAE1"/>
+                                        <text x="620" y="41" font-size="13" font-weight="600" fill="#072A57" text-anchor="middle">Patient Portal</text>
+                                        <text x="620" y="56" font-size="10.5" fill="#55606D" text-anchor="middle">จองนัด · LINE Login</text>
+                                    </g>
+                                    <!-- Arrows to API -->
+                                    <path d="M140,66 L160,98" stroke="#9AA5B1" stroke-width="1.4" fill="none" marker-end="url(#dk-ar-clinic)"/>
+                                    <path d="M380,66 L380,98" stroke="#9AA5B1" stroke-width="1.4" fill="none" marker-end="url(#dk-ar-clinic)"/>
+                                    <path d="M620,66 L470,98" stroke="#9AA5B1" stroke-width="1.4" fill="none" marker-end="url(#dk-ar-clinic)"/>
+                                    <!-- Row 2: API + Webhook -->
+                                    <rect x="140" y="100" width="400" height="44" rx="8" fill="#EAF0F7" stroke="#B4C6DA"/>
+                                    <text x="340" y="119" font-size="13" font-weight="700" fill="#072A57" text-anchor="middle">API Gateway · Hono 4 · fp-ts</text>
+                                    <text x="340" y="134" font-size="10.5" fill="#3E6390" text-anchor="middle">Type-safe · Multi-tenant · OpenAPI / Scalar Docs</text>
+                                    <rect x="580" y="100" width="140" height="44" rx="8" fill="#FFFFFF" stroke="#D3DAE1"/>
+                                    <text x="650" y="119" font-size="13" font-weight="600" fill="#072A57" text-anchor="middle">Webhook</text>
+                                    <text x="650" y="134" font-size="10.5" fill="#55606D" text-anchor="middle">LINE · Payment</text>
+                                    <path d="M580,122 L544,122" stroke="#9AA5B1" stroke-width="1.4" fill="none" marker-end="url(#dk-ar-clinic)"/>
+                                    <!-- Bus to data layer -->
+                                    <path d="M340,144 L340,160 M122,160 L662,160 M122,160 L122,176 M302,160 L302,176 M482,160 L482,176 M662,160 L662,176" stroke="#9AA5B1" stroke-width="1.4" fill="none"/>
+                                    <path d="M122,176 L122,178 M302,176 L302,178 M482,176 L482,178 M662,176 L662,178" stroke="#9AA5B1" stroke-width="1.4" fill="none" marker-end="url(#dk-ar-clinic)"/>
+                                    <!-- Row 3: Data & Async -->
+                                    <text x="40" y="196" font-size="10" font-weight="600" fill="#9AA5B1" letter-spacing="0.05em">DATA &amp; ASYNC LAYER</text>
+                                    <rect x="40" y="200" width="165" height="40" rx="8" fill="#F6F8F9" stroke="#D3DAE1"/>
+                                    <text x="122" y="217" font-size="12.5" font-weight="600" fill="#072A57" text-anchor="middle">PostgreSQL 16</text>
+                                    <text x="122" y="231" font-size="10" fill="#55606D" text-anchor="middle">per-tenant schema</text>
+                                    <rect x="220" y="200" width="165" height="40" rx="8" fill="#F6F8F9" stroke="#D3DAE1"/>
+                                    <text x="302" y="217" font-size="12.5" font-weight="600" fill="#072A57" text-anchor="middle">BullMQ Worker</text>
+                                    <text x="302" y="231" font-size="10" fill="#55606D" text-anchor="middle">Redis · Notification</text>
+                                    <rect x="400" y="200" width="165" height="40" rx="8" fill="#F6F8F9" stroke="#D3DAE1"/>
+                                    <text x="482" y="217" font-size="12.5" font-weight="600" fill="#072A57" text-anchor="middle">SuperTokens</text>
+                                    <text x="482" y="231" font-size="10" fill="#55606D" text-anchor="middle">Auth · Multi-tenant</text>
+                                    <rect x="580" y="200" width="165" height="40" rx="8" fill="#F6F8F9" stroke="#D3DAE1"/>
+                                    <text x="662" y="217" font-size="12.5" font-weight="600" fill="#072A57" text-anchor="middle">Cloudflare R2</text>
+                                    <text x="662" y="231" font-size="10" fill="#55606D" text-anchor="middle">Object Storage</text>
+                                </svg>
                 </div>
-                <p class="label" style="margin-top:32px;">Backend Development</p>
-                <p class="meta-val th">
-                    ออกแบบและพัฒนา RESTful API กับฐานข้อมูล ดูแลตั้งแต่คุย requirement
-                    วางโครงสร้างข้อมูล จนขึ้น production<br /><br />
-                    <span style="color:var(--label);">TypeScript · Node.js · Bun · NestJS · Hono · PostgreSQL · Prisma</span>
+                <p class="th" style="font-size:14px;color:var(--label);margin-top:10px;">สถาปัตยกรรม Microservices Monorepo ของ Clinic ERP</p>
+                <p class="label" style="margin-top:22px;">01 &nbsp;·&nbsp; Backend Development</p>
+                <p class="meta-val th" style="font-size:18px;">
+                    ออกแบบและพัฒนา RESTful API กับฐานข้อมูล ดูแลตั้งแต่คุย requirement วางโครงสร้างข้อมูล จนขึ้น production<br /><br />
+                    <span style="color:var(--label);font-size:16px;">TypeScript · Node.js · Bun · NestJS · Hono · PostgreSQL · Prisma</span>
                 </p>
             </div>
             <div style="width:560px;">
-                <div style="height:300px;background:var(--wash);border:1px solid var(--hair);display:flex;align-items:center;justify-content:center;">
-                    <span style="font-size:120px;font-weight:800;color:#DCE3EA;">02</span>
+                <div style="height:300px;background:var(--wash);border:1px solid var(--hair);padding:22px 20px;display:flex;align-items:center;">
+                    <svg viewBox="0 0 760 214" style="width:100%;height:auto;display:block;" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MeawSook AI vector search architecture">
+                                    <defs>
+                                        <marker id="dk-ar-meaw" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#9AA5B1"/></marker>
+                                        <marker id="ar-meaw-r" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#072A57"/></marker>
+                                    </defs>
+                                    <!-- Pipeline -->
+                                    <text x="20" y="14" font-size="10" font-weight="600" fill="#9AA5B1" letter-spacing="0.05em">AI IMAGE MATCHING PIPELINE</text>
+                                    <rect x="20" y="22" width="140" height="50" rx="8" fill="#FFFFFF" stroke="#D3DAE1"/>
+                                    <text x="90" y="43" font-size="12.5" font-weight="600" fill="#072A57" text-anchor="middle">LINE LIFF</text>
+                                    <text x="90" y="58" font-size="10" fill="#55606D" text-anchor="middle">อัปรูปแมว</text>
+                                    <rect x="190" y="22" width="130" height="50" rx="8" fill="#FFFFFF" stroke="#D3DAE1"/>
+                                    <text x="255" y="43" font-size="12.5" font-weight="600" fill="#072A57" text-anchor="middle">API · Hono</text>
+                                    <text x="255" y="58" font-size="10" fill="#55606D" text-anchor="middle">Next.js 15</text>
+                                    <rect x="350" y="22" width="150" height="50" rx="8" fill="#EAF0F7" stroke="#B4C6DA"/>
+                                    <text x="425" y="43" font-size="12.5" font-weight="700" fill="#072A57" text-anchor="middle">Voyage MM-3</text>
+                                    <text x="425" y="58" font-size="10" fill="#3E6390" text-anchor="middle">Multimodal Embedding</text>
+                                    <rect x="540" y="22" width="200" height="50" rx="8" fill="#F6F8F9" stroke="#D3DAE1"/>
+                                    <text x="640" y="43" font-size="12.5" font-weight="600" fill="#072A57" text-anchor="middle">PostgreSQL + pgvector</text>
+                                    <text x="640" y="58" font-size="10" fill="#55606D" text-anchor="middle">ANN Similarity Search</text>
+                                    <path d="M160,47 L188,47" stroke="#9AA5B1" stroke-width="1.4" fill="none" marker-end="url(#dk-ar-meaw)"/>
+                                    <path d="M320,47 L348,47" stroke="#9AA5B1" stroke-width="1.4" fill="none" marker-end="url(#dk-ar-meaw)"/>
+                                    <path d="M500,47 L538,47" stroke="#9AA5B1" stroke-width="1.4" fill="none" marker-end="url(#dk-ar-meaw)"/>
+                                    <!-- Return: matched cats -->
+                                    <path d="M640,72 L640,96 L90,96 L90,74" stroke="#072A57" stroke-width="1.5" fill="none" marker-end="url(#ar-meaw-r)"/>
+                                    <text x="365" y="91" font-size="10" font-weight="600" fill="#072A57" text-anchor="middle">จับคู่ใบหน้าแมวข้ามโพสต์อัตโนมัติ (Vector Similarity)</text>
+                                    <!-- Donation flow -->
+                                    <text x="20" y="134" font-size="10" font-weight="600" fill="#9AA5B1" letter-spacing="0.05em">DONATION FLOW · idempotency-safe</text>
+                                    <g font-size="11.5" font-weight="600" fill="#072A57" text-anchor="middle">
+                                        <rect x="20" y="142" width="128" height="34" rx="6" fill="#FFFFFF" stroke="#D3DAE1"/><text x="84" y="163">สั่งบริจาค</text>
+                                        <rect x="168" y="142" width="128" height="34" rx="6" fill="#FFFFFF" stroke="#D3DAE1"/><text x="232" y="163">โอนเงิน</text>
+                                        <rect x="316" y="142" width="128" height="34" rx="6" fill="#FFFFFF" stroke="#D3DAE1"/><text x="380" y="163">อัปสลิป</text>
+                                        <rect x="464" y="142" width="128" height="34" rx="6" fill="#FFFFFF" stroke="#D3DAE1"/><text x="528" y="163">ยืนยัน (Admin)</text>
+                                        <rect x="612" y="142" width="128" height="34" rx="6" fill="#EAF0F7" stroke="#B4C6DA"/><text x="676" y="163" fill="#072A57">จัดส่ง + รูป</text>
+                                    </g>
+                                    <path d="M148,159 L166,159 M296,159 L314,159 M444,159 L462,159 M592,159 L610,159" stroke="#9AA5B1" stroke-width="1.4" fill="none" marker-end="url(#dk-ar-meaw)"/>
+                                    <text x="20" y="200" font-size="10.5" fill="#55606D">🔒 Idempotency Key ในทุก transaction — donor ตรวจสอบได้ตั้งแต่โอนเงินจนถึงรูปแมวกินอาหาร (โปร่งใส 100%)</text>
+                                </svg>
                 </div>
-                <p class="label" style="margin-top:32px;">AI &amp; Integration</p>
-                <p class="meta-val th">
-                    ต่อ AI แบบ RAG เข้ากับระบบเดิม ทำ Vector Search และเชื่อมระบบภายนอก
-                    เช่น HL7, LINE LIFF และ Payment<br /><br />
-                    <span style="color:var(--label);">OpenAI SDK · LangChain · Qdrant · pgvector · HL7 Parser</span>
+                <p class="th" style="font-size:14px;color:var(--label);margin-top:10px;">AI Vector Search Pipeline ของ MeawSook</p>
+                <p class="label" style="margin-top:22px;">02 &nbsp;·&nbsp; AI &amp; Integration</p>
+                <p class="meta-val th" style="font-size:18px;">
+                    ต่อ AI แบบ RAG เข้ากับระบบเดิม ทำ Vector Search และเชื่อมระบบภายนอก เช่น HL7, LINE LIFF และ Payment<br /><br />
+                    <span style="color:var(--label);font-size:16px;">OpenAI SDK · LangChain · Qdrant · pgvector · HL7 Parser</span>
                 </p>
             </div>
             <div style="width:560px;">
-                <div style="height:300px;background:var(--wash);border:1px solid var(--hair);display:flex;align-items:center;justify-content:center;">
-                    <span style="font-size:120px;font-weight:800;color:#DCE3EA;">03</span>
+                <div style="height:300px;background:var(--wash);border:1px solid var(--hair);padding:22px 20px;display:flex;align-items:center;">
+                    <svg viewBox="0 0 760 244" style="width:100%;height:auto;display:block;" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="M-MERT real-time architecture">
+                                    <defs>
+                                        <marker id="dk-ar-mmert" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#9AA5B1"/></marker>
+                                        <marker id="ar-mmert-live" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#072A57"/></marker>
+                                    </defs>
+                                    <!-- Modules -->
+                                    <text x="30" y="14" font-size="10" font-weight="600" fill="#9AA5B1" letter-spacing="0.05em">9 CORE MODULES</text>
+                                    <g font-size="11" font-weight="600" fill="#072A57" text-anchor="middle">
+                                        <rect x="30" y="22" width="130" height="30" rx="6" fill="#EAF0F7" stroke="#B4C6DA"/><text x="95" y="41">Mission</text>
+                                        <rect x="170" y="22" width="130" height="30" rx="6" fill="#EAF0F7" stroke="#B4C6DA"/><text x="235" y="41">Triage</text>
+                                        <rect x="310" y="22" width="130" height="30" rx="6" fill="#EAF0F7" stroke="#B4C6DA"/><text x="375" y="41">Vital Signs</text>
+                                        <rect x="450" y="22" width="130" height="30" rx="6" fill="#EAF0F7" stroke="#B4C6DA"/><text x="515" y="41">Medical Order</text>
+                                        <rect x="590" y="22" width="140" height="30" rx="6" fill="#EAF0F7" stroke="#B4C6DA"/><text x="660" y="41">Hospital Coord.</text>
+                                    </g>
+                                    <!-- Flow -->
+                                    <rect x="30" y="96" width="180" height="54" rx="8" fill="#FFFFFF" stroke="#D3DAE1"/>
+                                    <text x="120" y="118" font-size="13" font-weight="600" fill="#072A57" text-anchor="middle">Field Units</text>
+                                    <text x="120" y="134" font-size="10.5" fill="#55606D" text-anchor="middle">รถพยาบาล · อาสาสมัคร</text>
+                                    <rect x="300" y="90" width="200" height="66" rx="8" fill="#EAF0F7" stroke="#B4C6DA"/>
+                                    <text x="400" y="111" font-size="13" font-weight="700" fill="#072A57" text-anchor="middle">M-MERT API</text>
+                                    <text x="400" y="127" font-size="10.5" fill="#3E6390" text-anchor="middle">Bun · Hono 4 · Effect (FP)</text>
+                                    <text x="400" y="142" font-size="10.5" font-weight="600" fill="#072A57" text-anchor="middle">SSE event hub</text>
+                                    <rect x="580" y="96" width="160" height="54" rx="8" fill="#FFFFFF" stroke="#D3DAE1"/>
+                                    <text x="660" y="118" font-size="13" font-weight="600" fill="#072A57" text-anchor="middle">Command Dashboard</text>
+                                    <text x="660" y="134" font-size="10.5" fill="#55606D" text-anchor="middle">สั่งการแบบ Real-time</text>
+                                    <!-- REST in -->
+                                    <text x="255" y="112" font-size="10" fill="#55606D" text-anchor="middle">REST · JWT/RBAC</text>
+                                    <path d="M210,123 L296,123" stroke="#9AA5B1" stroke-width="1.4" fill="none" marker-end="url(#dk-ar-mmert)"/>
+                                    <!-- SSE out -->
+                                    <text x="540" y="112" font-size="10" font-weight="600" fill="#072A57" text-anchor="middle">SSE push (live)</text>
+                                    <path d="M500,123 L576,123" stroke="#072A57" stroke-width="1.6" fill="none" marker-end="url(#ar-mmert-live)"/>
+                                    <!-- DB -->
+                                    <path d="M400,156 L400,190" stroke="#9AA5B1" stroke-width="1.4" fill="none" marker-end="url(#dk-ar-mmert)"/>
+                                    <text x="440" y="177" font-size="10" fill="#55606D" text-anchor="start">Prisma 6</text>
+                                    <rect x="315" y="192" width="170" height="42" rx="8" fill="#F6F8F9" stroke="#D3DAE1"/>
+                                    <text x="400" y="210" font-size="12.5" font-weight="600" fill="#072A57" text-anchor="middle">PostgreSQL 16</text>
+                                    <text x="400" y="225" font-size="10" fill="#55606D" text-anchor="middle">Mission · Vital · GPS (UTM/MGRS)</text>
+                                </svg>
                 </div>
-                <p class="label" style="margin-top:32px;">DevOps &amp; Delivery</p>
-                <p class="meta-val th">
-                    ดูแล deployment ด้วย Docker และ CI/CD บน cloud จัดการ environment config
-                    และงาน background ด้วย queue<br /><br />
-                    <span style="color:var(--label);">Docker · GitHub Actions · Nginx · Linux · Redis · BullMQ</span>
+                <p class="th" style="font-size:14px;color:var(--label);margin-top:10px;">สถาปัตยกรรม Real-time Event-driven ของ M-MERT</p>
+                <p class="label" style="margin-top:22px;">03 &nbsp;·&nbsp; DevOps &amp; Delivery</p>
+                <p class="meta-val th" style="font-size:18px;">
+                    ดูแล deployment ด้วย Docker และ CI/CD บน cloud จัดการงาน background ด้วย queue และงาน real-time ด้วย SSE<br /><br />
+                    <span style="color:var(--label);font-size:16px;">Docker · GitHub Actions · Nginx · Linux · Redis · BullMQ · SSE</span>
                 </p>
             </div>
         </div>
@@ -301,6 +492,10 @@
             <img class="shot" src="assets/projects/pool-01.webp" alt="" />
         </div>
         <p class="cap th" style="left:870px;top:880px;width:860px;">แดชบอร์ด Billing สรุปปริมาณและราคาก๊าซรายเดือน</p>
+        <div class="metrics" style="position:absolute;left:870px;top:912px;width:860px;">
+            <div><div class="accent-bar"></div><p class="m-num">3</p><p class="m-cap th">แหล่งจัดหาก๊าซ<br />LNG · Gulf · Myanmar</p></div>
+            <div><div class="accent-bar"></div><p class="m-num">100%</p><p class="m-cap th">ทุกการคำนวณ<br />บันทึก audit trail</p></div>
+        </div>
 
         <p class="eyebrow">Aquila Studio · Gas Management</p>
         <div class="rule half"></div>
@@ -371,6 +566,9 @@
             <img class="shot" src="assets/projects/prolab-01.webp" alt="" />
         </div>
         <p class="cap th" style="left:870px;top:880px;width:860px;">หน้าแรกของ ProLab Web Application</p>
+        <div class="metrics" style="position:absolute;left:870px;top:912px;width:860px;">
+            <div><div class="accent-bar"></div><p class="m-num">3–7 → 1–3</p><p class="m-cap th">วัน — เวลารอผลแล็บ<br />หลังทีมปรับ flow ระบบ</p></div>
+        </div>
 
         <p class="eyebrow">Aquila Studio · HealthTech</p>
         <div class="rule half"></div>
@@ -414,6 +612,10 @@
             <img class="shot" src="assets/projects/movesook-01.webp" alt="" />
         </div>
         <p class="cap th" style="left:870px;top:880px;width:860px;">หน้าแรก เรียกรถรับจ้างขนย้าย</p>
+        <div class="metrics" style="position:absolute;left:870px;top:912px;width:860px;">
+            <div><div class="accent-bar"></div><p class="m-num">3</p><p class="m-cap th">แอปใน Monorepo<br />web · admin · api</p></div>
+            <div><div class="accent-bar"></div><p class="m-num">4</p><p class="m-cap th">ระดับสิทธิ์ RBAC<br />USER · DRIVER · ADMIN · SYSTEM</p></div>
+        </div>
 
         <p class="eyebrow">Side Project · SaaS Marketplace</p>
         <div class="rule half"></div>
@@ -453,6 +655,10 @@
             <img class="shot" src="assets/projects/icmt-01.webp" alt="" />
         </div>
         <p class="cap th" style="left:870px;top:880px;width:860px;">แดชบอร์ดภาพรวมสถานะอุปกรณ์ พร้อมรายงานรายโรงเรียน</p>
+        <div class="metrics" style="position:absolute;left:870px;top:912px;width:860px;">
+            <div><div class="accent-bar"></div><p class="m-num">2,000+</p><p class="m-cap th">อุปกรณ์ในระบบ<br />กระจายหลายโรงเรียน</p></div>
+            <div><div class="accent-bar"></div><p class="m-num">4</p><p class="m-cap th">บริการแยกกัน<br />Web · Admin · Storage · Worker</p></div>
+        </div>
 
         <p class="eyebrow">Aquila Studio · EdTech</p>
         <div class="rule half"></div>
