@@ -85,7 +85,7 @@ flowchart TD
 | **ERC — Centralized Energy Data Platform** | รวมข้อมูลไฟฟ้าจากหลายแหล่งเข้า dashboard เดียว สำหรับดูภาพรวมและ monitoring | `NestJS` `REST API` `PostgreSQL` `Data Pipeline` |
 | **Pool Manager — Gas Pool Management** | คำนวณต้นทุนก๊าซจากหลายแหล่งจัดหา (LNG/Gulf/Myanmar) พร้อม Cost Allocation & Pricing Workflow | `Cost Engine` `Audit Trail` `PostgreSQL` |
 | **[Prolab — Health Service Platform](https://ai.prolab.co.th/th)** 🔗 | ร่วมพัฒนา backend ของ AI Health Analytics + ปรับ Lab Result System (ทีมลดเวลารอผล 3–7 → 1–3 วัน) | `AI Analytics` `HL7` `LAB System` |
-| **ICMT — Device Registration** | ลงทะเบียน/ยืนยันอุปกรณ์โทรศัพท์ด้วย IMEI แยก Web/Admin/Storage/Worker | `Turborepo` `Next.js` `Hono` `Prisma` `Redis` |
+| **ICMT — ระบบบริการจัดการแท็บเล็ตเพื่อการศึกษา** | ทะเบียนทรัพย์สิน ยืม–คืน ตรวจรับคืน ตั๋วเคลมซ่อม และรายงานสถานะอุปกรณ์รายโรงเรียน แยก Web/Admin/Storage/Worker | `Turborepo` `Next.js` `Hono` `Prisma` `Redis` |
 
 ---
 
