@@ -95,6 +95,7 @@ flowchart TD
 
 | Project | สรุป | Stack |
 |---------|------|-------|
+| **VSDMS — ระบบบริหาร Visa และแจ้งเตือนสำหรับโรงเรียน** | ติดตาม Visa ของนักเรียนต่างชาติและผู้ติดตามผ่าน LINE LIFF แจ้งเตือนก่อนหมดอายุอัตโนมัติ ผู้ปกครองยื่นคำร้องต่ออายุและติดตามสถานะเองได้ — ออกแบบตาม PDPA เพราะเป็นข้อมูลของผู้เยาว์: เข้ารหัสระดับคอลัมน์ (AES-256-GCM + blind index + key rotation), เอกสารแนบแบบ envelope encryption, Audit Log ทุกการอ่าน/แก้, รองรับไทย/อังกฤษ · ทำคนเดียวตั้งแต่ requirement ถึง production (4 apps · 9 packages · ~40 models) | `Turborepo` `Hono RPC` `Next.js` `Prisma` `PostgreSQL` `BullMQ` `LINE LIFF` `Docker` `Caddy` |
 | **Verso PO/PR — Procurement Workflow** | ระบบจัดซื้อครบวงจร Multi-Level Approval + Budget Validation พร้อม Audit Trail ตามหลัก Internal Control | `Approval Flow` `Budget Control` `Audit Trail` |
 | **M-MERT — ระบบสั่งการการแพทย์ฉุกเฉินทางทะเล** | ระบบสั่งการครบวงจร ครอบคลุมภารกิจ, Triage, คำสั่งแพทย์, ติดตามสัญญาณชีพ — push ข้อมูล Real-time ด้วย SSE พร้อมแผนที่ติดตามตำแหน่ง | `Hono 4` `Effect` `SSE` `Prisma` `Next.js` `Leaflet` |
 | **Clinic Booking + RAG Chat** | ระบบจองคิวผ่าน LINE LIFF พร้อม AI Chat ตอบคำถามอัตโนมัติด้วย RAG ดึงข้อมูลจาก Vector DB | `RAG` `LangChain` `Qdrant` `OpenAI` `LINE LIFF` `Redis` `Prisma` `Sentry` |
@@ -152,7 +153,7 @@ flowchart TD
 ![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat&logo=langchain&logoColor=white)
 ![Turborepo](https://img.shields.io/badge/Turborepo-EF4444?style=flat&logo=turborepo&logoColor=white)
 
-**Architecture & Concepts** · System Design · Multi-tenant SaaS · Queue / Background Job · Real-time (SSE) · RAG / Vector Search · Embedding & Retrieval Pipeline · API Security · RBAC
+**Architecture & Concepts** · System Design · PDPA / Data Protection (Field-level & Envelope Encryption) · Multi-tenant SaaS · Queue / Background Job · Real-time (SSE) · RAG / Vector Search · Embedding & Retrieval Pipeline · API Security · RBAC
 
 ---
 
