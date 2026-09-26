@@ -1172,7 +1172,9 @@
                             <div class="flex gap-2"><span class="text-mint mt-1 shrink-0">▸</span>RBAC + ตรวจความเป็นเจ้าของทุก endpoint (ตอบ 404 แทน 403 กันเดา id) · refresh token แบบ httpOnly + rotation</div>
                             <div class="flex gap-2"><span class="text-mint mt-1 shrink-0">▸</span>แจ้งเตือนรายวันนับวันปฏิทินตามเวลาไทย · retention sweep ลบข้อมูลตามระยะเก็บที่ตั้งไว้</div>
                             <div class="flex gap-2"><span class="text-mint mt-1 shrink-0">▸</span>ไทย/อังกฤษ ทั้งสองแอป — server ส่ง error เป็น code ให้ client แปล · นำเข้า/ส่งออก CSV</div>
-                            <div class="flex gap-2"><span class="text-mint mt-1 shrink-0">▸</span>Deploy บน VPS 1 vCPU / 1 GB แยก prod/UAT · Caddy + Docker hardening (cap_drop, read-only) · CrowdSec</div>
+                            <div class="flex gap-2"><span class="text-mint mt-1 shrink-0">▸</span>Deploy prod + UAT บน VPS 2 vCPU / 8 GB เครื่องเดียว แยก 5 สแตก Docker Compose (infra · edge · prod · uat · monitor) · Caddy auto-TLS + hardening (cap_drop ALL, read-only) · UAT อยู่หลัง basic auth ยกเว้น LINE webhook ที่ตรวจลายเซ็น HMAC</div>
+                            <div class="flex gap-2"><span class="text-mint mt-1 shrink-0">▸</span>CrowdSec + firewall bouncer (iptables/ipset ถึง chain DOCKER-USER) อ่าน log ของ Caddy และ SSH แบน IP ที่ brute-force หรือยิง L7 flood · ปิดการส่ง context ให้ CrowdSec Console เพราะ URI มี id ของผู้เยาว์</div>
+                            <div class="flex gap-2"><span class="text-mint mt-1 shrink-0">▸</span>Monitoring: Netdata + Dozzle + รายงาน GoAccess รายวันพร้อม GeoIP · ทุกหน้าผูก 127.0.0.1 เข้าผ่าน SSH tunnel เท่านั้น · แจ้งเตือนเข้า Telegram (flood, disk watchdog) · access log เก็บ 90 วันแล้วลบตาม PDPA</div>
                         </div>
                         <div class="flex flex-wrap gap-1.5 pt-3 border-t border-line">
                             <span class="inline-flex items-center rounded-md bg-panel2 px-2 py-0.5 font-mono text-[10px] font-medium text-muted">Turborepo</span>
@@ -1187,6 +1189,9 @@
                             <span class="inline-flex items-center rounded-md bg-panel2 px-2 py-0.5 font-mono text-[10px] font-medium text-muted">Messaging API</span>
                             <span class="inline-flex items-center rounded-md bg-panel2 px-2 py-0.5 font-mono text-[10px] font-medium text-muted">Docker</span>
                             <span class="inline-flex items-center rounded-md bg-panel2 px-2 py-0.5 font-mono text-[10px] font-medium text-muted">Caddy</span>
+                            <span class="inline-flex items-center rounded-md bg-panel2 px-2 py-0.5 font-mono text-[10px] font-medium text-muted">CrowdSec</span>
+                            <span class="inline-flex items-center rounded-md bg-panel2 px-2 py-0.5 font-mono text-[10px] font-medium text-muted">Netdata</span>
+                            <span class="inline-flex items-center rounded-md bg-panel2 px-2 py-0.5 font-mono text-[10px] font-medium text-muted">GoAccess</span>
                         </div>
                     </div>
                 </details>

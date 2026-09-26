@@ -58,7 +58,7 @@
 | 📦 **[StockSook](https://stocksook.pixelranklab.com/)** | SaaS ERP + POS สำหรับ SME ไทย ผ่าน LINE Mini App |
 | 🏥 **[Clinic ERP](https://erp-clinic.pixelranklab.com/)** | Multi-tenant B2B SaaS · 6 Microservices · fp-ts |
 | 🚚 **[MoveSook](https://movesook.com/)** | Marketplace เรียกคนขับขนย้าย On-demand · type-safe RPC |
-| 🛂 **VSDMS** (ฟรีแลนซ์) | ระบบ Visa + แจ้งเตือนผ่าน LINE สำหรับโรงเรียน · ออกแบบตาม PDPA — field-level encryption, envelope encryption, Audit Log |
+| 🛂 **VSDMS** (ฟรีแลนซ์) | ระบบ Visa + แจ้งเตือนผ่าน LINE สำหรับโรงเรียน · ออกแบบตาม PDPA — field-level encryption, envelope encryption, Audit Log · CrowdSec + Netdata monitoring |
 
 ---
 
