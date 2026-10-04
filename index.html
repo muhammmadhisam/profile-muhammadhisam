@@ -794,16 +794,16 @@
                                 <div class="flex items-center gap-2 mb-1.5 flex-wrap">
                                     <span class="inline-flex items-center rounded-md bg-mint/10 text-mint border border-mint/30 px-2 py-0.5 font-mono text-[10px] font-medium">B2B SaaS</span>
                                     <span class="inline-flex items-center rounded-md bg-panel2 border border-line px-2 py-0.5 text-xs font-medium text-muted">HealthTech</span>
-                                    <span class="inline-flex items-center rounded-md bg-panel2 border border-line px-2 py-0.5 text-xs font-medium text-muted">6 Microservices</span>
+                                    <span class="inline-flex items-center rounded-md bg-panel2 border border-line px-2 py-0.5 text-xs font-medium text-muted">Privacy-by-design</span>
                                 </div>
                                 <h3 class="font-mono text-base sm:text-lg font-bold leading-snug">
-                                    Clinic ERP — ระบบ ERP + CRM สำหรับคลินิกในไทย
-                                    <a href="https://erp-clinic.pixelranklab.com/" target="_blank" rel="noopener noreferrer"
+                                    Clinic ERP — ระบบบริหารคลินิกความงามแบบตั้งค่าเองได้
+                                    <a href="https://app.clinic.erp.pixelranklab.com/" target="_blank" rel="noopener noreferrer"
                                         class="inline-flex items-center gap-1 text-mint hover:underline ml-1 text-sm font-medium">
-                                        erp-clinic.pixelranklab.com<svg class="h-3 w-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                                        app.clinic.erp.pixelranklab.com<svg class="h-3 w-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                                     </a>
                                 </h3>
-                                <p class="text-sm text-muted mt-0.5">Multi-tenant B2B SaaS</p>
+                                <p class="text-sm text-muted mt-0.5">Config-driven Clinic Platform · แยกฐานข้อมูลต่อคลินิก</p>
                             </div>
                             </div>
                             <svg class="h-5 w-5 shrink-0 text-muted transition-transform duration-200 group-open:rotate-180 mt-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
@@ -844,88 +844,100 @@
                             </div>
                         </div>
                         <p class="text-[14.5px] text-txt/85 leading-relaxed mb-4">
-                            ลองออกแบบ <span class="font-medium text-txt">ระบบ multi-tenant</span>
-                            สำหรับคลินิก แยก Workspace ของแต่ละสาขา ครอบคลุมตั้งแต่นัดหมาย จัดการคนไข้
-                            ไปจนถึงหลังบ้านของ Super-admin — และใช้
-                            <span class="font-medium text-txt">fp-ts</span> จัดการ Error กับ Side-effects
+                            ระบบหลังร้านของ<span class="font-medium text-txt">คลินิกความงาม</span>ที่ทุกอย่าง<span class="font-medium text-txt">ตั้งค่าได้จากหน้าจอ</span>
+                            — ประเภทการรักษา ขั้นตอนในเคส หน่วยนับ ค่ามือ ไม่มีค่าทางธุรกิจฝังในโค้ด ครอบคลุมเวชระเบียน นัดหมายและคิว
+                            เคสการรักษา คลังเวชภัณฑ์ การเงินและภาษี ค่ามือ CRM แอปลูกค้าบน LINE และเว็บขายระบบ
+                            ออกแบบแบบ <span class="font-medium text-txt">privacy-by-design</span> ตั้งแต่ชั้นฐานข้อมูล
                         </p>
                         <div class="grid sm:grid-cols-2 gap-x-6 gap-y-2 text-[14px] text-txt/85 mb-4">
-                            <div class="flex gap-2"><span class="text-mint mt-1 shrink-0">▸</span>แยกเป็น 6 แอปใน Monorepo (API, Web-Clinic, Admin, Patient, Webhook, Worker)</div>
-                            <div class="flex gap-2"><span class="text-mint mt-1 shrink-0">▸</span>Patient Portal สำหรับผู้ป่วยจองนัดออนไลน์</div>
-                            <div class="flex gap-2"><span class="text-mint mt-1 shrink-0">▸</span>SuperTokens Auth (LINE Login + Email) แบบ Multi-tenant</div>
-                            <div class="flex gap-2"><span class="text-mint mt-1 shrink-0">▸</span>BullMQ Worker สำหรับงาน Background &amp; Notification</div>
-                            <div class="flex gap-2"><span class="text-mint mt-1 shrink-0">▸</span>OpenAPI / Scalar Docs สำหรับ Frontend &amp; Integration Partner</div>
-                            <div class="flex gap-2"><span class="text-mint mt-1 shrink-0">▸</span>Cloudflare R2 / S3-compatible Object Storage</div>
+                            <div class="flex gap-2"><span class="text-mint mt-1 shrink-0">▸</span>Monorepo 5 แอป (API · หน้าจอพนักงาน · แอปลูกค้า LINE · ศูนย์ผู้ขาย · เว็บขายระบบ) + shared packages</div>
+                            <div class="flex gap-2"><span class="text-mint mt-1 shrink-0">▸</span>Type-safe ตลอดสาย: Hono <code class="font-mono text-[12.5px]">AppType</code> → <code class="font-mono text-[12.5px]">hc</code> client + Zod schema ร่วมกันทั้ง API และหน้าจอ</div>
+                            <div class="flex gap-2"><span class="text-mint mt-1 shrink-0">▸</span>เคสการรักษาแบบตั้งขั้นตอนเอง ปิดเคสแล้วตัดสต๊อก (Lot / Serial) และคิดค่ามือตามกติกาที่คลินิกตั้ง</div>
+                            <div class="flex gap-2"><span class="text-mint mt-1 shrink-0">▸</span>ข้อมูลอ่อนไหวเข้ารหัสต่อฟิลด์ + blind index ค้นหาได้โดยไม่ถอดรหัส · หน้า list ปิดบังเสมอ · กดเปิดดูต้องมีสิทธิ์และถูกบันทึก</div>
+                            <div class="flex gap-2"><span class="text-mint mt-1 shrink-0">▸</span>RBAC ด้วย permission code · ลบแบบ soft-delete ทุกตาราง · ledger และ audit เป็น append-only</div>
+                            <div class="flex gap-2"><span class="text-mint mt-1 shrink-0">▸</span>แอปลูกค้าบน LINE (LIFF): จองคิว ส่งสลิปมัดจำ ดูคอร์ส แต้ม สมาชิก — หน้าตาแยกรายคลินิกได้ด้วยการตั้งค่า</div>
+                            <div class="flex gap-2"><span class="text-mint mt-1 shrink-0">▸</span>แยกฐานข้อมูลและ API container ต่อคลินิก บน Docker + Caddy · โดเมนย่อยของแต่ละคลินิก</div>
+                            <div class="flex gap-2"><span class="text-mint mt-1 shrink-0">▸</span>ผู้ขายเปิด/ปิดโมดูลต่อคลินิกตามแพ็กเกจ · เว็บขายระบบรับ lead พร้อมความยินยอม PDPA</div>
                         </div>
 
                         <!-- Architecture: Clinic ERP -->
                         <div class="mb-4">
                             <p class="text-xs font-semibold uppercase tracking-wider text-muted mb-2 flex items-center gap-1.5">
                                 <svg class="h-3.5 w-3.5 text-mint" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 5a1 1 0 011-1h5v6H4V5zM14 4h5a1 1 0 011 1v3h-6V4zM14 12h6v7a1 1 0 01-1 1h-5v-8zM4 14h6v6H5a1 1 0 01-1-1v-5z"/></svg>
-                                Architecture — Microservices Monorepo
+                                Architecture — Turborepo Monorepo · ฐานแยกต่อคลินิก
                             </p>
                             <div class="rounded-md border border-line bg-[#171D1E] p-4 overflow-x-auto">
-                                <svg viewBox="0 0 760 244" class="w-full min-w-[660px] h-auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Clinic ERP microservices architecture">
+                                <svg viewBox="0 0 760 252" class="w-full min-w-[660px] h-auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Clinic ERP architecture: four Next.js apps behind Caddy, one Hono API, per-clinic PostgreSQL databases">
                                     <defs>
                                         <marker id="ar-clinic" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#6E807C"/></marker>
                                     </defs>
                                     <!-- Row 1: Clients -->
-                                    <text x="40" y="14" font-size="10" font-weight="600" fill="#6E807C" letter-spacing="0.05em">CLIENTS · Next.js 15 · shadcn/ui</text>
-                                    <g>
-                                        <rect x="40" y="22" width="200" height="44" rx="8" fill="#232B2C" stroke="#36403F"/>
-                                        <text x="140" y="41" font-size="13" font-weight="600" fill="#E4EEEB" text-anchor="middle">Web-Clinic</text>
-                                        <text x="140" y="56" font-size="10.5" fill="#8C9C98" text-anchor="middle">แดชบอร์ดคลินิก</text>
-                                        <rect x="280" y="22" width="200" height="44" rx="8" fill="#232B2C" stroke="#36403F"/>
-                                        <text x="380" y="41" font-size="13" font-weight="600" fill="#E4EEEB" text-anchor="middle">Admin Console</text>
-                                        <text x="380" y="56" font-size="10.5" fill="#8C9C98" text-anchor="middle">Super-admin</text>
-                                        <rect x="520" y="22" width="200" height="44" rx="8" fill="#232B2C" stroke="#36403F"/>
-                                        <text x="620" y="41" font-size="13" font-weight="600" fill="#E4EEEB" text-anchor="middle">Patient Portal</text>
-                                        <text x="620" y="56" font-size="10.5" fill="#8C9C98" text-anchor="middle">จองนัด · LINE Login</text>
-                                    </g>
+                                    <text x="40" y="14" font-size="10" font-weight="600" fill="#6E807C" letter-spacing="0.05em">CLIENTS · Next.js 15 · Tailwind v4 · Radix UI · hc&lt;AppType&gt;</text>
+                                    <rect x="40" y="22" width="155" height="44" rx="8" fill="#232B2C" stroke="#36403F"/>
+                                    <text x="117.5" y="41" font-size="13" font-weight="600" fill="#E4EEEB" text-anchor="middle">Web</text>
+                                    <text x="117.5" y="56" font-size="10.5" fill="#8C9C98" text-anchor="middle">หน้าจอพนักงาน</text>
+                                    <rect x="215" y="22" width="155" height="44" rx="8" fill="#232B2C" stroke="#36403F"/>
+                                    <text x="292.5" y="41" font-size="13" font-weight="600" fill="#E4EEEB" text-anchor="middle">LIFF</text>
+                                    <text x="292.5" y="56" font-size="10.5" fill="#8C9C98" text-anchor="middle">แอปลูกค้าบน LINE</text>
+                                    <rect x="390" y="22" width="155" height="44" rx="8" fill="#232B2C" stroke="#36403F"/>
+                                    <text x="467.5" y="41" font-size="13" font-weight="600" fill="#E4EEEB" text-anchor="middle">Admin</text>
+                                    <text x="467.5" y="56" font-size="10.5" fill="#8C9C98" text-anchor="middle">ศูนย์ผู้ขาย</text>
+                                    <rect x="565" y="22" width="155" height="44" rx="8" fill="#232B2C" stroke="#36403F"/>
+                                    <text x="642.5" y="41" font-size="13" font-weight="600" fill="#E4EEEB" text-anchor="middle">Landing</text>
+                                    <text x="642.5" y="56" font-size="10.5" fill="#8C9C98" text-anchor="middle">เว็บขายระบบ</text>
                                     <!-- Arrows to API -->
-                                    <path d="M140,66 L160,98" stroke="#6E807C" stroke-width="1.4" fill="none" marker-end="url(#ar-clinic)"/>
-                                    <path d="M380,66 L380,98" stroke="#6E807C" stroke-width="1.4" fill="none" marker-end="url(#ar-clinic)"/>
-                                    <path d="M620,66 L470,98" stroke="#6E807C" stroke-width="1.4" fill="none" marker-end="url(#ar-clinic)"/>
-                                    <!-- Row 2: API + Webhook -->
-                                    <rect x="140" y="100" width="400" height="44" rx="8" fill="#10312A" stroke="#2F6F5F"/>
-                                    <text x="340" y="119" font-size="13" font-weight="700" fill="#3EEBC0" text-anchor="middle">API Gateway · Hono 4 · fp-ts</text>
-                                    <text x="340" y="134" font-size="10.5" fill="#79D9C1" text-anchor="middle">Type-safe · Multi-tenant · OpenAPI / Scalar Docs</text>
+                                    <path d="M117,66 L270,98" stroke="#6E807C" stroke-width="1.4" fill="none" marker-end="url(#ar-clinic)"/>
+                                    <path d="M292,66 L330,98" stroke="#6E807C" stroke-width="1.4" fill="none" marker-end="url(#ar-clinic)"/>
+                                    <path d="M467,66 L430,98" stroke="#6E807C" stroke-width="1.4" fill="none" marker-end="url(#ar-clinic)"/>
+                                    <path d="M642,66 L490,98" stroke="#6E807C" stroke-width="1.4" fill="none" marker-end="url(#ar-clinic)"/>
+                                    <!-- Row 2: Caddy + API + LINE -->
+                                    <rect x="40" y="100" width="150" height="44" rx="8" fill="#232B2C" stroke="#36403F"/>
+                                    <text x="115" y="119" font-size="13" font-weight="600" fill="#E4EEEB" text-anchor="middle">Caddy</text>
+                                    <text x="115" y="134" font-size="10.5" fill="#8C9C98" text-anchor="middle">TLS · โดเมนย่อยต่อคลินิก</text>
+                                    <path d="M190,122 L216,122" stroke="#6E807C" stroke-width="1.4" fill="none" marker-end="url(#ar-clinic)"/>
+                                    <rect x="220" y="100" width="340" height="44" rx="8" fill="#10312A" stroke="#2F6F5F"/>
+                                    <text x="390" y="119" font-size="13" font-weight="600" fill="#3EEBC0" text-anchor="middle">API · Hono 4 · Zod · Drizzle</text>
+                                    <text x="390" y="134" font-size="10.5" fill="#79D9C1" text-anchor="middle">staff · public (LINE) · vendor · marketing apps</text>
+                                    <path d="M580,122 L564,122" stroke="#6E807C" stroke-width="1.4" fill="none" marker-end="url(#ar-clinic)"/>
                                     <rect x="580" y="100" width="140" height="44" rx="8" fill="#232B2C" stroke="#36403F"/>
-                                    <text x="650" y="119" font-size="13" font-weight="600" fill="#E4EEEB" text-anchor="middle">Webhook</text>
-                                    <text x="650" y="134" font-size="10.5" fill="#8C9C98" text-anchor="middle">LINE · Payment</text>
-                                    <path d="M580,122 L544,122" stroke="#6E807C" stroke-width="1.4" fill="none" marker-end="url(#ar-clinic)"/>
-                                    <!-- Bus to data layer -->
-                                    <path d="M340,144 L340,160 M122,160 L662,160 M122,160 L122,176 M302,160 L302,176 M482,160 L482,176 M662,160 L662,176" stroke="#6E807C" stroke-width="1.4" fill="none"/>
-                                    <path d="M122,176 L122,178 M302,176 L302,178 M482,176 L482,178 M662,176 L662,178" stroke="#6E807C" stroke-width="1.4" fill="none" marker-end="url(#ar-clinic)"/>
-                                    <!-- Row 3: Data & Async -->
-                                    <text x="40" y="196" font-size="10" font-weight="600" fill="#6E807C" letter-spacing="0.05em">DATA &amp; ASYNC LAYER</text>
-                                    <rect x="40" y="200" width="165" height="40" rx="8" fill="#1D2425" stroke="#36403F"/>
-                                    <text x="122" y="217" font-size="12.5" font-weight="600" fill="#E4EEEB" text-anchor="middle">PostgreSQL 16</text>
-                                    <text x="122" y="231" font-size="10" fill="#8C9C98" text-anchor="middle">per-tenant schema</text>
-                                    <rect x="220" y="200" width="165" height="40" rx="8" fill="#1D2425" stroke="#36403F"/>
-                                    <text x="302" y="217" font-size="12.5" font-weight="600" fill="#E4EEEB" text-anchor="middle">BullMQ Worker</text>
-                                    <text x="302" y="231" font-size="10" fill="#8C9C98" text-anchor="middle">Redis · Notification</text>
-                                    <rect x="400" y="200" width="165" height="40" rx="8" fill="#1D2425" stroke="#36403F"/>
-                                    <text x="482" y="217" font-size="12.5" font-weight="600" fill="#E4EEEB" text-anchor="middle">SuperTokens</text>
-                                    <text x="482" y="231" font-size="10" fill="#8C9C98" text-anchor="middle">Auth · Multi-tenant</text>
-                                    <rect x="580" y="200" width="165" height="40" rx="8" fill="#1D2425" stroke="#36403F"/>
-                                    <text x="662" y="217" font-size="12.5" font-weight="600" fill="#E4EEEB" text-anchor="middle">Cloudflare R2</text>
-                                    <text x="662" y="231" font-size="10" fill="#8C9C98" text-anchor="middle">Object Storage</text>
+                                    <text x="650" y="119" font-size="13" font-weight="600" fill="#E4EEEB" text-anchor="middle">LINE Platform</text>
+                                    <text x="650" y="134" font-size="10.5" fill="#8C9C98" text-anchor="middle">ID token · Messaging</text>
+                                    <!-- Bus to data & security layer -->
+                                    <path d="M390,144 L390,160 M122,160 L662,160" stroke="#6E807C" stroke-width="1.4" fill="none"/>
+                                    <path d="M122,160 L122,182" stroke="#6E807C" stroke-width="1.4" fill="none" marker-end="url(#ar-clinic)"/>
+                                    <path d="M302,160 L302,182" stroke="#6E807C" stroke-width="1.4" fill="none" marker-end="url(#ar-clinic)"/>
+                                    <path d="M482,160 L482,182" stroke="#6E807C" stroke-width="1.4" fill="none" marker-end="url(#ar-clinic)"/>
+                                    <path d="M662,160 L662,182" stroke="#6E807C" stroke-width="1.4" fill="none" marker-end="url(#ar-clinic)"/>
+                                    <rect x="40" y="186" width="165" height="44" rx="8" fill="#1D2425" stroke="#36403F"/>
+                                    <text x="122.5" y="205" font-size="12.5" font-weight="600" fill="#E4EEEB" text-anchor="middle">PostgreSQL 17</text>
+                                    <text x="122.5" y="220" font-size="10.5" fill="#8C9C98" text-anchor="middle">ฐานแยกต่อคลินิก</text>
+                                    <rect x="220" y="186" width="165" height="44" rx="8" fill="#1D2425" stroke="#36403F"/>
+                                    <text x="302.5" y="205" font-size="12.5" font-weight="600" fill="#E4EEEB" text-anchor="middle">@erp/security</text>
+                                    <text x="302.5" y="220" font-size="10.5" fill="#8C9C98" text-anchor="middle">AES-256-GCM · blind index</text>
+                                    <rect x="400" y="186" width="165" height="44" rx="8" fill="#1D2425" stroke="#36403F"/>
+                                    <text x="482.5" y="205" font-size="12.5" font-weight="600" fill="#E4EEEB" text-anchor="middle">Encrypted Blobs</text>
+                                    <text x="482.5" y="220" font-size="10.5" fill="#8C9C98" text-anchor="middle">envelope encryption</text>
+                                    <rect x="580" y="186" width="165" height="44" rx="8" fill="#1D2425" stroke="#36403F"/>
+                                    <text x="662.5" y="205" font-size="12.5" font-weight="600" fill="#E4EEEB" text-anchor="middle">Audit Log</text>
+                                    <text x="662.5" y="220" font-size="10.5" fill="#8C9C98" text-anchor="middle">append-only · ลบไม่ได้</text>
                                 </svg>
                             </div>
                         </div>
 
                         <div class="flex flex-wrap gap-1.5 pt-3 border-t border-line">
                             <span class="inline-flex items-center rounded-md bg-panel2 px-2 py-0.5 font-mono text-[10px] font-medium text-muted">Turborepo</span>
+                            <span class="inline-flex items-center rounded-md bg-panel2 px-2 py-0.5 font-mono text-[10px] font-medium text-muted">pnpm</span>
                             <span class="inline-flex items-center rounded-md bg-panel2 px-2 py-0.5 font-mono text-[10px] font-medium text-muted">Hono 4</span>
-                            <span class="inline-flex items-center rounded-md bg-panel2 px-2 py-0.5 font-mono text-[10px] font-medium text-muted">fp-ts</span>
+                            <span class="inline-flex items-center rounded-md bg-panel2 px-2 py-0.5 font-mono text-[10px] font-medium text-muted">Zod 4</span>
+                            <span class="inline-flex items-center rounded-md bg-panel2 px-2 py-0.5 font-mono text-[10px] font-medium text-muted">Drizzle ORM</span>
+                            <span class="inline-flex items-center rounded-md bg-panel2 px-2 py-0.5 font-mono text-[10px] font-medium text-muted">PostgreSQL 17</span>
                             <span class="inline-flex items-center rounded-md bg-panel2 px-2 py-0.5 font-mono text-[10px] font-medium text-muted">Next.js 15</span>
                             <span class="inline-flex items-center rounded-md bg-panel2 px-2 py-0.5 font-mono text-[10px] font-medium text-muted">TanStack Query</span>
-                            <span class="inline-flex items-center rounded-md bg-panel2 px-2 py-0.5 font-mono text-[10px] font-medium text-muted">shadcn/ui</span>
-                            <span class="inline-flex items-center rounded-md bg-panel2 px-2 py-0.5 font-mono text-[10px] font-medium text-muted">PostgreSQL 16</span>
-                            <span class="inline-flex items-center rounded-md bg-panel2 px-2 py-0.5 font-mono text-[10px] font-medium text-muted">BullMQ + Redis</span>
-                            <span class="inline-flex items-center rounded-md bg-panel2 px-2 py-0.5 font-mono text-[10px] font-medium text-muted">SuperTokens</span>
-                            <span class="inline-flex items-center rounded-md bg-panel2 px-2 py-0.5 font-mono text-[10px] font-medium text-muted">Cloudflare R2</span>
+                            <span class="inline-flex items-center rounded-md bg-panel2 px-2 py-0.5 font-mono text-[10px] font-medium text-muted">Tailwind v4</span>
+                            <span class="inline-flex items-center rounded-md bg-panel2 px-2 py-0.5 font-mono text-[10px] font-medium text-muted">Radix UI</span>
+                            <span class="inline-flex items-center rounded-md bg-panel2 px-2 py-0.5 font-mono text-[10px] font-medium text-muted">LINE LIFF</span>
+                            <span class="inline-flex items-center rounded-md bg-panel2 px-2 py-0.5 font-mono text-[10px] font-medium text-muted">Vitest</span>
+                            <span class="inline-flex items-center rounded-md bg-panel2 px-2 py-0.5 font-mono text-[10px] font-medium text-muted">Docker + Caddy</span>
                         </div>
                     </div>
                 </details>
@@ -1776,7 +1788,7 @@
             <img src="assets/projects/stocksook-02.webp" alt="StockSook — ฟีเจอร์จัดการสต๊อก ขายหน้าร้าน และรายงาน" />
             <img src="assets/projects/stocksook-03.webp" alt="StockSook — ขั้นตอนเริ่มต้นใช้งาน 3 ขั้นตอน" />
         </template>
-        <template data-gallery-src="clinic-erp" data-gallery-title="Clinic ERP — ERP + CRM สำหรับคลินิก">
+        <template data-gallery-src="clinic-erp" data-gallery-title="Clinic ERP — ระบบบริหารคลินิกความงามแบบตั้งค่าเองได้">
             <img src="assets/projects/clinic-erp-02.webp" alt="Clinic ERP — ดีไซน์ Liquid Glass: เว็บขายระบบ (Landing page) ส่วนหัวและตัวเลขสำคัญ" />
             <img src="assets/projects/clinic-erp-03.webp" alt="Clinic ERP — ดีไซน์ Liquid Glass: แอปลูกค้าบน LINE (LIFF) หน้าแรก การเงินของฉัน แต้มสะสม และสมาชิก" />
             <img src="assets/projects/clinic-erp-04.webp" alt="Clinic ERP — ดีไซน์ Liquid Glass: แอปลูกค้าบน LINE (LIFF) จองคิว เลือกวัน เวลา ยืนยัน และส่งคำขอ" />

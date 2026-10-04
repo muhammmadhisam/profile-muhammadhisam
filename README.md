@@ -109,7 +109,7 @@ flowchart TD
 | Project | Highlight | Stack |
 |---------|-----------|-------|
 | **[StockSook](https://stocksook.pixelranklab.com/)** 🔗 | ERP + POS ขนาดเล็กสำหรับร้าน SME เข้าใช้ผ่าน LINE Mini App | `Turborepo` `Next.js 15` `Hono` `PostgreSQL` `LINE LIFF` |
-| **[Clinic ERP](https://erp-clinic.pixelranklab.com/)** 🔗 | Multi-tenant B2B SaaS แยกบริการ 6 ส่วน · fp-ts · SuperTokens | `Hono 4` `fp-ts` `BullMQ` `Cloudflare R2` |
+| **[Clinic ERP](https://app.clinic.erp.pixelranklab.com/)** 🔗 | ระบบบริหารคลินิกความงามแบบตั้งค่าเองได้ · แอปลูกค้าบน LINE · ฐานแยกต่อคลินิก · privacy-by-design | `Hono 4` `Drizzle` `PostgreSQL 17` `Next.js 15` `LINE LIFF` |
 | **[MeawSook](https://meawsook.com/)** 🔗 | แมวหาย + บริจาคอาหารที่ตรวจสอบย้อนหลังได้ · AI จับคู่ใบหน้าแมวด้วย Vector Search | `Voyage MM-3` `pgvector` `LINE LIFF` |
 | **[MoveSook](https://movesook.com/)** 🔗 | Two-sided marketplace เรียกคนขับขนย้าย On-demand · end-to-end type-safe RPC | `Next.js` `Hono` `Prisma` `Zod` `Turborepo` |
 | **EMS-ECI** | ระบบบันทึกผู้ป่วย & Checklist สำหรับพยาบาล ทดแทนกระดาษ | `Next.js 16` `Prisma 7` `better-auth` `ExcelJS` |
