@@ -8,6 +8,22 @@
     <meta name="description"
         content="Portfolio และ Resume ของ Muhammadhisam Pala (มูฮัมหมัดฮีซาม ปาล๊ะ) — Software Developer สาย TypeScript, Node.js, Bun" />
     <meta name="theme-color" content="#14181A" />
+    <meta name="color-scheme" content="dark light" />
+    <script>
+        // ตั้งธีมก่อนวาดหน้าจอ เพื่อไม่ให้จอกระพริบตอนโหลด
+        (function () {
+            var root = document.documentElement;
+            var saved = null;
+            try { saved = localStorage.getItem("theme"); } catch (e) { }
+            var prefersLight = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches;
+            root.setAttribute("data-theme", saved === "light" || saved === "dark" ? saved : (prefersLight ? "light" : "dark"));
+            root.classList.add("js");
+            var seen = null;
+            try { seen = sessionStorage.getItem("booted"); } catch (e) { }
+            var calm = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            if (!seen && !calm) root.classList.add("booting");
+        })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -23,35 +39,93 @@
                         mono: ['JetBrains Mono', 'IBM Plex Sans Thai', 'ui-monospace', 'monospace'],
                         display: ['Josefin Sans', 'IBM Plex Sans Thai', 'sans-serif'],
                     },
+                    // สีทั้งหมดอ้างอิง CSS variables เพื่อสลับโหมดมืด/สว่างได้
                     colors: {
-                        ink: '#14181A',
-                        panel: '#1E2426',
-                        panel2: '#262E30',
-                        line: '#2F3A3B',
-                        mint: '#3EEBC0',
-                        mintdim: '#1F8C74',
-                        txt: '#E4EEEB',
-                        muted: '#8C9C98',
+                        ink: 'rgb(var(--c-ink) / <alpha-value>)',
+                        panel: 'rgb(var(--c-panel) / <alpha-value>)',
+                        panel2: 'rgb(var(--c-panel2) / <alpha-value>)',
+                        code: 'rgb(var(--c-code) / <alpha-value>)',
+                        line: 'rgb(var(--c-line) / <alpha-value>)',
+                        mint: 'rgb(var(--c-mint) / <alpha-value>)',
+                        mintdim: 'rgb(var(--c-mintdim) / <alpha-value>)',
+                        txt: 'rgb(var(--c-txt) / <alpha-value>)',
+                        muted: 'rgb(var(--c-muted) / <alpha-value>)',
                     },
                 },
             },
         }
     </script>
     <style>
+        /* ================= THEME TOKENS ================= */
+        /* ค่าสีเก็บเป็นช่อง R G B เพื่อให้ Tailwind ใส่ความโปร่งใส (/70, /85) ได้ */
+        :root {
+            --c-ink: 20 24 26;
+            --c-panel: 30 36 38;
+            --c-panel2: 38 46 48;
+            --c-code: 23 29 30;
+            --c-line: 47 58 59;
+            --c-mint: 62 235 192;
+            --c-mintdim: 31 140 116;
+            --c-txt: 228 238 235;
+            --c-muted: 140 156 152;
+            --c-onmint: 11 15 16;
+
+            /* สีในแผนภาพสถาปัตยกรรม (SVG) */
+            --d-box: #232B2C;
+            --d-box2: #1D2425;
+            --d-stroke: #36403F;
+            --d-line: #6E807C;
+            --d-hl: #10312A;
+            --d-hlstroke: #2F6F5F;
+            --d-hltext: #79D9C1;
+
+            --glow: 0.35;
+            --topo-opacity: 0.09;
+            --grid-opacity: 0.07;
+            color-scheme: dark;
+        }
+
+        :root[data-theme="light"] {
+            --c-ink: 242 246 245;
+            --c-panel: 255 255 255;
+            --c-panel2: 232 239 237;
+            --c-code: 248 251 250;
+            --c-line: 208 220 217;
+            --c-mint: 8 122 96;
+            --c-mintdim: 11 94 75;
+            --c-txt: 14 26 27;
+            --c-muted: 81 98 94;
+            --c-onmint: 255 255 255;
+
+            --d-box: #FFFFFF;
+            --d-box2: #F3F7F6;
+            --d-stroke: #C3D1CD;
+            --d-line: #7A8B87;
+            --d-hl: #DCF3EC;
+            --d-hlstroke: #6FC2AA;
+            --d-hltext: #0B6E57;
+
+            --glow: 0.12;
+            --topo-opacity: 0.14;
+            --grid-opacity: 0.09;
+            color-scheme: light;
+        }
+
         html {
             scroll-behavior: smooth;
         }
 
         body {
             font-family: 'IBM Plex Sans Thai', 'JetBrains Mono', sans-serif;
-            background: #14181A;
-            color: #E4EEEB;
+            background: rgb(var(--c-ink));
+            color: rgb(var(--c-txt));
             -webkit-font-smoothing: antialiased;
+            transition: background-color .4s ease, color .4s ease;
         }
 
         ::selection {
-            background: #3EEBC0;
-            color: #0B0F10;
+            background: rgb(var(--c-mint));
+            color: rgb(var(--c-onmint));
         }
 
         ::-webkit-scrollbar {
@@ -60,27 +134,33 @@
         }
 
         ::-webkit-scrollbar-track {
-            background: #14181A;
+            background: rgb(var(--c-ink));
         }
 
         ::-webkit-scrollbar-thumb {
-            background: #2F3A3B;
+            background: rgb(var(--c-line));
             border-radius: 999px;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: #1F8C74;
+            background: rgb(var(--c-mintdim));
         }
 
         :focus-visible {
-            outline: 2px solid #3EEBC0;
+            outline: 2px solid rgb(var(--c-mint));
             outline-offset: 2px;
             border-radius: 4px;
         }
 
+        /* ข้อความบนพื้นมิ้นต์ (ปุ่ม/ป้าย) ต้องคมทั้งสองโหมด */
+        .bg-mint.text-ink,
+        .bg-mint .text-ink {
+            color: rgb(var(--c-onmint));
+        }
+
         /* กรอบไล่สีมิ้นต์แบบการ์ดโปรไฟล์ในเทมเพลต */
         .frame-cut {
-            border: 2px solid #3EEBC0;
+            border: 2px solid rgb(var(--c-mint));
             border-radius: 76px 12px 76px 12px;
         }
 
@@ -90,17 +170,17 @@
 
         /* ป้ายหัวข้อแบบมีเงาออฟเซ็ต */
         .tag-heading {
-            border: 2px solid #3EEBC0;
+            border: 2px solid rgb(var(--c-mint));
             border-radius: 10px;
-            box-shadow: 6px 6px 0 rgba(62, 235, 192, 0.18);
+            box-shadow: 6px 6px 0 rgb(var(--c-mint) / 0.18);
         }
 
         .glow-mint {
-            text-shadow: 0 0 28px rgba(62, 235, 192, 0.35);
+            text-shadow: 0 0 28px rgb(var(--c-mint) / var(--glow));
         }
 
         .code-tag {
-            color: #1F8C74;
+            color: rgb(var(--c-mintdim));
             font-family: 'JetBrains Mono', monospace;
             font-size: 12px;
         }
@@ -117,6 +197,21 @@
             transform: rotate(180deg);
         }
 
+        /* ---------- แผนภาพ SVG ใช้สีตามธีม ---------- */
+        svg [fill="#232B2C"] { fill: var(--d-box); }
+        svg [fill="#1D2425"] { fill: var(--d-box2); }
+        svg [fill="#10312A"] { fill: var(--d-hl); }
+        svg [fill="#79D9C1"] { fill: var(--d-hltext); }
+        svg [fill="#6E807C"] { fill: var(--d-line); }
+        svg [fill="#8C9C98"] { fill: rgb(var(--c-muted)); }
+        svg [fill="#E4EEEB"] { fill: rgb(var(--c-txt)); }
+        svg [fill="#3EEBC0"] { fill: rgb(var(--c-mint)); }
+        svg [stroke="#36403F"] { stroke: var(--d-stroke); }
+        svg [stroke="#2F6F5F"] { stroke: var(--d-hlstroke); }
+        svg [stroke="#6E807C"] { stroke: var(--d-line); }
+        svg [stroke="#3EEBC0"] { stroke: rgb(var(--c-mint)); }
+
+        /* ================= BACKGROUND LAYERS ================= */
         .topo {
             position: fixed;
             inset: 0;
@@ -124,18 +219,462 @@
             height: 100%;
             z-index: 0;
             pointer-events: none;
+            color: rgb(var(--c-mint));
+        }
+
+        .topo g[stroke] {
+            stroke-opacity: var(--topo-opacity);
+        }
+
+        /* ตารางดิจิทัลจาง ๆ + แสงตามเมาส์ */
+        .cyber-grid {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background-image:
+                linear-gradient(rgb(var(--c-mint) / var(--grid-opacity)) 1px, transparent 1px),
+                linear-gradient(90deg, rgb(var(--c-mint) / var(--grid-opacity)) 1px, transparent 1px);
+            background-size: 56px 56px;
+            -webkit-mask-image: radial-gradient(420px circle at var(--mx, 50%) var(--my, 30%), #000 0%, transparent 70%);
+            mask-image: radial-gradient(420px circle at var(--mx, 50%) var(--my, 30%), #000 0%, transparent 70%);
+        }
+
+        .spotlight {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background: radial-gradient(600px circle at var(--mx, 50%) var(--my, 30%), rgb(var(--c-mint) / 0.06), transparent 60%);
+        }
+
+        /* แถบความคืบหน้าการเลื่อน */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            z-index: 70;
+            transform-origin: 0 50%;
+            transform: scaleX(var(--progress, 0));
+            background: linear-gradient(90deg, rgb(var(--c-mintdim)), rgb(var(--c-mint)));
+            box-shadow: 0 0 12px rgb(var(--c-mint) / 0.6);
+        }
+
+        /* ================= HERO 3D ================= */
+        .hero-3d {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* พื้นตาราง 3 มิติไหลเข้าหาผู้ชม */
+        .hero-floor {
+            position: absolute;
+            left: -50%;
+            right: -50%;
+            bottom: -2px;
+            height: 46%;
+            z-index: 0;
+            pointer-events: none;
+            perspective: 420px;
+            perspective-origin: 50% 0%;
+            -webkit-mask-image: linear-gradient(to top, #000 10%, transparent 95%);
+            mask-image: linear-gradient(to top, #000 10%, transparent 95%);
+        }
+
+        .hero-floor::before {
+            content: "";
+            position: absolute;
+            inset: 0 0 -60% 0;
+            transform: rotateX(68deg);
+            transform-origin: 50% 0%;
+            background-image:
+                linear-gradient(rgb(var(--c-mint) / 0.32) 1px, transparent 1px),
+                linear-gradient(90deg, rgb(var(--c-mint) / 0.32) 1px, transparent 1px);
+            background-size: 64px 64px;
+            animation: floor-move 2.6s linear infinite;
+        }
+
+        :root[data-theme="light"] .hero-floor::before {
+            background-image:
+                linear-gradient(rgb(var(--c-mint) / 0.22) 1px, transparent 1px),
+                linear-gradient(90deg, rgb(var(--c-mint) / 0.22) 1px, transparent 1px);
+        }
+
+        @keyframes floor-move {
+            to {
+                background-position: 0 64px;
+            }
+        }
+
+        /* คำว่า Developer: ตัวอักษรนูนแบบโฮโลแกรม */
+        .holo-word {
+            position: relative;
+            text-shadow:
+                0 0 28px rgb(var(--c-mint) / var(--glow)),
+                1px 1px 0 rgb(var(--c-mintdim) / 0.9),
+                2px 2px 0 rgb(var(--c-mintdim) / 0.6),
+                3px 3px 0 rgb(var(--c-mintdim) / 0.35);
+            transform: perspective(800px) rotateX(var(--hx, 0deg)) rotateY(var(--hy, 0deg));
+            transition: transform .3s ease-out;
+        }
+
+        .holo-word .scr {
+            color: rgb(var(--c-txt) / 0.55);
+        }
+
+        .status-dot {
+            position: relative;
+        }
+
+        .status-dot::after {
+            content: "";
+            position: absolute;
+            inset: -4px;
+            border-radius: 999px;
+            border: 1px solid rgb(var(--c-mint));
+            animation: ping 1.8s cubic-bezier(0, 0, .2, 1) infinite;
+        }
+
+        @keyframes ping {
+            75%,
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+
+        /* เส้นแสงสแกนผ่านการ์ดโปรไฟล์ */
+        .scanline {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scanline::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: -30%;
+            height: 30%;
+            pointer-events: none;
+            background: linear-gradient(to bottom, transparent, rgb(var(--c-mint) / 0.12), transparent);
+            animation: scan 5s ease-in-out infinite;
+        }
+
+        @keyframes scan {
+            0% {
+                top: -30%;
+            }
+
+            60%,
+            100% {
+                top: 110%;
+            }
+        }
+
+        /* ================= 3D TILT CARDS ================= */
+        .tilt.tilt {
+            position: relative;
+            transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateZ(0);
+            transition-property: transform, border-color, box-shadow, background-color, color;
+            transition-duration: .5s;
+            transition-timing-function: cubic-bezier(.2, .8, .2, 1);
+            will-change: transform;
+        }
+
+        .tilt.is-tilting {
+            transition-duration: .12s;
+            box-shadow: 0 24px 48px -24px rgb(var(--c-mint) / 0.35);
+        }
+
+        /* แสงสะท้อนตามตำแหน่งเมาส์ */
+        .tilt::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity .3s;
+            background: radial-gradient(380px circle at var(--gx, 50%) var(--gy, 50%), rgb(var(--c-mint) / 0.14), transparent 45%);
+        }
+
+        .tilt.is-tilting::after {
             opacity: 1;
         }
 
-        @media (prefers-reduced-motion: reduce) {
-            html {
-                scroll-behavior: auto;
-            }
+        /* ================= 3D SCROLL REVEAL ================= */
+        .js .reveal {
+            opacity: 0;
+            translate: 0 48px 0;
+            rotate: x 16deg;
+            scale: .97;
+            filter: blur(6px);
+            transform-origin: 50% 0%;
+            transition: opacity .8s cubic-bezier(.2, .8, .2, 1), translate .9s cubic-bezier(.2, .8, .2, 1),
+                rotate .9s cubic-bezier(.2, .8, .2, 1), scale .9s cubic-bezier(.2, .8, .2, 1), filter .8s ease;
+            transition-delay: var(--d, 0ms);
+        }
 
-            * {
-                transition-duration: .01ms !important;
-                animation-duration: .01ms !important;
+        .js .reveal.in {
+            opacity: 1;
+            translate: 0 0 0;
+            rotate: x 0deg;
+            scale: 1;
+            filter: none;
+        }
+
+        /* ================= THEME TOGGLE ================= */
+        .theme-toggle .i-sun,
+        :root[data-theme="light"] .theme-toggle .i-moon {
+            display: none;
+        }
+
+        :root[data-theme="light"] .theme-toggle .i-sun {
+            display: block;
+        }
+
+        .theme-toggle svg {
+            transition: transform .5s cubic-bezier(.2, .8, .2, 1);
+        }
+
+        .theme-toggle:hover svg {
+            transform: rotate(-30deg) scale(1.1);
+        }
+
+        ::view-transition-old(root),
+        ::view-transition-new(root) {
+            animation: none;
+            mix-blend-mode: normal;
+        }
+
+        /* ลากหมุนทรงกลมใน Hero */
+        .can-spin {
+            cursor: grab;
+        }
+
+        .can-spin.is-spinning {
+            cursor: grabbing;
+            user-select: none;
+        }
+
+        /* ================= LIGHT MODE: การ์ดกระจก ================= */
+        :root[data-theme="light"] :is(#about, #experience, #projects, #side-projects, #skills, #contact) :is(article, details, .rounded-2xl.border, .rounded-xl.border),
+        :root[data-theme="light"] #top :is(.frame-cut-inner, .rounded-\[40px\]) {
+            background-color: rgb(255 255 255 / 0.6);
+            -webkit-backdrop-filter: blur(14px) saturate(1.4);
+            backdrop-filter: blur(14px) saturate(1.4);
+            box-shadow:
+                inset 0 1px 0 rgb(255 255 255 / 0.9),
+                0 1px 2px rgb(14 26 27 / 0.04),
+                0 14px 34px -14px rgb(14 26 27 / 0.16);
+        }
+
+        :root[data-theme="light"] :is(#experience, #projects, #skills) .tilt.is-tilting {
+            box-shadow:
+                inset 0 1px 0 rgb(255 255 255 / 0.9),
+                0 26px 50px -22px rgb(var(--c-mint) / 0.35);
+        }
+
+        /* ================= เคอร์เซอร์เรืองแสง ================= */
+        .cursor-ring,
+        .cursor-dot {
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 90;
+            pointer-events: none;
+            border-radius: 999px;
+            opacity: 0;
+            transition: opacity .3s ease;
+        }
+
+        .cursor-ring {
+            width: 38px;
+            height: 38px;
+            margin: -19px 0 0 -19px;
+            border: 1px solid rgb(var(--c-mint) / 0.7);
+            box-shadow: 0 0 18px rgb(var(--c-mint) / 0.4), inset 0 0 12px rgb(var(--c-mint) / 0.2);
+            transition: opacity .3s ease, width .25s ease, height .25s ease, margin .25s ease, background-color .25s ease;
+        }
+
+        .cursor-dot {
+            width: 6px;
+            height: 6px;
+            margin: -3px 0 0 -3px;
+            background: rgb(var(--c-mint));
+            box-shadow: 0 0 10px 2px rgb(var(--c-mint) / 0.7);
+        }
+
+        .cursor-on .cursor-ring,
+        .cursor-on .cursor-dot {
+            opacity: 1;
+        }
+
+        .cursor-ring.is-hover {
+            width: 62px;
+            height: 62px;
+            margin: -31px 0 0 -31px;
+            background-color: rgb(var(--c-mint) / 0.08);
+        }
+
+        .cursor-ring.is-down {
+            width: 28px;
+            height: 28px;
+            margin: -14px 0 0 -14px;
+        }
+
+        /* ================= TIMELINE เรืองแสง ================= */
+        .tl-beam {
+            position: absolute;
+            left: -1px;
+            top: 0;
+            width: 2px;
+            height: calc(var(--tl, 0) * 100%);
+            pointer-events: none;
+            background: linear-gradient(to bottom, rgb(var(--c-mint) / 0), rgb(var(--c-mint)) 12%, rgb(var(--c-mint)));
+            box-shadow: 0 0 12px rgb(var(--c-mint) / 0.7);
+        }
+
+        .tl-beam::after {
+            content: "";
+            position: absolute;
+            bottom: -4px;
+            left: -3px;
+            width: 8px;
+            height: 8px;
+            border-radius: 999px;
+            background: rgb(var(--c-mint));
+            box-shadow: 0 0 16px 5px rgb(var(--c-mint) / 0.6);
+        }
+
+        .tl-dot {
+            transition: border-color .4s ease, box-shadow .4s ease;
+        }
+
+        .tl-dot>span {
+            transition: background-color .4s ease;
+        }
+
+        .tl-active .tl-dot {
+            border-color: rgb(var(--c-mint));
+            box-shadow: 0 0 0 4px rgb(var(--c-mint) / 0.15), 0 0 18px rgb(var(--c-mint) / 0.8);
+        }
+
+        .tl-active .tl-dot>span {
+            background-color: rgb(var(--c-mint));
+        }
+
+        /* ================= BOOT SCREEN ================= */
+        .boot {
+            display: none;
+        }
+
+        .booting .boot {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            background: rgb(var(--c-ink));
+            /* กันค้าง: ถ้าสคริปต์ไม่ทำงาน หน้าโหลดจะหายไปเอง */
+            animation: boot-failsafe .01s 6s forwards;
+        }
+
+        .booting body {
+            overflow: hidden;
+        }
+
+        .boot.is-leaving {
+            animation: boot-out .75s cubic-bezier(.7, 0, .3, 1) forwards;
+        }
+
+        @keyframes boot-failsafe {
+            to {
+                opacity: 0;
+                visibility: hidden;
             }
+        }
+
+        @keyframes boot-out {
+            to {
+                opacity: 0;
+                visibility: hidden;
+                transform: perspective(900px) rotateX(16deg) scale(1.12);
+                filter: blur(8px);
+            }
+        }
+
+        .boot-box {
+            width: 100%;
+            max-width: 520px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: rgb(var(--c-txt) / 0.85);
+        }
+
+        .boot-log {
+            min-height: 9.5em;
+            white-space: pre-wrap;
+            line-height: 1.7;
+        }
+
+        .boot-log .ok {
+            color: rgb(var(--c-mint));
+        }
+
+        .boot-bar {
+            margin-top: 16px;
+            height: 2px;
+            background: rgb(var(--c-line));
+            overflow: hidden;
+        }
+
+        .boot-bar>span {
+            display: block;
+            height: 100%;
+            width: calc(var(--boot, 0) * 100%);
+            background: rgb(var(--c-mint));
+            box-shadow: 0 0 12px rgb(var(--c-mint));
+            transition: width .2s ease;
+        }
+
+        /* ================= MOBILE MENU ================= */
+        .mobile-menu {
+            transform-origin: top;
+            animation: menu-in .35s cubic-bezier(.2, .8, .2, 1);
+        }
+
+        @keyframes menu-in {
+            from {
+                opacity: 0;
+                transform: perspective(700px) rotateX(-20deg) translateY(-8px);
+            }
+        }
+
+        .menu-toggle .bar {
+            transition: transform .3s ease, opacity .2s ease;
+            transform-origin: center;
+        }
+
+        .menu-toggle[aria-expanded="true"] .bar-1 {
+            transform: translateY(5px) rotate(45deg);
+        }
+
+        .menu-toggle[aria-expanded="true"] .bar-2 {
+            opacity: 0;
+        }
+
+        .menu-toggle[aria-expanded="true"] .bar-3 {
+            transform: translateY(-5px) rotate(-45deg);
         }
 
         @keyframes dotfall {
@@ -157,16 +696,71 @@
         .dot-fall {
             animation: dotfall 1.8s ease-in-out infinite;
         }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: .01ms !important;
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+            }
+
+            .js .reveal {
+                opacity: 1;
+                translate: none;
+                rotate: none;
+                scale: none;
+                filter: none;
+            }
+        }
+
+        @media print {
+            .js .reveal {
+                opacity: 1;
+                translate: none;
+                rotate: none;
+                scale: none;
+                filter: none;
+            }
+
+            .boot,
+            .cursor-ring,
+            .cursor-dot,
+            .hero-3d,
+            .hero-floor,
+            .cyber-grid,
+            .spotlight,
+            .scroll-progress {
+                display: none;
+            }
+        }
     </style>
 </head>
 
 <body class="font-sans antialiased">
 
+    <!-- หน้าโหลดแบบ terminal (แสดงครั้งแรกของแต่ละ session) -->
+    <div class="boot" id="boot" aria-hidden="true">
+        <div class="boot-box">
+            <p class="mb-3 text-[11px] tracking-[0.25em] uppercase text-muted"><span class="text-mint">&lt;C/&gt;</span> hisam.os</p>
+            <div class="boot-log" id="boot-log"></div>
+            <div class="boot-bar"><span></span></div>
+            <p class="mt-3 text-[10px] text-muted">กดปุ่มใดก็ได้หรือคลิกเพื่อข้าม</p>
+        </div>
+    </div>
+    <div class="cursor-ring" aria-hidden="true"></div>
+    <div class="cursor-dot" aria-hidden="true"></div>
+
     <!-- พื้นหลังลายเส้นชั้นความสูง (topographic) -->
     <svg class="topo" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
         <defs>
             <pattern id="topo" width="460" height="420" patternUnits="userSpaceOnUse">
-                <g fill="none" stroke="#3EEBC0" stroke-opacity="0.09" stroke-width="1">
+                <g fill="none" stroke="currentColor" stroke-width="1">
                     <g transform="translate(120 110) rotate(-18)">
                         <ellipse rx="26" ry="16" />
                         <ellipse rx="48" ry="30" />
@@ -213,6 +807,9 @@
         </defs>
         <rect width="100%" height="100%" fill="url(#topo)" />
     </svg>
+    <div class="cyber-grid" aria-hidden="true"></div>
+    <div class="spotlight" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true"></div>
 
     <div class="relative z-10">
 
@@ -251,6 +848,20 @@
                             </svg>
                             <span class="hidden sm:inline">LinkedIn</span>
                         </a>
+                        <button type="button" id="theme-toggle" aria-label="สลับโหมดมืด/สว่าง"
+                            class="theme-toggle grid h-8 w-8 place-items-center rounded-md border border-line bg-panel/70 text-muted hover:border-mint hover:text-mint transition-colors">
+                            <svg class="i-moon h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8"
+                                viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M20 14.5A8.5 8.5 0 019.5 4a8.5 8.5 0 1010.5 10.5z" />
+                            </svg>
+                            <svg class="i-sun h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8"
+                                viewBox="0 0 24 24" aria-hidden="true">
+                                <circle cx="12" cy="12" r="4" />
+                                <path stroke-linecap="round"
+                                    d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+                            </svg>
+                        </button>
                         <a href="mailto:muhammadhisam.pala@gmail.com"
                             class="inline-flex items-center gap-1.5 rounded-md border border-mint/40 bg-mint/10 px-2.5 py-1.5 text-mint hover:bg-mint hover:text-ink transition-colors">
                             <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="2"
@@ -260,9 +871,31 @@
                             </svg>
                             <span class="hidden sm:inline">Contact</span>
                         </a>
+                        <button type="button" id="menu-toggle" aria-label="เปิดเมนู" aria-expanded="false"
+                            aria-controls="mobile-menu"
+                            class="menu-toggle md:hidden grid h-8 w-8 place-items-center rounded-md border border-line bg-panel/70 text-txt hover:border-mint hover:text-mint transition-colors">
+                            <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                                aria-hidden="true">
+                                <path class="bar bar-1" stroke-linecap="round" d="M4 7h16" />
+                                <path class="bar bar-2" stroke-linecap="round" d="M4 12h16" />
+                                <path class="bar bar-3" stroke-linecap="round" d="M4 17h16" />
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </div>
+            <nav id="mobile-menu" aria-label="เมนูหลัก" hidden
+                class="mobile-menu md:hidden border-t border-line bg-ink/95 backdrop-blur">
+                <ul class="mx-auto max-w-7xl px-4 py-3 font-mono text-sm">
+                    <li><a href="#top" class="flex items-center justify-between rounded-md px-3 py-3 text-txt hover:bg-mint/10 hover:text-mint"><span><span class="text-mint">01.</span> Home</span><span aria-hidden="true">&rarr;</span></a></li>
+                    <li><a href="#about" class="flex items-center justify-between rounded-md px-3 py-3 text-txt hover:bg-mint/10 hover:text-mint"><span><span class="text-mint">02.</span> About</span><span aria-hidden="true">&rarr;</span></a></li>
+                    <li><a href="#experience" class="flex items-center justify-between rounded-md px-3 py-3 text-txt hover:bg-mint/10 hover:text-mint"><span><span class="text-mint">03.</span> Experience</span><span aria-hidden="true">&rarr;</span></a></li>
+                    <li><a href="#projects" class="flex items-center justify-between rounded-md px-3 py-3 text-txt hover:bg-mint/10 hover:text-mint"><span><span class="text-mint">04.</span> Work</span><span aria-hidden="true">&rarr;</span></a></li>
+                    <li><a href="#side-projects" class="flex items-center justify-between rounded-md px-3 py-3 text-txt hover:bg-mint/10 hover:text-mint"><span><span class="text-mint">05.</span> Side Projects</span><span aria-hidden="true">&rarr;</span></a></li>
+                    <li><a href="#skills" class="flex items-center justify-between rounded-md px-3 py-3 text-txt hover:bg-mint/10 hover:text-mint"><span><span class="text-mint">06.</span> Skills</span><span aria-hidden="true">&rarr;</span></a></li>
+                    <li><a href="#contact" class="flex items-center justify-between rounded-md px-3 py-3 text-txt hover:bg-mint/10 hover:text-mint"><span><span class="text-mint">07.</span> Contact</span><span aria-hidden="true">&rarr;</span></a></li>
+                </ul>
+            </nav>
         </header>
 
         <!-- ================= แถบไอคอนซ้าย ================= -->
@@ -325,18 +958,24 @@
         <main>
             <!-- ================= HERO ================= -->
             <section id="top" class="relative overflow-hidden border-b border-line">
-                <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
+                <canvas id="hero-3d" class="hero-3d" aria-hidden="true"></canvas>
+                <div class="hero-floor" aria-hidden="true"></div>
+                <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
 
                     <h1 class="sr-only">Muhammadhisam Pala (มูฮัมหมัดฮีซาม ปาล๊ะ) — Software Developer</h1>
-                    <p aria-hidden="true"
-                        class="font-display font-extralight text-mint glow-mint leading-none text-6xl sm:text-8xl lg:text-[8.5rem] text-center lg:text-left lg:pl-[26%]">
-                        Developer</p>
+                    <p class="mb-4 flex items-center justify-center lg:justify-start lg:pl-[26%] gap-2 font-mono text-[11px] tracking-[0.2em] text-muted uppercase">
+                        <span class="status-dot inline-block h-1.5 w-1.5 rounded-full bg-mint"></span>
+                        <span data-typer="system.online // open_to_work">system.online // open_to_work</span>
+                    </p>
+                    <p aria-hidden="true" id="holo-word"
+                        class="holo-word font-display font-extralight text-mint leading-none text-6xl sm:text-8xl lg:text-[8.5rem] text-center lg:text-left lg:pl-[26%]"
+                        data-scramble="Developer">Developer</p>
 
                     <div class="mt-10 grid gap-10 lg:grid-cols-[300px_minmax(0,1fr)_220px] lg:items-center">
 
                         <!-- การ์ดโปรไฟล์ -->
-                        <div class="frame-cut p-2.5 mx-auto w-full max-w-[300px]">
-                            <div class="frame-cut-inner border border-txt/25 bg-panel/60 px-5 pt-7 pb-5 text-center">
+                        <div class="frame-cut tilt p-2.5 mx-auto w-full max-w-[300px]">
+                            <div class="frame-cut-inner scanline border border-txt/25 bg-panel/60 backdrop-blur-sm px-5 pt-7 pb-5 text-center">
                                 <div
                                     class="mx-auto grid h-16 w-16 place-items-center rounded-full bg-mint/15 ring-2 ring-mint">
                                     <span class="font-mono text-lg font-bold text-mint">MH</span>
@@ -456,20 +1095,20 @@
 
                         <!-- แคปซูลตัวเลข -->
                         <div
-                            class="rounded-[40px] border border-line bg-panel/80 px-6 py-7 mx-auto w-full max-w-[260px]">
+                            class="tilt rounded-[40px] border border-line bg-panel/80 backdrop-blur-sm px-6 py-7 mx-auto w-full max-w-[260px]">
                             <ul class="space-y-6">
                                 <li class="flex items-center gap-4">
-                                    <span class="font-display text-3xl font-light text-mint">5+</span>
+                                    <span class="font-display text-3xl font-light text-mint" data-count="5+">5+</span>
                                     <span
                                         class="font-mono text-[10px] leading-tight text-muted">ปีในสาย<br />พัฒนาซอฟต์แวร์</span>
                                 </li>
                                 <li class="flex items-center gap-4">
-                                    <span class="font-display text-3xl font-light text-mint">10+</span>
+                                    <span class="font-display text-3xl font-light text-mint" data-count="10+">10+</span>
                                     <span
                                         class="font-mono text-[10px] leading-tight text-muted">ระบบที่ร่วมพัฒนา<br />และใช้งานจริง</span>
                                 </li>
                                 <li class="flex items-center gap-4">
-                                    <span class="font-display text-3xl font-light text-mint">3</span>
+                                    <span class="font-display text-3xl font-light text-mint" data-count="3">3</span>
                                     <span
                                         class="font-mono text-[10px] leading-tight text-muted">บริษัท<br />ที่เคยร่วมงาน</span>
                                 </li>
@@ -534,7 +1173,7 @@
 
                         <!-- หน้าต่างโค้ดจำลอง + สรุปขอบเขตงาน -->
                         <div class="space-y-5">
-                            <div class="overflow-hidden rounded-2xl border border-line bg-[#171D1E]">
+                            <div class="overflow-hidden rounded-2xl border border-line bg-code">
                                 <div class="flex items-center gap-1.5 border-b border-line px-4 py-2.5">
                                     <span class="h-2.5 w-2.5 rounded-full bg-[#FF5F57]"></span>
                                     <span class="h-2.5 w-2.5 rounded-full bg-[#FEBC2E]"></span>
@@ -591,7 +1230,7 @@
 
                         <li class="relative">
                             <span
-                                class="absolute -left-[31px] sm:-left-[39px] top-6 grid h-4 w-4 place-items-center rounded-full border-2 border-mint bg-ink"><span
+                                class="tl-dot absolute -left-[31px] sm:-left-[39px] top-6 grid h-4 w-4 place-items-center rounded-full border-2 border-mint bg-ink"><span
                                     class="h-1.5 w-1.5 rounded-full bg-mint"></span></span>
                             <article
                                 class="rounded-2xl border border-line bg-panel/70 p-6 transition-colors hover:border-mint/50">
@@ -632,7 +1271,7 @@
 
                         <li class="relative">
                             <span
-                                class="absolute -left-[31px] sm:-left-[39px] top-6 grid h-4 w-4 place-items-center rounded-full border-2 border-line bg-ink"><span
+                                class="tl-dot absolute -left-[31px] sm:-left-[39px] top-6 grid h-4 w-4 place-items-center rounded-full border-2 border-line bg-ink"><span
                                     class="h-1.5 w-1.5 rounded-full bg-muted"></span></span>
                             <article
                                 class="rounded-2xl border border-line bg-panel/70 p-6 transition-colors hover:border-mint/50">
@@ -658,7 +1297,7 @@
 
                         <li class="relative">
                             <span
-                                class="absolute -left-[31px] sm:-left-[39px] top-6 grid h-4 w-4 place-items-center rounded-full border-2 border-line bg-ink"><span
+                                class="tl-dot absolute -left-[31px] sm:-left-[39px] top-6 grid h-4 w-4 place-items-center rounded-full border-2 border-line bg-ink"><span
                                     class="h-1.5 w-1.5 rounded-full bg-muted"></span></span>
                             <article
                                 class="rounded-2xl border border-line bg-panel/70 p-6 transition-colors hover:border-mint/50">
@@ -1208,7 +1847,7 @@
                                         </svg>
                                         Architecture — Turborepo Monorepo · ฐานแยกต่อคลินิก
                                     </p>
-                                    <div class="rounded-md border border-line bg-[#171D1E] p-4 overflow-x-auto">
+                                    <div class="rounded-md border border-line bg-code p-4 overflow-x-auto">
                                         <svg viewBox="0 0 760 252" class="w-full min-w-[660px] h-auto"
                                             xmlns="http://www.w3.org/2000/svg" role="img"
                                             aria-label="Clinic ERP architecture: four Next.js apps behind Caddy, one Hono API, per-clinic PostgreSQL databases">
@@ -1615,7 +2254,7 @@
                                         </svg>
                                         Architecture — Real-time Event-driven (SSE)
                                     </p>
-                                    <div class="rounded-md border border-line bg-[#171D1E] p-4 overflow-x-auto">
+                                    <div class="rounded-md border border-line bg-code p-4 overflow-x-auto">
                                         <svg viewBox="0 0 760 244" class="w-full min-w-[660px] h-auto"
                                             xmlns="http://www.w3.org/2000/svg" role="img"
                                             aria-label="M-MERT real-time architecture">
@@ -2202,7 +2841,7 @@
                                         </svg>
                                         Architecture — AI Vector Search Pipeline
                                     </p>
-                                    <div class="rounded-md border border-line bg-[#171D1E] p-4 overflow-x-auto">
+                                    <div class="rounded-md border border-line bg-code p-4 overflow-x-auto">
                                         <svg viewBox="0 0 760 214" class="w-full min-w-[680px] h-auto"
                                             xmlns="http://www.w3.org/2000/svg" role="img"
                                             aria-label="MeawSook AI vector search architecture">
@@ -2881,6 +3520,584 @@
                 else if (e.key === "ArrowLeft") show(at - 1);
                 else if (e.key === "ArrowRight") show(at + 1);
             });
+        })();
+    </script>
+    <!-- ================= THEME + 3D EFFECTS ================= -->
+    <script>
+        (function () {
+            var root = document.documentElement;
+            var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            var finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+            // ---------- สลับโหมดมืด/สว่าง ----------
+            var btn = document.getElementById("theme-toggle");
+            var metaTheme = document.querySelector('meta[name="theme-color"]');
+
+            function applyTheme(theme) {
+                root.setAttribute("data-theme", theme);
+                if (metaTheme) metaTheme.setAttribute("content", theme === "light" ? "#F2F6F5" : "#14181A");
+                if (btn) btn.setAttribute("aria-label", theme === "light" ? "เปลี่ยนเป็นโหมดมืด" : "เปลี่ยนเป็นโหมดสว่าง");
+                window.dispatchEvent(new Event("themechange"));
+            }
+
+            applyTheme(root.getAttribute("data-theme") || "dark");
+
+            if (btn) {
+                btn.addEventListener("click", function () {
+                    var next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
+                    try { localStorage.setItem("theme", next); } catch (e) { }
+
+                    if (!document.startViewTransition || reduce) {
+                        applyTheme(next);
+                        return;
+                    }
+                    // วงกลมขยายจากปุ่มสลับธีม
+                    var r = btn.getBoundingClientRect();
+                    var x = r.left + r.width / 2;
+                    var y = r.top + r.height / 2;
+                    var radius = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
+                    var transition = document.startViewTransition(function () { applyTheme(next); });
+                    transition.ready.then(function () {
+                        root.animate(
+                            { clipPath: ["circle(0px at " + x + "px " + y + "px)", "circle(" + radius + "px at " + x + "px " + y + "px)"] },
+                            { duration: 650, easing: "cubic-bezier(.2,.8,.2,1)", pseudoElement: "::view-transition-new(root)" }
+                        );
+                    });
+                });
+            }
+
+            // ตามธีมของระบบ หากผู้ใช้ยังไม่เคยเลือกเอง
+            var systemLight = window.matchMedia("(prefers-color-scheme: light)");
+            if (systemLight.addEventListener) {
+                systemLight.addEventListener("change", function (e) {
+                    var saved = null;
+                    try { saved = localStorage.getItem("theme"); } catch (err) { }
+                    if (!saved) applyTheme(e.matches ? "light" : "dark");
+                });
+            }
+
+            // ---------- แถบความคืบหน้าการเลื่อน ----------
+            var bar = document.querySelector(".scroll-progress");
+            var scrollQueued = false;
+            function updateProgress() {
+                scrollQueued = false;
+                var max = document.documentElement.scrollHeight - innerHeight;
+                bar.style.setProperty("--progress", max > 0 ? (scrollY / max).toFixed(4) : 0);
+            }
+            if (bar) {
+                addEventListener("scroll", function () {
+                    if (!scrollQueued) { scrollQueued = true; requestAnimationFrame(updateProgress); }
+                }, { passive: true });
+                updateProgress();
+            }
+
+            // ---------- แสงและตารางตามเมาส์ ----------
+            var glowLayers = document.querySelectorAll(".cyber-grid, .spotlight");
+            var holo = document.getElementById("holo-word");
+            var pointer = { x: innerWidth / 2, y: innerHeight * 0.3, nx: 0, ny: 0 };
+            var pointerQueued = false;
+            function paintPointer() {
+                pointerQueued = false;
+                glowLayers.forEach(function (el) {
+                    el.style.setProperty("--mx", pointer.x + "px");
+                    el.style.setProperty("--my", pointer.y + "px");
+                });
+                if (holo && scrollY < innerHeight) {
+                    holo.style.setProperty("--hy", (pointer.nx * 10).toFixed(2) + "deg");
+                    holo.style.setProperty("--hx", (-pointer.ny * 8).toFixed(2) + "deg");
+                }
+            }
+            if (finePointer && !reduce) {
+                addEventListener("pointermove", function (e) {
+                    pointer.x = e.clientX;
+                    pointer.y = e.clientY;
+                    pointer.nx = e.clientX / innerWidth - 0.5;
+                    pointer.ny = e.clientY / innerHeight - 0.5;
+                    if (!pointerQueued) { pointerQueued = true; requestAnimationFrame(paintPointer); }
+                }, { passive: true });
+            }
+
+            // ---------- การ์ดเอียง 3 มิติตามเมาส์ ----------
+            if (finePointer && !reduce) {
+                var tiltTargets = document.querySelectorAll(
+                    ".tilt, #experience article, #projects article, #skills .mt-10 > div, #skills .mt-14 > div, #about .grid-cols-2 > div"
+                );
+                tiltTargets.forEach(function (el) {
+                    el.classList.add("tilt");
+                    var max = el.offsetWidth > 500 ? 3 : 7;
+                    el.addEventListener("pointermove", function (e) {
+                        var r = el.getBoundingClientRect();
+                        var px = (e.clientX - r.left) / r.width;
+                        var py = (e.clientY - r.top) / r.height;
+                        el.style.setProperty("--ry", ((px - 0.5) * 2 * max).toFixed(2) + "deg");
+                        el.style.setProperty("--rx", (-(py - 0.5) * 2 * max).toFixed(2) + "deg");
+                        el.style.setProperty("--gx", (px * 100).toFixed(1) + "%");
+                        el.style.setProperty("--gy", (py * 100).toFixed(1) + "%");
+                        el.classList.add("is-tilting");
+                    });
+                    el.addEventListener("pointerleave", function () {
+                        el.style.setProperty("--rx", "0deg");
+                        el.style.setProperty("--ry", "0deg");
+                        el.classList.remove("is-tilting");
+                    });
+                });
+            }
+
+            // ---------- เผยเนื้อหาแบบพลิก 3 มิติขณะเลื่อน ----------
+            var itemSelector = [
+                "#about .grid > *",
+                "#experience ol > li",
+                "#projects article",
+                "#side-projects details",
+                "#skills .mt-10 > div",
+                "#skills ul > li",
+                "#skills .mt-14 > div",
+            ].join(",");
+            var items = Array.prototype.slice.call(document.querySelectorAll(itemSelector));
+            var blocks = Array.prototype.slice.call(document.querySelectorAll("main section:not(#top) > div > *"))
+                .filter(function (el) {
+                    return items.indexOf(el) === -1 && !el.querySelector(itemSelector);
+                });
+            var revealEls = blocks.concat(items);
+
+            revealEls.forEach(function (el) {
+                var siblings = Array.prototype.indexOf.call(el.parentElement.children, el);
+                el.style.setProperty("--d", (items.indexOf(el) === -1 ? 0 : (siblings % 6) * 70) + "ms");
+                el.parentElement.style.perspective = "1200px";
+                el.classList.add("reveal");
+            });
+
+            if (!("IntersectionObserver" in window) || reduce) {
+                revealEls.forEach(function (el) { el.classList.add("in"); });
+            } else {
+                var revealObserver = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (!entry.isIntersecting) return;
+                        entry.target.classList.add("in");
+                        revealObserver.unobserve(entry.target);
+                    });
+                }, { rootMargin: "0px 0px -8% 0px", threshold: 0 });
+                revealEls.forEach(function (el) { revealObserver.observe(el); });
+            }
+
+            // ---------- ข้อความถอดรหัส (scramble) ----------
+            var glyphs = "01<>/{}[]#=+*_-\\$%";
+            function esc(c) {
+                return c.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+            }
+            function scramble(el, duration) {
+                var target = el.getAttribute("data-scramble");
+                if (!target || reduce) return;
+                var start = performance.now();
+                function frame(now) {
+                    var t = Math.min(1, (now - start) / duration);
+                    var done = Math.floor(t * target.length);
+                    var html = esc(target.slice(0, done));
+                    var rest = "";
+                    for (var i = done; i < target.length; i++) {
+                        rest += glyphs.charAt(Math.floor(Math.random() * glyphs.length));
+                    }
+                    el.innerHTML = html + (rest ? '<span class="scr">' + esc(rest) + "</span>" : "");
+                    if (t < 1) requestAnimationFrame(frame);
+                }
+                requestAnimationFrame(frame);
+            }
+            // พิมพ์ข้อความสถานะทีละตัว
+            function typeOut(el) {
+                var text = el.getAttribute("data-typer");
+                var i = 0;
+                el.textContent = "";
+                (function type() {
+                    el.textContent = text.slice(0, ++i);
+                    if (i < text.length) setTimeout(type, 38);
+                })();
+            }
+
+            // ---------- นับตัวเลขขึ้น ----------
+            var counters = document.querySelectorAll("[data-count]");
+            function countUp(el) {
+                var raw = el.getAttribute("data-count");
+                var n = parseInt(raw, 10);
+                var suffix = raw.replace(/^\d+/, "");
+                if (isNaN(n) || reduce) return;
+                var start = performance.now();
+                (function frame(now) {
+                    var t = Math.min(1, (now - start) / 1300);
+                    var eased = 1 - Math.pow(1 - t, 3);
+                    el.textContent = Math.round(n * eased) + suffix;
+                    if (t < 1) requestAnimationFrame(frame);
+                })(start);
+            }
+
+            // หัวข้อแต่ละ section ถอดรหัสตอนเลื่อนมาถึง
+            var headings = Array.prototype.slice.call(document.querySelectorAll("main section:not(#top) h2"))
+                .filter(function (h) { return !h.children.length; });
+            headings.forEach(function (h) {
+                var label = h.textContent.replace(/\s+/g, " ").trim();
+                h.setAttribute("aria-label", label);
+                h.setAttribute("data-scramble", label);
+            });
+
+            // เริ่มเอฟเฟกต์ของ Hero หลังหน้าโหลดจบ (ถ้ามี)
+            function startIntro() {
+                if (reduce) return;
+                document.querySelectorAll("#top [data-scramble]").forEach(function (el) { scramble(el, 1400); });
+                document.querySelectorAll("[data-typer]").forEach(typeOut);
+                if (!("IntersectionObserver" in window)) return;
+                var countObserver = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (!entry.isIntersecting) return;
+                        countUp(entry.target);
+                        countObserver.unobserve(entry.target);
+                    });
+                }, { threshold: 0.6 });
+                counters.forEach(function (el) { countObserver.observe(el); });
+
+                var headingObserver = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (!entry.isIntersecting) return;
+                        scramble(entry.target, 900);
+                        headingObserver.unobserve(entry.target);
+                    });
+                }, { rootMargin: "0px 0px -10% 0px" });
+                headings.forEach(function (h) { headingObserver.observe(h); });
+            }
+
+            // ---------- หน้าโหลดแบบ terminal ----------
+            var boot = document.getElementById("boot");
+            if (boot && root.classList.contains("booting")) {
+                var log = document.getElementById("boot-log");
+                var steps = [
+                    ["> init hisam.os v" + new Date().getFullYear() + "." + (new Date().getMonth() + 1), ""],
+                    ["> load modules: typescript · node · bun", " ok"],
+                    ["> connect postgres://experience", " ok"],
+                    ["> mount projects & side-projects", " ok"],
+                    ["> compile 3d.scene", " ok"],
+                    ["> render portfolio", " ▮"],
+                ];
+                var step = 0, finished = false, timer = 0;
+                var finish = function () {
+                    if (finished) return;
+                    finished = true;
+                    clearTimeout(timer);
+                    try { sessionStorage.setItem("booted", "1"); } catch (e) { }
+                    boot.classList.add("is-leaving");
+                    setTimeout(function () {
+                        root.classList.remove("booting");
+                        startIntro();
+                    }, 650);
+                };
+                (function next() {
+                    if (finished) return;
+                    if (step >= steps.length) { timer = setTimeout(finish, 280); return; }
+                    var line = document.createElement("div");
+                    line.textContent = steps[step][0];
+                    if (steps[step][1]) {
+                        var ok = document.createElement("span");
+                        ok.className = "ok";
+                        ok.textContent = steps[step][1];
+                        line.appendChild(ok);
+                    }
+                    log.appendChild(line);
+                    step++;
+                    boot.style.setProperty("--boot", step / steps.length);
+                    timer = setTimeout(next, 210);
+                })();
+                addEventListener("keydown", finish, { once: true });
+                boot.addEventListener("pointerdown", finish);
+            } else {
+                startIntro();
+            }
+
+            // ---------- เคอร์เซอร์เรืองแสง ----------
+            if (finePointer && !reduce) {
+                var ring = document.querySelector(".cursor-ring");
+                var dot = document.querySelector(".cursor-dot");
+                var cur = { x: -100, y: -100, rx: -100, ry: -100, active: false };
+                addEventListener("pointermove", function (e) {
+                    if (e.pointerType !== "mouse") return;
+                    cur.x = e.clientX;
+                    cur.y = e.clientY;
+                    if (!cur.active) {
+                        cur.active = true;
+                        cur.rx = cur.x;
+                        cur.ry = cur.y;
+                        root.classList.add("cursor-on");
+                        requestAnimationFrame(follow);
+                    }
+                    var interactive = e.target.closest && e.target.closest("a, button, summary, .shot, [role='button']");
+                    ring.classList.toggle("is-hover", !!interactive);
+                }, { passive: true });
+                document.addEventListener("mouseleave", function () {
+                    cur.active = false;
+                    root.classList.remove("cursor-on");
+                });
+                addEventListener("pointerdown", function () { ring.classList.add("is-down"); });
+                addEventListener("pointerup", function () { ring.classList.remove("is-down"); });
+                function follow() {
+                    if (!cur.active) return;
+                    cur.rx += (cur.x - cur.rx) * 0.2;
+                    cur.ry += (cur.y - cur.ry) * 0.2;
+                    dot.style.transform = "translate3d(" + cur.x + "px," + cur.y + "px,0)";
+                    ring.style.transform = "translate3d(" + cur.rx.toFixed(1) + "px," + cur.ry.toFixed(1) + "px,0)";
+                    requestAnimationFrame(follow);
+                }
+            }
+
+            // ---------- Timeline เรืองแสงตามการเลื่อน ----------
+            var timeline = document.querySelector("#experience ol");
+            if (timeline) {
+                var beam = document.createElement("span");
+                beam.className = "tl-beam";
+                beam.setAttribute("aria-hidden", "true");
+                timeline.appendChild(beam);
+                var stops = Array.prototype.slice.call(timeline.children).filter(function (li) { return li.tagName === "LI"; });
+                var tlQueued = false;
+                function paintTimeline() {
+                    tlQueued = false;
+                    var r = timeline.getBoundingClientRect();
+                    var progress = reduce ? 1 : Math.max(0, Math.min(1, (innerHeight * 0.65 - r.top) / r.height));
+                    beam.style.setProperty("--tl", progress.toFixed(4));
+                    var reach = r.top + progress * r.height;
+                    stops.forEach(function (li) {
+                        var d = li.querySelector(".tl-dot");
+                        li.classList.toggle("tl-active", !!d && d.getBoundingClientRect().top <= reach);
+                    });
+                }
+                addEventListener("scroll", function () {
+                    if (!tlQueued) { tlQueued = true; requestAnimationFrame(paintTimeline); }
+                }, { passive: true });
+                addEventListener("resize", paintTimeline);
+                paintTimeline();
+            }
+
+            // ---------- เมนูมือถือ ----------
+            var menuBtn = document.getElementById("menu-toggle");
+            var menu = document.getElementById("mobile-menu");
+            if (menuBtn && menu) {
+                var setMenu = function (open) {
+                    menu.hidden = !open;
+                    menuBtn.setAttribute("aria-expanded", String(open));
+                    menuBtn.setAttribute("aria-label", open ? "ปิดเมนู" : "เปิดเมนู");
+                };
+                menuBtn.addEventListener("click", function () { setMenu(menu.hidden); });
+                menu.addEventListener("click", function (e) { if (e.target.closest("a")) setMenu(false); });
+                document.addEventListener("keydown", function (e) {
+                    if (e.key === "Escape" && !menu.hidden) { setMenu(false); menuBtn.focus(); }
+                });
+                matchMedia("(min-width: 768px)").addEventListener("change", function (e) { if (e.matches) setMenu(false); });
+            }
+
+            // ---------- ทรงกลมข้อมูล 3 มิติในส่วน Hero ----------
+            var canvas = document.getElementById("hero-3d");
+            if (!canvas || !canvas.getContext) return;
+            var ctx = canvas.getContext("2d");
+            var hero = canvas.parentElement;
+
+            var count = innerWidth < 640 ? 200 : 420;
+            var nodes = [];
+            for (var i = 0; i < count; i++) {
+                var y = 1 - (i / (count - 1)) * 2;
+                var ring = Math.sqrt(1 - y * y);
+                var theta = i * 2.399963;
+                nodes.push([Math.cos(theta) * ring, y, Math.sin(theta) * ring]);
+            }
+            // เชื่อมจุดที่อยู่ใกล้กันเป็นโครงข่าย
+            var linkDist = Math.pow(1.3 * Math.sqrt((4 * Math.PI) / count), 2);
+            var links = [];
+            for (var a = 0; a < count; a++) {
+                for (var b = a + 1; b < count; b++) {
+                    var dx = nodes[a][0] - nodes[b][0];
+                    var dy = nodes[a][1] - nodes[b][1];
+                    var dz = nodes[a][2] - nodes[b][2];
+                    if (dx * dx + dy * dy + dz * dz < linkDist) links.push([a, b]);
+                }
+            }
+            var orbits = [
+                { r: 1.42, tilt: 1.15, spin: 0.4, speed: 0.00045 },
+                { r: 1.7, tilt: -0.55, spin: 1.9, speed: -0.0003 },
+            ];
+
+            var W = 0, H = 0, cx = 0, cy = 0, R = 0, fade = 1;
+            var rgb = "62,235,192";
+            var rotY = 0, rotX = -0.35, tiltX = 0, tiltY = 0;
+            var running = false, visible = true, last = 0;
+            var projected = new Array(count);
+
+            function readColor() {
+                rgb = getComputedStyle(root).getPropertyValue("--c-mint").trim().split(/\s+/).join(",");
+            }
+
+            function resize() {
+                var dpr = Math.min(2, window.devicePixelRatio || 1);
+                W = hero.clientWidth;
+                H = hero.clientHeight;
+                canvas.width = Math.round(W * dpr);
+                canvas.height = Math.round(H * dpr);
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+                if (W >= 1024) {
+                    cx = W * 0.8; cy = H * 0.48; R = Math.min(H * 0.4, W * 0.19); fade = 1;
+                } else {
+                    cx = W * 0.5; cy = Math.min(H * 0.21, 240); R = Math.min(W * 0.46, 230); fade = 0.6;
+                }
+            }
+
+            function project(p, out) {
+                // หมุนรอบแกน Y แล้วแกน X จากนั้นฉายแบบ perspective
+                var cosY = Math.cos(rotY + tiltY), sinY = Math.sin(rotY + tiltY);
+                var cosX = Math.cos(rotX + tiltX), sinX = Math.sin(rotX + tiltX);
+                var x = p[0] * cosY - p[2] * sinY;
+                var z = p[0] * sinY + p[2] * cosY;
+                var y = p[1] * cosX - z * sinX;
+                z = p[1] * sinX + z * cosX;
+                var s = 3.2 / (3.2 - z);
+                out.x = cx + x * R * s;
+                out.y = cy + y * R * s;
+                out.z = z;
+                out.s = s;
+                return out;
+            }
+
+            function orbitPoint(o, t, out) {
+                var px = Math.cos(t) * o.r, pz = Math.sin(t) * o.r;
+                var cosT = Math.cos(o.tilt), sinT = Math.sin(o.tilt);
+                var cosS = Math.cos(o.spin), sinS = Math.sin(o.spin);
+                var y = -pz * sinT;
+                var z = pz * cosT;
+                return project([px * cosS - z * sinS, y, px * sinS + z * cosS], out);
+            }
+
+            function draw(time) {
+                ctx.clearRect(0, 0, W, H);
+                for (var i = 0; i < count; i++) projected[i] = project(nodes[i], projected[i] || {});
+
+                // แกนเรืองแสงตรงกลางทรงกลม
+                var core = ctx.createRadialGradient(cx, cy, 0, cx, cy, R * 1.25);
+                core.addColorStop(0, "rgba(" + rgb + "," + 0.16 * fade + ")");
+                core.addColorStop(0.55, "rgba(" + rgb + "," + 0.05 * fade + ")");
+                core.addColorStop(1, "rgba(" + rgb + ",0)");
+                ctx.fillStyle = core;
+                ctx.fillRect(cx - R * 1.3, cy - R * 1.3, R * 2.6, R * 2.6);
+
+                // เส้นเชื่อม: แบ่งความทึบเป็นชั้น เพื่อวาดเป็นชุดเดียวกัน
+                var buckets = [[], [], [], []];
+                for (var l = 0; l < links.length; l++) {
+                    var p1 = projected[links[l][0]], p2 = projected[links[l][1]];
+                    var depth = ((p1.z + p2.z) / 2 + 1) / 2;
+                    buckets[Math.min(3, Math.floor(depth * 4))].push(p1, p2);
+                }
+                ctx.lineWidth = 0.7;
+                for (var k = 0; k < 4; k++) {
+                    ctx.strokeStyle = "rgba(" + rgb + "," + (0.05 + k * 0.1) * fade + ")";
+                    ctx.beginPath();
+                    var seg = buckets[k];
+                    for (var j = 0; j < seg.length; j += 2) {
+                        ctx.moveTo(seg[j].x, seg[j].y);
+                        ctx.lineTo(seg[j + 1].x, seg[j + 1].y);
+                    }
+                    ctx.stroke();
+                }
+
+                // แถบสแกนเลื่อนขึ้นลงตามแนวแกน Y
+                var scanY = Math.sin(time * 0.0007);
+                for (var n = 0; n < count; n++) {
+                    var p = projected[n];
+                    var d = (p.z + 1) / 2;
+                    var hit = Math.max(0, 1 - Math.abs(nodes[n][1] - scanY) * 9);
+                    ctx.fillStyle = "rgba(" + rgb + "," + Math.min(1, (0.15 + d * 0.65 + hit * 0.6)) * fade + ")";
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, (0.6 + d * 1.5 + hit * 1.4) * p.s * 0.8, 0, 6.2832);
+                    ctx.fill();
+                }
+
+                // วงโคจรพร้อมแพ็กเก็ตข้อมูลวิ่ง
+                var q = {};
+                orbits.forEach(function (o, idx) {
+                    ctx.beginPath();
+                    for (var s = 0; s <= 96; s++) {
+                        orbitPoint(o, (s / 96) * 6.2832, q);
+                        if (s === 0) ctx.moveTo(q.x, q.y); else ctx.lineTo(q.x, q.y);
+                    }
+                    ctx.strokeStyle = "rgba(" + rgb + "," + 0.18 * fade + ")";
+                    ctx.lineWidth = 1;
+                    ctx.setLineDash(idx ? [2, 6] : []);
+                    ctx.stroke();
+                    ctx.setLineDash([]);
+                    for (var pk = 0; pk < 3; pk++) {
+                        orbitPoint(o, time * o.speed + pk * 2.0944, q);
+                        var glow = (q.z + 1.7) / 3.4;
+                        ctx.fillStyle = "rgba(" + rgb + "," + (0.35 + glow * 0.65) * fade + ")";
+                        ctx.shadowColor = "rgba(" + rgb + ",0.9)";
+                        ctx.shadowBlur = 12;
+                        ctx.beginPath();
+                        ctx.arc(q.x, q.y, 2 + glow * 1.6, 0, 6.2832);
+                        ctx.fill();
+                        ctx.shadowBlur = 0;
+                    }
+                });
+            }
+
+            function loop(now) {
+                if (!running) return;
+                var dt = Math.min(48, now - (last || now));
+                last = now;
+                rotY += dt * 0.00018 + spin.vy;
+                rotX = Math.max(-1.2, Math.min(0.6, rotX + spin.vx));
+                spin.vy *= spin.dragging ? 0.6 : 0.95;
+                spin.vx *= spin.dragging ? 0.6 : 0.9;
+                tiltY += ((pointer.nx || 0) * 0.6 - tiltY) * 0.05;
+                tiltX += ((pointer.ny || 0) * 0.4 - tiltX) * 0.05;
+                draw(now);
+                requestAnimationFrame(loop);
+            }
+
+            function start() {
+                if (running || reduce || !visible || document.hidden) return;
+                running = true;
+                last = 0;
+                requestAnimationFrame(loop);
+            }
+            function stop() { running = false; }
+
+            // ลากเมาส์บนพื้นที่ว่างของ Hero เพื่อหมุนทรงกลม (มีแรงเฉื่อย)
+            var spin = { vx: 0, vy: 0, dragging: false, x: 0, y: 0 };
+            if (finePointer && !reduce) {
+                hero.classList.add("can-spin");
+                hero.addEventListener("pointerdown", function (e) {
+                    if (e.button !== 0 || e.target.closest("a, button, p, h1, h2, span, li, ul, img")) return;
+                    spin.dragging = true;
+                    spin.x = e.clientX;
+                    spin.y = e.clientY;
+                    hero.classList.add("is-spinning");
+                    e.preventDefault();
+                });
+                addEventListener("pointermove", function (e) {
+                    if (!spin.dragging) return;
+                    spin.vy += (e.clientX - spin.x) * 0.0025;
+                    spin.vx -= (e.clientY - spin.y) * 0.0018;
+                    spin.x = e.clientX;
+                    spin.y = e.clientY;
+                });
+                addEventListener("pointerup", function () {
+                    spin.dragging = false;
+                    hero.classList.remove("is-spinning");
+                });
+            }
+
+            readColor();
+            resize();
+            draw(0);
+
+            addEventListener("resize", function () { resize(); if (!running) draw(0); });
+            addEventListener("themechange", function () { readColor(); if (!running) draw(0); });
+            document.addEventListener("visibilitychange", function () { document.hidden ? stop() : start(); });
+            if ("IntersectionObserver" in window) {
+                new IntersectionObserver(function (entries) {
+                    visible = entries[0].isIntersecting;
+                    visible ? start() : stop();
+                }).observe(hero);
+            }
+            start();
         })();
     </script>
 </body>
